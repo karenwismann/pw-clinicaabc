@@ -109,12 +109,12 @@ export const HeroCarousel: React.FC = () => {
             <div className="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
-                {/* Left Text Card: Clean, readable glassmorphism banner */}
-                <div className="lg:col-span-8 max-w-2xl text-white space-y-5 backdrop-blur-md bg-cfa-navy/45 p-6 sm:p-10 rounded-3xl border border-white/20 shadow-2xl animate-fadeIn">
+                {/* Left Text Card: Solid, non-translucent corporate navy card */}
+                <div className="lg:col-span-8 max-w-2xl text-white space-y-5 bg-[#0B2559] p-6 sm:p-10 rounded-3xl border border-[#69B3E7]/40 shadow-2xl animate-fadeIn">
                   
                   {/* Badge */}
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-bold text-white shadow-sm font-title">
-                    <Sparkles className="w-3.5 h-3.5 text-cfa-light" />
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#004C97] border border-[#69B3E7]/60 text-xs font-bold text-white shadow-sm font-title">
+                    <Sparkles className="w-3.5 h-3.5 text-[#69B3E7]" />
                     <span>{slide.badgeText}</span>
                   </div>
 
@@ -123,28 +123,28 @@ export const HeroCarousel: React.FC = () => {
                     {slide.title}
                   </h1>
 
-                  {/* CTA Buttons */}
+                  {/* CTA Buttons - Both Solid Blue (#004C97) */}
                   <div className="pt-2 flex flex-wrap items-center gap-3">
                     <Link
                       href={slide.buttonLink}
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-light text-cfa-navy font-extrabold text-sm sm:text-base shadow-lg hover:shadow-cfa-cyan/50 hover:scale-102 active:scale-98 transition-all font-title"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#004C97] hover:bg-[#003B75] text-white font-bold text-sm sm:text-base border border-[#69B3E7]/50 shadow-md hover:scale-102 active:scale-98 transition-all font-title"
                     >
                       <span>{slide.buttonText}</span>
-                      <ArrowRight className="w-5 h-5" />
+                      <ArrowRight className="w-5 h-5 text-white" />
                     </Link>
 
                     <Link
                       href="/#agendar-cita"
-                      className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm transition-all font-title"
+                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#004C97] hover:bg-[#003B75] text-white font-bold text-sm sm:text-base border border-[#69B3E7]/50 shadow-md hover:scale-102 active:scale-98 transition-all font-title"
                     >
-                      <Clock className="w-4 h-4 text-cfa-light" />
+                      <Clock className="w-4 h-4 text-[#69B3E7]" />
                       <span>{language === 'es' ? 'Agendar Consulta' : 'Book Consultation'}</span>
                     </Link>
                   </div>
 
                   {/* Official Legend */}
                   <div className="pt-2 flex items-center gap-2 text-xs sm:text-sm text-blue-100 font-medium tracking-wide drop-shadow-sm font-sans">
-                    <ShieldCheck className="w-4 h-4 text-cfa-light flex-shrink-0" />
+                    <ShieldCheck className="w-4 h-4 text-[#69B3E7] flex-shrink-0" />
                     <span>{slide.legend}</span>
                   </div>
                 </div>

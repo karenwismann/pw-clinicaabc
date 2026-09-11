@@ -391,7 +391,21 @@ export default function Home() {
                       <span>{language === 'es' ? 'Ver más' : 'View more'}</span>
                       <ChevronRight className="w-4 h-4" />
                     </button>
-                    <span className="text-[10px] text-[#0B2559]/70 font-sans">Centro Médico ABC</span>
+
+                    {doc.linkedinUrl ? (
+                      <a
+                        href={doc.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-1.5 rounded-lg bg-[#0A66C2]/10 hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white transition-all flex items-center gap-1"
+                        aria-label="LinkedIn"
+                        title="Ver LinkedIn"
+                      >
+                        <Linkedin className="w-3.5 h-3.5" />
+                      </a>
+                    ) : (
+                      <span className="text-[10px] text-[#0B2559]/70 font-sans">Centro Médico ABC</span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -520,9 +534,23 @@ export default function Home() {
                   <p className="text-xs sm:text-sm text-[#0B2559]/80 font-sans leading-relaxed">
                     {(selectedDoctor[language] || selectedDoctor.es).brief}
                   </p>
-                  <div className="pt-1 flex items-center justify-center sm:justify-start gap-2 text-xs text-[#0B2559] font-semibold">
-                    <ShieldCheck className="w-4 h-4 text-[#004C97]" />
-                    <span>Centro Médico ABC Campus Santa Fe</span>
+                  <div className="pt-1 flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs text-[#0B2559] font-semibold">
+                    <div className="flex items-center gap-1.5">
+                      <ShieldCheck className="w-4 h-4 text-[#004C97]" />
+                      <span>Centro Médico ABC Campus Santa Fe</span>
+                    </div>
+                    {selectedDoctor.linkedinUrl && (
+                      <a
+                        href={selectedDoctor.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0A66C2] text-white text-xs font-bold hover:brightness-110 shadow-xs transition-all font-title"
+                      >
+                        <Linkedin className="w-3.5 h-3.5" />
+                        <span>LinkedIn</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

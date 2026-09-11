@@ -160,7 +160,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
   {
     year: "2020",
     badge: "Seguridad RI Witness",
-    imageSrc: "/imagenes/ri_witness.jpg",
+    imageSrc: "/imagenes/2020TL.jpeg",
     es: {
       title: "Comenzamos a utilizar la plataforma RI WITNESS seguridad y vigilancia de los gametos.",
       description: "Comenzamos a utilizar la plataforma RI WITNESS seguridad y vigilancia de los gametos con tecnología RFID para trazabilidad total de muestras biológicas.",

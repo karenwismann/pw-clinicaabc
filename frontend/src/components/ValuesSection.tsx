@@ -86,53 +86,41 @@ export const ValuesSection: React.FC = () => {
 
       {/* Selected Value Detailed Showcase */}
       <div className="bg-gradient-to-br from-cfa-iceBlue/90 via-white to-cfa-grayLight p-6 sm:p-8 rounded-3xl border border-cfa-softBlue shadow-inner transition-all duration-300">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          <div className="lg:col-span-8 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cfa-cyan to-cfa-deepBlue text-white flex items-center justify-center shadow-md flex-shrink-0">
-                <Icon className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="text-xs font-bold text-cfa-cyan uppercase tracking-wider font-title">
-                  {language === 'es' ? 'Valor Institucional' : 'Institutional Value'}
-                </span>
-                <h3 className="font-title text-xl sm:text-2xl font-bold text-cfa-navy">
-                  {activeData.title}
-                </h3>
-              </div>
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cfa-cyan to-cfa-deepBlue text-white flex items-center justify-center shadow-md flex-shrink-0">
+              <Icon className="w-6 h-6" />
             </div>
-
-            <p className="text-sm sm:text-base text-cfa-grayDark leading-relaxed font-sans">
-              {activeData.description}
-            </p>
-
-            {activeData.environmentalPoints && (
-              <div className="space-y-2.5 pt-2">
-                {activeData.environmentalPoints.map((point, pIdx) => (
-                  <div key={pIdx} className="p-3 bg-white/90 rounded-xl border border-cfa-softBlue text-xs sm:text-sm text-cfa-navy font-sans flex items-start gap-2.5">
-                    <span className="w-5 h-5 rounded-full bg-cfa-cyan text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
-                      {pIdx + 1}
-                    </span>
-                    <span className="leading-relaxed">{point}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            <div className="p-3 bg-white/80 rounded-xl border border-cfa-softBlue text-xs text-cfa-navy font-sans flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-cfa-cyan flex-shrink-0" />
-              <span className="font-semibold">{activeData.subtitle}</span>
+            <div>
+              <span className="text-xs font-bold text-cfa-cyan uppercase tracking-wider font-title">
+                {language === 'es' ? 'Valor Institucional' : 'Institutional Value'}
+              </span>
+              <h3 className="font-title text-xl sm:text-2xl font-bold text-cfa-navy">
+                {activeData.title}
+              </h3>
             </div>
           </div>
 
-          <div className="lg:col-span-4 bg-white p-6 rounded-2xl border border-cfa-softBlue shadow-sm flex flex-col justify-center text-center space-y-3">
-            <Sparkles className="w-8 h-8 text-cfa-cyan mx-auto" />
-            <p className="font-title text-base font-extrabold text-cfa-navy leading-snug">
-              {activeData.title}
-            </p>
-            <p className="text-xs text-cfa-grayText font-sans">
-              Clínica de Fertilización Asistida • Centro Médico ABC
-            </p>
+          <p className="text-sm sm:text-base text-cfa-grayDark leading-relaxed font-sans">
+            {activeData.description}
+          </p>
+
+          {activeData.environmentalPoints && (
+            <div className="space-y-2.5 pt-2">
+              {activeData.environmentalPoints.map((point, pIdx) => (
+                <div key={pIdx} className="p-3 bg-white/90 rounded-xl border border-cfa-softBlue text-xs sm:text-sm text-cfa-navy font-sans flex items-start gap-2.5">
+                  <span className="w-5 h-5 rounded-full bg-cfa-cyan text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                    {pIdx + 1}
+                  </span>
+                  <span className="leading-relaxed">{point}</span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <div className="p-3 bg-white/80 rounded-xl border border-cfa-softBlue text-xs text-cfa-navy font-sans flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-cfa-cyan flex-shrink-0" />
+            <span className="font-semibold">{activeData.subtitle}</span>
           </div>
         </div>
       </div>

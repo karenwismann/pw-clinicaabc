@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { DOCTORS, SPECIALIST_GROUPS, Doctor } from '@/data/team';
-import { Award, Users, GraduationCap, Sparkles, CheckCircle2, ChevronRight, Stethoscope, Heart, Calendar, X, ExternalLink, ShieldCheck } from 'lucide-react';
+import { Award, Users, GraduationCap, Sparkles, CheckCircle2, ChevronRight, Stethoscope, Heart, Calendar, X, ExternalLink, ShieldCheck, Linkedin } from 'lucide-react';
 import { AppointmentModal } from '@/components/AppointmentModal';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -168,7 +168,7 @@ export default function EquipoPage() {
                   </div>
                 </div>
 
-                {/* Footer with "Ver más" Button */}
+                {/* Footer with "Ver más" Button & LinkedIn */}
                 <div className="p-6 pt-0">
                   <div className="pt-4 border-t border-cfa-grayBorder flex items-center justify-between">
                     <button
@@ -179,7 +179,20 @@ export default function EquipoPage() {
                       <ChevronRight className="w-4 h-4" />
                     </button>
 
-                    <span className="text-[10px] text-cfa-grayText font-medium font-sans">Centro Médico ABC</span>
+                    {doc.linkedinUrl ? (
+                      <a
+                        href={doc.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-1.5 rounded-lg bg-[#0A66C2]/10 hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white transition-all flex items-center gap-1"
+                        aria-label="LinkedIn"
+                        title="Ver LinkedIn"
+                      >
+                        <Linkedin className="w-3.5 h-3.5" />
+                      </a>
+                    ) : (
+                      <span className="text-[10px] text-cfa-grayText font-medium font-sans">Centro Médico ABC</span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -327,9 +340,23 @@ export default function EquipoPage() {
                   <p className="text-xs sm:text-sm text-cfa-grayDark font-sans leading-relaxed">
                     {(selectedDoctor[language] || selectedDoctor.es).brief}
                   </p>
-                  <div className="pt-1 flex items-center justify-center sm:justify-start gap-2 text-xs text-cfa-navy font-semibold">
-                    <ShieldCheck className="w-4 h-4 text-cfa-cyan" />
-                    <span>Centro Médico ABC Campus Santa Fe</span>
+                  <div className="pt-1 flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs text-cfa-navy font-semibold">
+                    <div className="flex items-center gap-1.5">
+                      <ShieldCheck className="w-4 h-4 text-cfa-cyan" />
+                      <span>Centro Médico ABC Campus Santa Fe</span>
+                    </div>
+                    {selectedDoctor.linkedinUrl && (
+                      <a
+                        href={selectedDoctor.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0A66C2] text-white text-xs font-bold hover:brightness-110 shadow-xs transition-all font-title"
+                      >
+                        <Linkedin className="w-3.5 h-3.5" />
+                        <span>LinkedIn</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

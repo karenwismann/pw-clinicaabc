@@ -12,6 +12,7 @@ export interface Doctor {
   name: string;
   imageSrc: string;
   curriculumImageSrc?: string;
+  linkedinUrl?: string;
   isLeadership?: boolean;
   es: DoctorData;
   en: DoctorData;
@@ -90,6 +91,7 @@ export const DOCTORS: Doctor[] = [
     id: "dra-stephanie-lizmi",
     name: "Dra. Stephanie Lizmi Romano",
     imageSrc: "/imagenes/doctores/doctorasteph.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/stephanie-lizmi-671507269",
     es: {
       role: "Coordinadora del Área Médica & Coach de la Fertilidad",
       specialty: "Ginecología, Reproducción Humana Asistida y Coaching de Fertilidad",
@@ -279,43 +281,61 @@ export const DOCTORS: Doctor[] = [
     name: "Dr. Gonzalo Eugui Velázquez",
     imageSrc: "/imagenes/doctores/dr_gonzalo.jpg",
     es: {
-      role: "Especialista en Reproducción Humana",
-      specialty: "Ginecología, Obstetricia y Biología de la Reproducción",
-      brief: "Especialista en medicina reproductiva, transferencias embrionarias de alta precisión y diagnóstico integral de fertilidad en el Centro Médico ABC Santa Fe.",
+      role: "Ginecólogo y Obstetra · Médico Adjunto en Reproducción Asistida",
+      specialty: "Ginecología, Obstetricia, Reproducción Asistida y Cirugía Endoscópica",
+      brief: "Ginecólogo en la Clínica de Fertilización Asistida del Centro Médico ABC. Médico adjunto en ciclos de reproducción asistida, cirugía abierta, laparoscópica y docencia de residentes en el Centro Médico ABC.",
       fullBio: [
-        "Médico especialista en ginecología, obstetricia y biología de la reproducción humana.",
-        "Experto en monitorización folicular precisa, transferencias embrionarias ecoguiadas y control ginecológico de alta especialidad.",
-        "Miembro adscrito al cuerpo médico de la Clínica de Fertilización Asistida en el Centro Médico ABC Campus Santa Fe."
+        "Ginecólogo en la Clínica de Fertilización Asistida del Centro Médico ABC, desempeñando el rol de médico adjunto en ciclos de reproducción asistida, así como ayudante en procedimientos de cirugía abierta, cirugía laparoscópica y obstetricia.",
+        "Profesor adjunto de médicos residentes de primer año de Ginecología y Obstetricia en el Centro Médico ABC.",
+        "Profesor adjunto de simulación clínica para médicos residentes en el Centro Médico ABC.",
+        "Egresado de la Licenciatura en Médico Cirujano por la Universidad Anáhuac México Norte (2014-2020), con mención por Excelencia Académica en 2017.",
+        "Realizó el Internado de Pregrado en el Centro Médico ABC desempeñándose con distinción como Jefe de Médicos Internos.",
+        "Servicio Social Rotatorio en la Ciudad de México: Centro de Salud TIII Cuajimalpa, UNEME CAPA San Mateo y Hospital Pediátrico de Tacubaya.",
+        "Especialidad en Ginecología y Obstetricia realizada en el Centro Médico ABC (2020-2024).",
+        "Certificación oficial vigente por el Consejo Mexicano de Ginecología y Obstetricia."
       ],
       education: [
-        "Médico Cirujano y Partero",
-        "Especialidad en Ginecología y Obstetricia",
-        "Subespecialidad en Biología de la Reproducción Humana",
-        "Certificado por el Consejo Mexicano de Ginecología y Obstetricia"
+        "Licenciatura en Médico Cirujano - Universidad Anáhuac México Norte (2014-2020) · Excelencia Académica 2017",
+        "Internado de Pregrado - Centro Médico ABC (Jefe de Médicos Internos)",
+        "Servicio Social Rotatorio CDMX - Centro de Salud TIII Cuajimalpa, UNEME CAPA San Mateo, Hospital Pediátrico de Tacubaya",
+        "Especialidad en Ginecología y Obstetricia - Centro Médico ABC (2020-2024)",
+        "Certificación por el Consejo Mexicano de Ginecología y Obstetricia"
       ],
       achievements: [
-        "Especialista en medicina reproductiva avanzada",
-        "Especialista adscrito en el Centro Médico ABC Campus Santa Fe"
+        "Médico Adjunto en Ciclos de Reproducción Asistida CFA Centro Médico ABC",
+        "Profesor Adjunto de Médicos Residentes de Ginecología y Obstetricia CMABC",
+        "Profesor Adjunto de Simulación para Médicos Residentes CMABC",
+        "Jefe de Médicos Internos de Pregrado en Centro Médico ABC",
+        "Certificación por el Consejo Mexicano de Ginecología y Obstetricia"
       ]
     },
     en: {
-      role: "Human Reproduction Specialist",
-      specialty: "Gynecology, Obstetrics & Human Reproductive Biology",
-      brief: "Specialist in reproductive medicine, ultrasound-guided embryo transfers, and comprehensive fertility diagnostics at ABC Medical Center Santa Fe.",
+      role: "Gynecologist & Obstetrician · Attending in Assisted Reproduction",
+      specialty: "Gynecology, Obstetrics, Assisted Reproduction & Endoscopic Surgery",
+      brief: "Gynecologist at the Assisted Fertilization Clinic at ABC Medical Center. Attending physician in assisted reproduction cycles, open and laparoscopic surgery, and residency simulation instructor at ABC Medical Center.",
       fullBio: [
-        "Specialist in gynecology, obstetrics, and human reproductive biology.",
-        "Expert in ultrasound-guided embryo transfers, follicular monitoring, and advanced fertility management.",
-        "Clinical faculty member at the Assisted Fertilization Clinic at ABC Medical Center Santa Fe."
+        "Gynecologist at the Assisted Fertilization Clinic at ABC Medical Center, serving as attending physician in assisted reproduction cycles and surgical assistant in open surgery, laparoscopy, and high-specialty obstetrics.",
+        "Adjunct Professor for first-year Obstetrics & Gynecology medical residents at ABC Medical Center.",
+        "Adjunct Clinical Simulation Professor for medical residents at ABC Medical Center.",
+        "Medical Doctor graduate from Universidad Anáhuac México Norte (2014-2020), honored with Academic Excellence in 2017.",
+        "Completed undergraduate clinical internship at ABC Medical Center, serving with distinction as Chief of Medical Interns.",
+        "Completed clinical social service in Mexico City at Centro de Salud TIII Cuajimalpa, UNEME CAPA San Mateo, and Tacubaya Pediatric Hospital.",
+        "Medical Residency in Obstetrics & Gynecology at ABC Medical Center (2020-2024).",
+        "Board certified by the Mexican Council of Gynecology and Obstetrics."
       ],
       education: [
-        "Medical Doctor - Surgery & Obstetrics",
-        "Specialty in Obstetrics & Gynecology",
-        "Subspecialty in Human Reproductive Medicine",
-        "Board Certified by Mexican Council of Gynecology & Obstetrics"
+        "M.D. / Physician Surgeon - Universidad Anáhuac México Norte (2014-2020) · Academic Excellence Award 2017",
+        "Undergraduate Clinical Internship - ABC Medical Center (Chief of Medical Interns)",
+        "Clinical Social Service - TIII Cuajimalpa Health Center, UNEME CAPA San Mateo, Tacubaya Pediatric Hospital",
+        "Residency in Obstetrics & Gynecology - ABC Medical Center (2020-2024)",
+        "Board Certified by the Mexican Council of Gynecology and Obstetrics"
       ],
       achievements: [
-        "Specialist in advanced assisted reproduction",
-        "Attending specialist at ABC Medical Center Santa Fe"
+        "Attending Physician in Assisted Reproduction Cycles at CFA ABC Medical Center",
+        "Adjunct Residency Professor for OB/GYN Residents at ABC Medical Center",
+        "Adjunct Clinical Simulation Professor at ABC Medical Center",
+        "Former Chief of Medical Interns at ABC Medical Center",
+        "Board Certified by Mexican Council of Gynecology & Obstetrics"
       ]
     }
   }

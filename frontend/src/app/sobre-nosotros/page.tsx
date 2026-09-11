@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { ValuesSection } from '@/components/ValuesSection';
-import { Award, Compass, Eye, Users, Building2, ShieldCheck, Sparkles } from 'lucide-react';
+import { InternationalMap } from '@/components/InternationalMap';
+import { Award, Compass, Eye, Users, Building2, ShieldCheck, Sparkles, Globe } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function SobreNosotrosPage() {
@@ -55,15 +56,6 @@ export default function SobreNosotrosPage() {
                 ? 'Nuestro ejercicio profesional abarca todas las subespecialidades: Ginecólogos, Urólogos, Biólogos de la Reproducción, Genetistas, Psicólogas, Biólogas / Embriólogas, y un cuerpo de enfermería con licenciatura y profunda experiencia en reproducción humana.'
                 : 'Our practice integrates all reproductive subspecialties: Gynecologists, Urologists, Reproductive Biologists, Geneticists, Clinical Psychologists, Embryologists, and specialized fertility nurses.'}
             </p>
-
-            <div className="p-4 bg-cfa-iceBlue rounded-2xl border border-cfa-softBlue flex items-start gap-3">
-              <ShieldCheck className="w-5 h-5 text-cfa-cyan flex-shrink-0 mt-0.5" />
-              <p className="text-xs text-cfa-navy leading-relaxed font-sans">
-                {language === 'es'
-                  ? 'Asimismo, contamos con el respaldo del despacho global Salles Sainz Grant Thornton, encargado de todos los procesos administrativos y laborales desde hace más de 15 años para garantizar absoluta solidez institucional.'
-                  : 'We are backed administratively by global audit and consulting firm Salles Sainz Grant Thornton for over 15 years, ensuring institutional transparency and operational excellence.'}
-              </p>
-            </div>
           </div>
 
           <div className="lg:col-span-5">
@@ -105,7 +97,7 @@ export default function SobreNosotrosPage() {
             {language === 'es' ? (
               <>
                 <p>
-                  El <strong>Dr. Carlos Navarro Martínez</strong>, Fundador y Director de nuestra Clínica de Fertilización Asistida (CFA), nace profesionalmente de la mano del <strong>Dr. Alfonso Gutiérrez Najar</strong>, su mentor y pionero de la infertilidad en México, trabajando a su lado entre 1980 y 1987.
+                  El <strong>Dr. Carlos Navarro Martínez</strong>, Fundador y Director de nuestra Clínica de Fertilización Asistida (CFA), nace profesionalmente de la mano del Dr. Alfonso Gutiérrez Najar, su mentor y pionero de la infertilidad en México, trabajando a su lado entre 1980 y 1987.
                 </p>
                 <p>
                   En los años 1988 y 1989, el Dr. Navarro realiza sus estudios de postgrado en el <strong>Women's Hospital of Texas</strong>, avalado por la prestigiosa <em>Universidad Baylor College of Medicine</em>, teniendo como jefe directo al <strong>Dr. Robert Franklin</strong>.
@@ -123,7 +115,7 @@ export default function SobreNosotrosPage() {
             ) : (
               <>
                 <p>
-                  <strong>Dr. Carlos Navarro Martínez</strong>, Founder and Medical Director of our Assisted Fertilization Clinic (CFA), trained alongside <strong>Dr. Alfonso Gutiérrez Najar</strong>, a pioneering figure in reproductive medicine in Mexico, from 1980 to 1987.
+                  <strong>Dr. Carlos Navarro Martínez</strong>, Founder and Medical Director of our Assisted Fertilization Clinic (CFA), trained alongside Dr. Alfonso Gutiérrez Najar, a pioneering figure in reproductive medicine in Mexico, from 1980 to 1987.
                 </p>
                 <p>
                   In 1988 and 1989, Dr. Navarro completed fellowship training at the <strong>Women's Hospital of Texas</strong> affiliated with <em>Baylor College of Medicine</em>, working directly under <strong>Dr. Robert Franklin</strong>.
@@ -227,53 +219,27 @@ export default function SobreNosotrosPage() {
 
       {/* 3. NUESTRA PRÁCTICA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-cfa-softBlue shadow-soft space-y-6">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-bold uppercase tracking-wider mb-2 font-title">
-              <Building2 className="w-3.5 h-3.5" />
-              <span>Campus Santa Fe</span>
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-cfa-softBlue shadow-soft">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-bold uppercase tracking-wider font-title">
+                <Globe className="w-3.5 h-3.5" />
+                <span>{language === 'es' ? 'Atención Internacional' : 'International Care'}</span>
+              </div>
+              <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-cfa-navy">
+                {language === 'es' ? 'Nuestra Práctica Médica' : 'Our Medical Practice'}
+              </h2>
+              <p className="text-sm sm:text-base text-cfa-grayDark leading-relaxed font-sans">
+                {language === 'es'
+                  ? 'Recibimos y atendemos con calidez a parejas y pacientes internacionales procedentes de Centro América, el Caribe, Estados Unidos y otros países, brindándoles acompañamiento integral, asesoría personalizada y los más altos estándares de excelencia médica en el Centro Médico ABC Santa Fe.'
+                  : 'We warmly welcome and care for international couples and patients from Central America, the Caribbean, the United States, and across the globe, providing comprehensive coordination, personalized guidance, and the highest standards of reproductive excellence at ABC Medical Center Santa Fe.'}
+              </p>
             </div>
-            <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-cfa-navy">
-              {language === 'es' ? 'Nuestra Práctica Médica' : 'Our Medical Practice'}
-            </h2>
-          </div>
 
-          <p className="text-sm sm:text-base text-cfa-grayDark leading-relaxed font-sans">
-            {language === 'es'
-              ? 'Somos un grupo médico compuesto por Ginecólogos, Urólogos, Genetista, Anestesiólogos, Biólogos, Coordinadoras, Enfermeras y Personal Administrativo. Llevamos a cabo nuestros tratamientos en el Centro Médico ABC en Santa Fe, en la zona nor-poniente de la Ciudad de México.'
-              : 'Our medical faculty includes Gynecologists, Urologists, Clinical Geneticists, Anesthesiologists, Reproductive Biologists, and specialized Coordinators practicing at ABC Medical Center Santa Fe.'}
-          </p>
-
-          <p className="text-sm sm:text-base text-cfa-grayDark leading-relaxed font-sans">
-            {language === 'es'
-              ? 'Recibimos pacientes de nuestra ciudad y de todo el país, así como pacientes de Centro América, Caribe y Estados Unidos.'
-              : 'We receive patients from all Mexican states as well as international patients from Central America, the Caribbean, the United States, and Canada.'}
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-            <div className="p-4 rounded-2xl bg-cfa-grayLight border border-cfa-grayBorder text-center">
-              <span className="block text-2xl font-bold text-cfa-cyan mb-1 font-title">
-                {language === 'es' ? 'Nacional' : 'National'}
-              </span>
-              <span className="text-xs text-cfa-grayText font-sans">
-                {language === 'es' ? 'Pacientes de los 32 estados de México' : 'Patients from all 32 Mexican states'}
-              </span>
-            </div>
-            <div className="p-4 rounded-2xl bg-cfa-grayLight border border-cfa-grayBorder text-center">
-              <span className="block text-2xl font-bold text-cfa-cyan mb-1 font-title">
-                {language === 'es' ? 'Internacional' : 'International'}
-              </span>
-              <span className="text-xs text-cfa-grayText font-sans">
-                {language === 'es' ? 'Centro América, Caribe y EE. UU.' : 'Central America, Caribbean & USA'}
-              </span>
-            </div>
-            <div className="p-4 rounded-2xl bg-cfa-grayLight border border-cfa-grayBorder text-center">
-              <span className="block text-2xl font-bold text-cfa-cyan mb-1 font-title">
-                {language === 'es' ? 'Acreditación' : 'Accreditation'}
-              </span>
-              <span className="text-xs text-cfa-grayText font-sans">
-                {language === 'es' ? 'Estándares del Centro Médico ABC' : 'ABC Medical Center Standards'}
-              </span>
+            {/* Right Map Component */}
+            <div className="lg:col-span-6">
+              <InternationalMap />
             </div>
           </div>
         </div>
