@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica de Fertilización Asistida | Centro Médico ABC Santa Fe</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Arial', 'Helvetica', 'sans-serif'],
+            title: ['Poppins', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            cfa: {
+              navy: '#0A2540',
+              dark: '#0A2540',
+              deepBlue: '#38369a',
+              midnight: '#07162c',
+              light: '#7ca5b8',
+              sky: '#38369a',
+              cyan: '#38369a',
+              softBlue: '#beddeb',
+              iceBlue: '#f0f8fa',
+              grayLight: '#f0f8fa',
+              graySlate: '#f0f8fa',
+              grayBorder: '#beddeb',
+              grayText: '#476375',
+              grayDark: '#0A2540',
+              navyBlue: '#0A2540',
+              egyptianBlue: '#38369a',
+              steelBlue: '#7ca5b8',
+              paleSky: '#beddeb',
+              aliceBlue: '#f0f8fa',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; }
+    h1, h2, h3, h4, h5, h6, .font-title { font-family: 'Poppins', sans-serif; }
+    .fade-in { animation: fadeIn 0.4s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="bg-cfa-grayLight text-cfa-grayDark antialiased min-h-screen flex flex-col selection:bg-cfa-softBlue selection:text-cfa-navy">
+
+  <!-- Top Bar -->
+  <div class="bg-cfa-navy text-white text-xs py-2.5 px-4 border-b border-white/10 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-2 text-cfa-light">
+        <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+        <span id="top-loc">Centro Médico ABC Santa Fe, Consultorio 332 (Entrada por Av. Vasco de Quiroga)</span>
+      </div>
+      <div class="flex items-center gap-5">
+        <div class="flex items-center gap-2">
+          <a href="https://www.youtube.com/@infertilidadabc" target="_blank" rel="noopener noreferrer" class="w-6 h-6 rounded-md bg-white/10 hover:bg-red-600 flex items-center justify-center text-white transition-colors" title="Podcast CFA en YouTube">
+            <i data-lucide="youtube" class="w-3.5 h-3.5"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-6 h-6 rounded-md bg-white/10 hover:bg-[#1877F2] flex items-center justify-center text-white transition-colors" title="Facebook">
+            <i data-lucide="facebook" class="w-3.5 h-3.5"></i>
+          </a>
+          <a href="https://www.instagram.com/clinicadefertilizacionenelabc/" target="_blank" rel="noopener noreferrer" class="w-6 h-6 rounded-md bg-white/10 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 flex items-center justify-center text-white transition-colors" title="Instagram @clinicadefertilizacionenelabc">
+            <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+        <span class="text-white/40">|</span>
+        <a href="tel:5552735194" class="hover:text-cfa-light flex items-center gap-1.5 transition-colors text-slate-100">
+          <i data-lucide="phone" class="w-3 h-3 text-cfa-light"></i>
+          <span>(55) 5273 5194</span>
+        </a>
+        <a href="tel:5552765463" class="hover:text-cfa-light flex items-center gap-1.5 transition-colors text-slate-100">
+          <i data-lucide="phone" class="w-3 h-3 text-cfa-light"></i>
+          <span>(55) 5276 54 63</span>
+        </a>
+        <span class="text-white/40">|</span>
+        <!-- Language Switcher in Header -->
+        <div class="inline-flex items-center rounded-xl bg-white/10 p-1 border border-white/20">
+          <button onclick="setLanguage('es')" id="btn-lang-es" class="px-2.5 py-0.5 rounded-lg text-xs font-bold bg-white text-cfa-navy shadow-xs cursor-pointer">🇲🇽 ES</button>
+          <button onclick="setLanguage('en')" id="btn-lang-en" class="px-2.5 py-0.5 rounded-lg text-xs font-bold text-white hover:text-cfa-light cursor-pointer">🇺🇸 EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-cfa-grayBorder py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="#inicio" class="flex items-center gap-3">
+        <img src="LOGOCFABC.png" alt="Clínica de Fertilización Asistida ABC" class="h-11 sm:h-12 w-auto max-w-[210px] object-contain">
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-cfa-navy font-title">
+        <a href="#inicio" id="nav-home" class="hover:text-cfa-cyan transition-colors">Inicio</a>
+        <a href="#sobre-nosotros" id="nav-about" class="hover:text-cfa-cyan transition-colors">Sobre la Clínica</a>
+        <a href="#tratamientos" id="nav-treatments" class="hover:text-cfa-cyan transition-colors">Tratamientos</a>
+        <a href="#innovacion" id="nav-innovation" class="hover:text-cfa-cyan transition-colors">Innovación & IA</a>
+        <a href="#equipo" id="nav-team" class="hover:text-cfa-cyan transition-colors">El Equipo</a>
+        <a href="#cita" id="nav-contact" class="hover:text-cfa-cyan transition-colors">Citas</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <!-- Language toggle mobile -->
+        <div class="lg:hidden inline-flex items-center rounded-xl bg-cfa-graySlate p-1 border border-cfa-grayBorder text-xs font-bold">
+          <button onclick="setLanguage('es')" class="px-2 py-0.5 rounded-lg text-xs">🇲🇽</button>
+          <button onclick="setLanguage('en')" class="px-2 py-0.5 rounded-lg text-xs">🇺🇸</button>
+        </div>
+
+        <button onclick="openAppointmentModal()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-deepBlue text-white text-xs sm:text-sm font-bold shadow-sm hover:brightness-105 transition-all flex items-center gap-2 font-title cursor-pointer">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span id="nav-btn-book">Agendar Cita</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. Hero Carrusel Informativo Full-Screen -->
+  <section id="inicio" class="relative w-full h-[85vh] min-h-[620px] max-h-[880px] bg-cfa-navy overflow-hidden">
+    <div id="carousel-slides" class="relative w-full h-full">
+      <!-- Slide 1 -->
+      <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-100 z-10">
+        <img src="IMAGENES/baby1.jpg" alt="Ayudando a formar familias" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-cfa-navy/90 via-cfa-navy/50 to-transparent sm:via-cfa-navy/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-cfa-navy/70 via-transparent to-cfa-navy/30"></div>
+        <div class="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center text-white">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-8 max-w-2xl space-y-5 backdrop-blur-md bg-cfa-navy/40 p-6 sm:p-10 rounded-3xl border border-white/20 shadow-2xl">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-semibold text-white">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cfa-light"></i> <span id="hero-badge1">Pioneros en México desde 1990</span>
+              </div>
+              <h1 id="hero-title1" class="font-title text-3xl sm:text-5xl font-extrabold leading-tight text-white drop-shadow-md">
+                Ayudando a formar familias – tratamientos de reproducción asistida desde 1990.
+              </h1>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#sobre-nosotros" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-light text-cfa-navy font-bold text-sm shadow-lg hover:bg-cfa-deepBlue transition-all font-title">
+                  <span id="hero-btn1">Conoce Sobre Nosotros</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#cita" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm transition-all font-title">
+                  <i data-lucide="calendar" class="w-4 h-4 text-cfa-light"></i>
+                  <span>Agendar Consulta</span>
+                </a>
+              </div>
+              <p id="hero-legend1" class="text-xs sm:text-sm text-slate-100 font-medium drop-shadow-sm font-sans flex items-center gap-2 pt-1">
+                <i data-lucide="shield-check" class="w-4 h-4 text-cfa-light"></i>
+                <span>Clínica de Fertilización Asistida en el Centro Médico ABC.</span>
+              </p>
+            </div>
+
+            <!-- Floating Badge on Desktop -->
+            <div class="hidden lg:flex lg:col-span-4 justify-end">
+              <div class="bg-white/90 backdrop-blur-xl p-5 rounded-2xl border border-white/60 shadow-2xl max-w-xs space-y-2 text-cfa-navy">
+                <div class="flex items-center gap-2">
+                  <span class="w-8 h-8 rounded-lg bg-cfa-cyan text-white flex items-center justify-center font-bold">
+                    <i data-lucide="award" class="w-4 h-4"></i>
+                  </span>
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-cfa-cyan block font-title">
+                      Centro de Excelencia
+                    </span>
+                    <h4 class="font-title font-bold text-xs leading-tight text-cfa-navy">
+                      1er Bebé FIV en México (1991)
+                    </h4>
+                  </div>
+                </div>
+                <p class="text-[11px] text-cfa-grayDark font-sans border-t border-slate-200/80 pt-2">
+                  Centro Médico ABC Campus Santa Fe
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0">
+        <img src="IMAGENES/baby2.jpg" alt="La ética, nuestro valor fundamental" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-cfa-navy/90 via-cfa-navy/50 to-transparent sm:via-cfa-navy/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-cfa-navy/70 via-transparent to-cfa-navy/30"></div>
+        <div class="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center text-white">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-8 max-w-2xl space-y-5 backdrop-blur-md bg-cfa-navy/40 p-6 sm:p-10 rounded-3xl border border-white/20 shadow-2xl">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-semibold text-white">
+                <i data-lucide="heart" class="w-3.5 h-3.5 text-cfa-light"></i> <span id="hero-badge2">Compromiso Ético y Científico</span>
+              </div>
+              <h1 id="hero-title2" class="font-title text-3xl sm:text-5xl font-extrabold leading-tight text-white drop-shadow-md">
+                La ética, nuestro valor fundamental
+              </h1>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#sobre-nosotros" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-light text-cfa-navy font-bold text-sm shadow-lg hover:bg-cfa-deepBlue transition-all font-title">
+                  <span id="hero-btn2">Nuestra Misión y Visión</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#cita" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm transition-all font-title">
+                  <i data-lucide="calendar" class="w-4 h-4 text-cfa-light"></i>
+                  <span>Agendar Consulta</span>
+                </a>
+              </div>
+              <p id="hero-legend2" class="text-xs sm:text-sm text-slate-100 font-medium drop-shadow-sm font-sans flex items-center gap-2 pt-1">
+                <i data-lucide="shield-check" class="w-4 h-4 text-cfa-light"></i>
+                <span>Clínica de Fertilización Asistida en el Centro Médico ABC.</span>
+              </p>
+            </div>
+
+            <!-- Floating Badge on Desktop -->
+            <div class="hidden lg:flex lg:col-span-4 justify-end">
+              <div class="bg-white/90 backdrop-blur-xl p-5 rounded-2xl border border-white/60 shadow-2xl max-w-xs space-y-2 text-cfa-navy">
+                <div class="flex items-center gap-2">
+                  <span class="w-8 h-8 rounded-lg bg-cfa-cyan text-white flex items-center justify-center font-bold">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                  </span>
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-cfa-cyan block font-title">
+                      Seguridad y Trazabilidad
+                    </span>
+                    <h4 class="font-title font-bold text-xs leading-tight text-cfa-navy">
+                      Sistema RI Witness RFID
+                    </h4>
+                  </div>
+                </div>
+                <p class="text-[11px] text-cfa-grayDark font-sans border-t border-slate-200/80 pt-2">
+                  Cero error humano • Protección continua
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0">
+        <img src="IMAGENES/baby3.jpg" alt="Más de 30 años de experiencia" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-cfa-navy/90 via-cfa-navy/50 to-transparent sm:via-cfa-navy/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-cfa-navy/70 via-transparent to-cfa-navy/30"></div>
+        <div class="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center text-white">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-8 max-w-2xl space-y-5 backdrop-blur-md bg-cfa-navy/40 p-6 sm:p-10 rounded-3xl border border-white/20 shadow-2xl">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-semibold text-white">
+                <i data-lucide="award" class="w-3.5 h-3.5 text-cfa-light"></i> <span id="hero-badge3">Excelencia Médica Acreditada</span>
+              </div>
+              <h1 id="hero-title3" class="font-title text-3xl sm:text-5xl font-extrabold leading-tight text-white drop-shadow-md">
+                Más de 30 años de experiencia, en el diagnóstico y tratamiento de problemas reproductivos
+              </h1>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#tratamientos" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-light text-cfa-navy font-bold text-sm shadow-lg hover:bg-cfa-deepBlue transition-all font-title">
+                  <span id="hero-btn3">Ver Tratamientos Especializados</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#cita" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm transition-all font-title">
+                  <i data-lucide="calendar" class="w-4 h-4 text-cfa-light"></i>
+                  <span>Agendar Consulta</span>
+                </a>
+              </div>
+              <p id="hero-legend3" class="text-xs sm:text-sm text-slate-100 font-medium drop-shadow-sm font-sans flex items-center gap-2 pt-1">
+                <i data-lucide="shield-check" class="w-4 h-4 text-cfa-light"></i>
+                <span>Clínica de Fertilización Asistida en el Centro Médico ABC.</span>
+              </p>
+            </div>
+
+            <!-- Floating Badge on Desktop -->
+            <div class="hidden lg:flex lg:col-span-4 justify-end">
+              <div class="bg-white/90 backdrop-blur-xl p-5 rounded-2xl border border-white/60 shadow-2xl max-w-xs space-y-2 text-cfa-navy">
+                <div class="flex items-center gap-2">
+                  <span class="w-8 h-8 rounded-lg bg-cfa-cyan text-white flex items-center justify-center font-bold">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  </span>
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-cfa-cyan block font-title">
+                      Vanguardia Médica
+                    </span>
+                    <h4 class="font-title font-bold text-xs leading-tight text-cfa-navy">
+                      11 Tratamientos de Alta Especialidad
+                    </h4>
+                  </div>
+                </div>
+                <p class="text-[11px] text-cfa-grayDark font-sans border-t border-slate-200/80 pt-2">
+                  Pioneros con Inteligencia Artificial
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <button onclick="prevSlide()" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md hover:bg-white text-white hover:text-cfa-navy border border-white/30 flex items-center justify-center transition-all shadow-xl hover:scale-105 cursor-pointer">
+      <i data-lucide="chevron-left" class="w-6 h-6"></i>
+    </button>
+    <button onclick="nextSlide()" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md hover:bg-white text-white hover:text-cfa-navy border border-white/30 flex items-center justify-center transition-all shadow-xl hover:scale-105 cursor-pointer">
+      <i data-lucide="chevron-right" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Thumbnail Pill Indicators -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5 bg-cfa-navy/80 backdrop-blur-xl px-5 py-2 rounded-full border border-white/20 shadow-2xl">
+      <button onclick="currentSlideIndex=0; showSlide(0);" class="w-3 h-3 rounded-full bg-white transition-all cursor-pointer" title="Slide 1"></button>
+      <button onclick="currentSlideIndex=1; showSlide(1);" class="w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer" title="Slide 2"></button>
+      <button onclick="currentSlideIndex=2; showSlide(2);" class="w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all cursor-pointer" title="Slide 3"></button>
+    </div>
+  </section>
+
+  <!-- 2. Sección Destacada: Podcast Oficial en YouTube & Redes Sociales -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-8">
+    <div class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#38369a] via-[#2d2a84] to-[#0A2540] text-white p-6 sm:p-10 lg:p-12 shadow-2xl border border-[#7ca5b8]/30">
+      
+      <!-- Ambient Glows -->
+      <div class="absolute top-0 left-0 w-96 h-96 bg-[#7ca5b8]/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-red-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        
+        <!-- Left Column: Enlarged Video / Podcast Showcase in Soap Bubble Glass Frame -->
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <a href="https://www.youtube.com/watch?v=GCagLjVF8U4" target="_blank" rel="noopener noreferrer" class="group block relative">
+            <!-- Iridescent Soap Bubble Glass Container -->
+            <div class="relative rounded-[2.5rem] p-2.5 sm:p-3.5 bg-white/10 backdrop-blur-2xl border-2 border-white/50 shadow-[0_15px_50px_rgba(0,0,0,0.3),inset_0_2px_6px_rgba(255,255,255,0.5)] ring-1 ring-cyan-200/40 hover:border-cyan-200/90 hover:shadow-[0_20px_60px_rgba(124,165,184,0.45)] transition-all duration-500 overflow-hidden">
+              
+              <!-- Soap Bubble Top Glare Highlight -->
+              <div class="absolute top-0 inset-x-6 h-28 bg-gradient-to-b from-white/40 via-white/10 to-transparent rounded-t-[2.5rem] pointer-events-none z-20"></div>
+
+              <!-- Inner Video Surface -->
+              <div class="relative w-full h-80 sm:h-96 lg:h-[420px] rounded-[2rem] overflow-hidden bg-slate-950/30 backdrop-blur-sm">
+                <img src="IMAGENES/baby1.jpg" alt="Podcast CFA" class="w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-85 transition-all duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                
+                <!-- Video Header Badges with Full YouTube Logo -->
+                <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none z-10">
+                  <div class="px-3.5 py-1.5 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 shadow-md flex items-center gap-2">
+                    <img src="IMAGENES/logos/youtube_full.png" alt="YouTube" class="h-4 sm:h-5 w-auto object-contain drop-shadow">
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-red-600/90 text-white text-[10px] font-black uppercase tracking-wider font-title shadow-md">
+                    4K Ultra HD
+                  </span>
+                </div>
+
+                <!-- Central Play Button Overlay -->
+                <div class="absolute inset-0 flex items-center justify-center z-10">
+                  <div class="relative flex items-center justify-center">
+                    <div class="absolute w-20 h-20 rounded-full bg-red-500/30 animate-ping pointer-events-none"></div>
+                    <div class="w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-gradient-to-tr from-red-600 to-red-500 text-white flex items-center justify-center shadow-2xl border border-white/40 group-hover:scale-110 transition-transform duration-300">
+                      <i data-lucide="play" class="w-7 sm:w-8 h-7 sm:h-8 fill-white text-white translate-x-0.5"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Bottom Meta -->
+                <div class="absolute bottom-4 left-4 right-4 space-y-1 text-white z-10">
+                  <div class="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#beddeb] uppercase tracking-wider font-title">
+                    <i data-lucide="mic" class="w-3.5 h-3.5 text-red-400"></i>
+                    <span>Dr. Carlos Navarro Martínez • Conducción Médica</span>
+                  </div>
+                  <h4 class="font-title font-bold text-base sm:text-lg text-white group-hover:text-red-300 transition-colors leading-snug">
+                    Podcast CFA: Preguntas Frecuentes y Casos de Éxito
+                  </h4>
+                  <p class="text-xs text-[#beddeb]/90 font-sans">
+                    Haz clic para reproducir episodios en YouTube
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Right: Summarized Podcast Information & Attractive CTAs -->
+        <div class="lg:col-span-5 space-y-5 order-1 lg:order-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-bold uppercase tracking-wider font-title">
+              <i data-lucide="radio" class="w-3.5 h-3.5 text-red-500 animate-pulse"></i>
+              <span>Podcast Oficial CFA</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[#beddeb] text-xs font-medium font-sans">
+              <i data-lucide="headphones" class="w-3.5 h-3.5 text-[#7ca5b8]"></i>
+              <span>Episodios Semanales</span>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="font-title text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+              Historias de Fertilidad, Ciencia & Esperanza
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans">
+              Diálogos médicos claros con el Dr. Carlos Navarro Martínez y especialistas del Centro Médico ABC Santa Fe. Avances científicos y testimonios reales.
+            </p>
+          </div>
+
+          <!-- Dynamic Equalizer Indicator -->
+          <div class="flex items-center gap-3.5 p-3.5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/15">
+            <div class="flex items-end gap-1 h-5 px-1">
+              <span class="w-1 bg-red-500 rounded-full h-3"></span>
+              <span class="w-1 bg-[#beddeb] rounded-full h-5"></span>
+              <span class="w-1 bg-red-400 rounded-full h-2"></span>
+              <span class="w-1 bg-[#7ca5b8] rounded-full h-5"></span>
+              <span class="w-1 bg-red-500 rounded-full h-3.5"></span>
+            </div>
+            <div class="text-xs text-slate-200 font-sans">
+              <strong class="text-white font-title block">Canal Oficial: @infertilidadabc</strong>
+              <span class="text-[#beddeb] text-[11px]">Video y audio en alta definición</span>
+            </div>
+          </div>
+
+          <!-- CTAs with Uploaded Official Transparent Logos -->
+          <div class="space-y-3 pt-1">
+            <!-- Main YouTube Button -->
+            <a href="https://www.youtube.com/watch?v=GCagLjVF8U4" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-2xl bg-red-600/50 hover:bg-red-600/75 border border-red-400/40 backdrop-blur-md text-white font-extrabold text-sm shadow-lg shadow-red-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all font-title group">
+              <img src="IMAGENES/logos/youtube_icon.png" alt="YouTube" class="w-5 h-5 object-contain flex-shrink-0">
+              <span>Ver en YouTube</span>
+              <i data-lucide="external-link" class="w-4 h-4 opacity-80 group-hover:translate-x-0.5 transition-transform"></i>
+            </a>
+
+            <!-- Social Media Channels Grid -->
+            <div class="flex items-center gap-2.5 pt-1">
+              <span class="text-xs text-[#beddeb] font-title font-semibold">
+                Síguenos:
+              </span>
+
+              <!-- Instagram Button -->
+              <a href="https://www.instagram.com/clinicadefertilizacionenelabc/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold shadow-sm hover:scale-105 transition-all font-title" title="Instagram @clinicadefertilizacionenelabc">
+                <img src="IMAGENES/logos/instagram.png" alt="Instagram" class="w-4 h-4 object-contain flex-shrink-0">
+                <span>Instagram</span>
+              </a>
+
+              <!-- Facebook Button -->
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold shadow-sm hover:scale-105 transition-all font-title" title="Facebook CFA">
+                <img src="IMAGENES/logos/facebook.png" alt="Facebook" class="w-4 h-4 object-contain flex-shrink-0">
+                <span>Facebook</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Bloque de Texto Destacado: Más de 30 años -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-soft border border-[#beddeb]/60 text-center max-w-4xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#beddeb]/40 text-[#38369a] text-xs font-bold uppercase tracking-wider font-title">
+        <i data-lucide="award" class="w-4 h-4 text-[#38369a]"></i>
+        <span id="feat-badge">Centro de Fertilidad de Alta Especialidad</span>
+      </div>
+      <h2 id="feat-title" class="font-title text-3xl sm:text-4xl font-extrabold text-[#38369a] leading-tight">
+        Más de 30 años ayudando a transformar familias
+      </h2>
+      <p id="feat-desc" class="text-base text-[#476375] leading-relaxed max-w-3xl mx-auto font-sans">
+        Contamos con más de 30 años de experiencia en el diagnóstico y tratamiento de los problemas reproductivos más complejos. Nuestras instalaciones en el <strong>Centro Médico ABC Campus Santa Fe</strong> ofrecen lo último en tecnología de primer mundo para los tratamientos de Fertilización in Vitro y Reproducción Asistida.
+      </p>
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-soft border border-cfa-softBlue space-y-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h3 id="tl-heading" class="font-title text-2xl sm:text-3xl font-bold text-cfa-navy">Línea de Tiempo Interactiva</h3>
+        <p id="tl-sub" class="text-xs sm:text-sm text-cfa-grayText mt-1 font-sans">Haz clic en cada hito para explorar la trayectoria médica</p>
+      </div>
+
+      <!-- Selector Dinámico -->
+      <div class="flex items-center justify-between overflow-x-auto pb-2 gap-3">
+        <button onclick="setTimelineYear(0)" class="timeline-btn px-4 py-2.5 rounded-2xl bg-white border border-cfa-grayBorder font-title font-bold text-xs hover:bg-cfa-softBlue transition-all cursor-pointer">1985</button>
+        <button onclick="setTimelineYear(1)" class="timeline-btn px-4 py-2.5 rounded-2xl bg-white border border-cfa-grayBorder font-title font-bold text-xs hover:bg-cfa-softBlue transition-all cursor-pointer">1987</button>
+        <button onclick="setTimelineYear(2)" class="timeline-btn px-4 py-2.5 rounded-2xl bg-cfa-navy text-white font-title font-bold text-xs shadow-md scale-105 cursor-pointer">1991 ★</button>
+        <button onclick="setTimelineYear(3)" class="timeline-btn px-4 py-2.5 rounded-2xl bg-white border border-cfa-grayBorder font-title font-bold text-xs hover:bg-cfa-softBlue transition-all cursor-pointer">1994</button>
+        <button onclick="setTimelineYear(4)" class="timeline-btn px-4 py-2.5 rounded-2xl bg-white border border-cfa-grayBorder font-title font-bold text-xs hover:bg-cfa-softBlue transition-all cursor-pointer">1999</button>
+        <button onclick="setTimelineYear(5)" class="timeline-btn px-4 py-2.5 rounded-2xl bg-white border border-cfa-grayBorder font-title font-bold text-xs hover:bg-cfa-softBlue transition-all cursor-pointer">2000</button>
+        <button onclick="setTimelineYear(6)" class="timeline-btn px-4 py-2.5 rounded-2xl bg-white border border-cfa-grayBorder font-title font-bold text-xs hover:bg-cfa-softBlue transition-all cursor-pointer">2005</button>
+        <button onclick="setTimelineYear(7)" class="timeline-btn px-4 py-2.5 rounded-2xl bg-white border border-cfa-grayBorder font-title font-bold text-xs hover:bg-cfa-softBlue transition-all cursor-pointer">2009</button>
+        <button onclick="setTimelineYear(8)" class="timeline-btn px-4 py-2.5 rounded-2xl bg-white border border-cfa-grayBorder font-title font-bold text-xs hover:bg-cfa-softBlue transition-all cursor-pointer">2010</button>
+      </div>
+
+      <!-- Tarjeta Detallada Dinámica -->
+      <div id="timeline-card" class="bg-gradient-to-br from-cfa-iceBlue via-white to-cfa-grayLight p-6 sm:p-8 rounded-2xl border border-cfa-softBlue flex flex-col md:flex-row items-start md:items-center justify-between gap-6 fade-in">
+        <div class="space-y-2">
+          <span id="tl-year" class="font-title text-4xl sm:text-5xl font-extrabold text-cfa-cyan">1991</span>
+          <h4 id="tl-title" class="font-title text-xl sm:text-2xl font-bold text-cfa-navy">Primer Nacimiento de FIV en México</h4>
+          <p id="tl-desc" class="text-sm text-cfa-grayDark leading-relaxed max-w-2xl font-sans">El Dr. Carlos Navarro Martínez formó parte del equipo médico histórico que logró el primer nacimiento por Fertilización in Vitro en la República Mexicana.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="prevTimeline()" class="w-10 h-10 rounded-xl bg-white border border-cfa-grayBorder hover:bg-cfa-cyan hover:text-white flex items-center justify-center transition-colors cursor-pointer"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+          <button onclick="nextTimeline()" class="w-10 h-10 rounded-xl bg-cfa-navy hover:bg-cfa-cyan text-white flex items-center justify-center transition-colors cursor-pointer"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Sobre Nosotros -->
+  <section id="sobre-nosotros" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white rounded-3xl p-8 sm:p-12 border border-cfa-softBlue shadow-soft">
+      <div class="lg:col-span-7 space-y-4">
+        <span id="about-tag" class="text-xs font-bold uppercase tracking-wider text-cfa-cyan bg-cfa-softBlue px-3 py-1 rounded-full font-title">Quiénes Somos</span>
+        <h2 id="about-title" class="font-title text-3xl font-bold text-cfa-navy">Grupo Multidisciplinario Especializado</h2>
+        <p id="about-desc1" class="text-sm text-cfa-grayDark leading-relaxed font-sans">
+          Somos un grupo multidisciplinario que nace en el año <strong>1994</strong>. Brindamos apoyo científico a parejas para formar una familia mediante Ginecólogos, Urólogos, Biólogos de la Reproducción, Genetistas, Psicólogas y Embriólogas. Respaldados por <strong>Salles Sainz Grant Thornton</strong> desde hace más de 15 años.
+        </p>
+      </div>
+      <div class="lg:col-span-5 bg-cfa-iceBlue p-6 rounded-2xl border border-cfa-softBlue space-y-3">
+        <h3 id="about-mision-title" class="font-title text-lg font-bold text-cfa-navy flex items-center gap-2">
+          <i data-lucide="compass" class="w-5 h-5 text-cfa-cyan"></i>
+          MISIÓN
+        </h3>
+        <p id="about-mision-desc" class="text-sm text-cfa-grayDark font-sans">Ayudar a nuestras pacientes a cumplir su anhelo de formar una Familia.</p>
+        <h3 id="about-vision-title" class="font-title text-lg font-bold text-cfa-navy flex items-center gap-2 pt-2">
+          <i data-lucide="eye" class="w-5 h-5 text-cfa-cyan"></i>
+          VISIÓN
+        </h3>
+        <p id="about-vision-desc" class="text-sm text-cfa-grayDark font-sans">Ofrecer a nuestras pacientes resultados comparables a las mejores Clínicas de reproducción en el mundo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Los 11 Tratamientos con sus Imágenes Reales y Flujograma DENTRO de Donación -->
+  <section id="tratamientos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span id="treat-tag" class="text-xs font-bold uppercase tracking-wider text-cfa-cyan bg-cfa-softBlue px-3 py-1 rounded-full font-title">Catálogo Completo</span>
+      <h2 id="treat-heading" class="font-title text-3xl sm:text-4xl font-bold text-cfa-navy mt-2">Los 11 Tratamientos de Reproducción Asistida</h2>
+      <p id="treat-sub" class="text-sm text-cfa-grayText mt-1 font-sans">Procedimientos especializados con tecnología de primer mundo en el Centro Médico ABC</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 1. FIV -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+            <img src="IMAGENES/tratamientos /FIV.jpg" alt="Fertilización in Vitro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 right-3 bg-cfa-cyan text-white text-[10px] font-bold px-2.5 py-1 rounded-full font-title">Alta Especialidad</span>
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 id="t1-title" class="font-title text-lg font-bold text-cfa-navy">1. Fertilización in Vitro (FIV)</h3>
+            <p id="t1-desc" class="text-xs text-cfa-grayDark font-sans">Ciclo de 5 fases: Estimulación ovárica con monitoreo seriado, captura en quirófano con sedación de 5-10 min, fertilización e incubación a 37°C hasta blastocisto (día 5/6), transferencia y soporte hormonal.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. ICSI -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+            <img src="IMAGENES/tratamientos /ICSI.webp" alt="ICSI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 right-3 bg-cfa-cyan text-white text-[10px] font-bold px-2.5 py-1 rounded-full font-title">Éxito >80%</span>
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 id="t2-title" class="font-title text-lg font-bold text-cfa-navy">2. ICSI (Microinyección)</h3>
+            <p id="t2-desc" class="text-xs text-cfa-grayDark font-sans">Inyección intracitoplasmática de un único espermatozoide directamente en el óvulo, logrando tasas de fertilización superiores al 80% en casos de factor masculino severo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Hatch Asistido -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+            <img src="IMAGENES/tratamientos /Hatch.jpeg" alt="Hatch Asistido" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 id="t3-title" class="font-title text-lg font-bold text-cfa-navy">3. Hatch Asistido (Láser)</h3>
+            <p id="t3-desc" class="text-xs text-cfa-grayDark font-sans">Microcirugía láser adaptada a microscopio invertido para abrir una brecha en la zona pelúcida de embriones descongelados y maximizar su implantación.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Transferencia -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+            <img src="IMAGENES/tratamientos /transferencia.jpeg" alt="Transferencia Embrionaria" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 id="t4-title" class="font-title text-lg font-bold text-cfa-navy">4. Transferencia de Embriones</h3>
+            <p id="t4-desc" class="text-xs text-cfa-grayDark font-sans">Protocolos en Fresco o Ciclo con Embriones Congelados con preparación endometrial fisiológica, procedimiento guiado por ecografía y 2 horas de reposo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Diagnóstico Genético -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+            <img src="IMAGENES/tratamientos /diagnosticogenetico.jpg" alt="Diagnóstico Genético PGD" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 id="t5-title" class="font-title text-lg font-bold text-cfa-navy">5. Diagnóstico Genético (PGD/NGS)</h3>
+            <p id="t5-desc" class="text-xs text-cfa-grayDark font-sans">Secuenciación de Nueva Generación en células del trofoectodermo de blastocistos para identificar embriones euploides con carga genética normal.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Congelación Óvulos -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+            <img src="IMAGENES/tratamientos /congelacion.jpeg" alt="Congelación de Óvulos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 id="t6-title" class="font-title text-lg font-bold text-cfa-navy">6. Congelación de Óvulos</h3>
+            <p id="t6-desc" class="text-xs text-cfa-grayDark font-sans">Vitrificación ultra-rápida y criopreservación de corteza ovárica por laparoscopia para preservar la fertilidad por motivos personales o profesionales.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Congelación Embriones -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+            <img src="IMAGENES/tratamientos /congelaciondeembriones.jpg" alt="Congelación de Embriones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 id="t7-title" class="font-title text-lg font-bold text-cfa-navy">7. Congelación de Embriones</h3>
+            <p id="t7-desc" class="text-xs text-cfa-grayDark font-sans">Vitrificación de blastocistos bajo el método Dr. Kuwayama con sobrevida superior al 95% y transferencias diferidas optimizadas.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Congelación Esperma -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+            <img src="IMAGENES/tratamientos /congelacionesperma.jpeg" alt="Congelación de Esperma" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 id="t8-title" class="font-title text-lg font-bold text-cfa-navy">8. Congelación de Esperma</h3>
+            <p id="t8-desc" class="text-xs text-cfa-grayDark font-sans">Criopreservación en viales y microperlas para conservar muestras seminales en perfectas condiciones biológicas por más de 15 años.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Cáncer y Reproducción -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+            <img src="IMAGENES/tratamientos /oncofertilidad.png" alt="Oncofertilidad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 id="t10-title" class="font-title text-lg font-bold text-cfa-navy">10. Cáncer y Reproducción</h3>
+            <p id="t10-desc" class="text-xs text-cfa-grayDark font-sans">Protocolos prioritarios de oncofertilidad para mujeres y hombres antes de iniciar tratamientos oncológicos (quimio o radioterapia).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Cirugía Reproductiva -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+            <img src="IMAGENES/tratamientos /cirugia.jpeg" alt="Cirugía Reproductiva" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 id="t11-title" class="font-title text-lg font-bold text-cfa-navy">11. Cirugía Reproductiva & Robótica</h3>
+            <p id="t11-desc" class="text-xs text-cfa-grayDark font-sans">Laparoscopia diagnóstica y operatoria (recuperación de 2 días), histeroscopía, miomectomía y microcirugía robótica en el Centro Médico ABC.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Donación de Óvulos y Esperma con FLUJOGRAMA INTEGRADO DENTRO -->
+      <div class="col-span-1 md:col-span-2 lg:col-span-3 bg-white rounded-3xl overflow-hidden border-2 border-cfa-cyan shadow-md p-6 sm:p-8 space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-4 h-52 rounded-2xl overflow-hidden relative">
+            <img src="IMAGENES/tratamientos /donacion.jpg" alt="Donación de Óvulos y Esperma" class="w-full h-full object-cover">
+          </div>
+          <div class="lg:col-span-8 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-bold uppercase font-title">
+              Tratamiento 09
+            </div>
+            <h3 id="t9-title" class="font-title text-2xl font-bold text-cfa-navy">9. Donación de Óvulos y Esperma</h3>
+            <p id="t9-desc" class="text-sm text-cfa-grayDark leading-relaxed font-sans">
+              Más de 26 años de experiencia en donación de gametos en asociación con el Dr. Richard Marrs (California Fertility Partners). Supervisado por la Psic. Nerea Iruretagoyena y Lic. Mónica Hevia.
+            </p>
+          </div>
+        </div>
+
+        <!-- FLUJOGRAMA INTERACTIVO DENTRO DEL APARTADO DE DONACION -->
+        <div class="bg-cfa-grayLight p-6 rounded-2xl border border-cfa-grayBorder space-y-4">
+          <h4 id="flow-title" class="font-title text-sm font-bold text-cfa-navy uppercase tracking-wider">Flujograma de Elección de Donadoras (4 Fases)</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            <div class="p-3 bg-white rounded-xl border border-cfa-grayBorder space-y-1">
+              <span id="f1-title" class="font-title font-bold text-cfa-cyan block">1. Evaluación Psicométrica</span>
+              <span id="f1-desc" class="text-cfa-grayDark font-sans">Estado mental, cognitivo y estabilidad emocional.</span>
+            </div>
+            <div class="p-3 bg-white rounded-xl border border-cfa-grayBorder space-y-1">
+              <span id="f2-title" class="font-title font-bold text-cfa-cyan block">2. Panel Genético</span>
+              <span id="f2-desc" class="text-cfa-grayDark font-sans">Cariotipos y descarte de Síndrome de X Frágil.</span>
+            </div>
+            <div class="p-3 bg-white rounded-xl border border-cfa-grayBorder space-y-1">
+              <span id="f3-title" class="font-title font-bold text-cfa-cyan block">3. Potencial Reproductivo</span>
+              <span id="f3-desc" class="text-cfa-grayDark font-sans">Reserva ovárica y respuesta biológica.</span>
+            </div>
+            <div class="p-3 bg-white rounded-xl border border-cfa-grayBorder space-y-1">
+              <span id="f4-title" class="font-title font-bold text-cfa-cyan block">4. Fenomatch Facial</span>
+              <span id="f4-desc" class="text-cfa-grayDark font-sans">Reconocimiento facial y parecidos físicos.</span>
+            </div>
+          </div>
+
+          <!-- AVISO DE PROHIBICION DE EGG SPLITTING -->
+          <div id="egg-split-notice" class="p-4 bg-rose-50 border border-rose-200 rounded-xl text-xs text-rose-900 font-sans leading-relaxed">
+            🛡️ <strong>Compromiso Ético CFA:</strong> En nuestra Clínica <strong>NO se hace y está estrictamente prohibido realizar tratamientos con Egg Splitting</strong> (dividir los óvulos de una donadora entre varias receptoras). Todos los óvulos obtenidos son exclusividad y prioridad absoluta de la paciente en tratamiento.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Innovación con YouTube @infertilidadabc y Roadmap -->
+  <section id="innovacion" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-gradient-to-br from-cfa-navy via-cfa-midnight to-cfa-deepBlue text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-cfa-cyan/30 space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <h2 id="inn-heading" class="font-title text-3xl sm:text-4xl font-extrabold text-white">Innovación: Machine Learning & Inteligencia Artificial</h2>
+        <p id="inn-sub" class="text-xs sm:text-sm text-slate-100 font-sans italic">Invertimos en la mejor tecnología en la certeza de brindar las mejores posibilidades de formar una familia.</p>
+      </div>
+
+      <!-- Podcast YouTube Channel Banner -->
+      <div class="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+        <div class="space-y-2 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold font-title">
+            <i data-lucide="youtube" class="w-4 h-4"></i>
+            <span id="yt-tag">Canal Oficial de YouTube</span>
+          </div>
+          <h3 id="yt-title" class="font-title text-xl sm:text-2xl font-bold text-white">Podcast CFA en YouTube: Historias y Fertilidad</h3>
+          <p id="yt-desc" class="text-xs sm:text-sm text-white/95 font-sans">Entrevistas con el Dr. Carlos Navarro y testimonios médicos reales.</p>
+        </div>
+        <a href="https://www.youtube.com/@infertilidadabc" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white text-red-600 font-extrabold text-xs sm:text-sm shadow-xl hover:scale-105 transition-all flex items-center gap-2 font-title flex-shrink-0">
+          <i data-lucide="youtube" class="w-5 h-5 text-red-600"></i>
+          <span>@infertilidadabc</span>
+          <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. El Equipo Médico con Fotos Reales y Modal Ver Más -->
+  <section id="equipo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <div class="text-center max-w-2xl mx-auto space-y-2">
+      <span id="eq-tag" class="text-xs font-bold uppercase tracking-wider text-cfa-cyan bg-cfa-softBlue px-3 py-1 rounded-full font-title">Cuerpo Médico</span>
+      <h2 id="eq-title" class="font-title text-3xl font-bold text-cfa-navy mt-1">Dr. Carlos Navarro Martínez & Especialistas</h2>
+      <p id="eq-sub" class="text-xs sm:text-sm text-cfa-grayText font-sans">Pioneros de la fertilidad asistida en México con más de 35 años de experiencia en Centro Médico ABC.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+      <!-- 1. Dr. Carlos Navarro -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-52 bg-cfa-iceBlue overflow-hidden">
+            <img src="IMAGENES/doctores/doctorcarlos.webp" alt="Dr. Carlos Navarro Martínez" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-cfa-navy/80 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute bottom-2 left-2 bg-amber-400 text-cfa-navy text-[9px] font-bold px-2 py-0.5 rounded-full font-title shadow-xs">★ 1er Bebé FIV México</span>
+          </div>
+          <div class="p-4 space-y-1">
+            <h4 class="font-title font-bold text-cfa-navy text-sm leading-snug">Dr. Carlos Navarro Martínez</h4>
+            <p class="text-[11px] text-cfa-cyan font-bold font-title">Fundador y Director Médico</p>
+            <p class="text-[11px] text-cfa-grayDark font-sans line-clamp-2">Ginecología, Obstetricia y Biología de la Reproducción Humana.</p>
+          </div>
+        </div>
+        <div class="p-4 pt-0">
+          <button onclick="openDoctorModal('carlos')" class="w-full py-2 px-3 rounded-xl bg-cfa-navy hover:bg-cfa-cyan text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 font-title cursor-pointer">
+            <span>Ver más</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. Dra. Tanya Montañez -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-52 bg-cfa-iceBlue overflow-hidden">
+            <img src="IMAGENES/doctores/doctoratanya.webp" alt="Dra. Tanya I. Montañez" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-cfa-navy/80 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-md text-cfa-navy text-[9px] font-bold px-2 py-0.5 rounded-full font-title">Reproducción Asistida</span>
+          </div>
+          <div class="p-4 space-y-1">
+            <h4 class="font-title font-bold text-cfa-navy text-sm leading-snug">Dra. Tanya I. Montañez</h4>
+            <p class="text-[11px] text-cfa-cyan font-bold font-title">Especialista en Reproducción</p>
+            <p class="text-[11px] text-cfa-grayDark font-sans line-clamp-2">Ginecología y Biología de la Reproducción Humana.</p>
+          </div>
+        </div>
+        <div class="p-4 pt-0">
+          <button onclick="openDoctorModal('tanya')" class="w-full py-2 px-3 rounded-xl bg-cfa-navy hover:bg-cfa-cyan text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 font-title cursor-pointer">
+            <span>Ver más</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Dr. Fernando Galván -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-52 bg-cfa-iceBlue overflow-hidden">
+            <img src="IMAGENES/doctores/doctorfernando.webp" alt="Dr. Fernando Galván" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-cfa-navy/80 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-md text-cfa-navy text-[9px] font-bold px-2 py-0.5 rounded-full font-title">Cirugía Reproductiva</span>
+          </div>
+          <div class="p-4 space-y-1">
+            <h4 class="font-title font-bold text-cfa-navy text-sm leading-snug">Dr. Fernando Galván</h4>
+            <p class="text-[11px] text-cfa-cyan font-bold font-title">Cirugía & Endoscopía</p>
+            <p class="text-[11px] text-cfa-grayDark font-sans line-clamp-2">Laparoscopia e histeroscopía diagnóstica y operatoria.</p>
+          </div>
+        </div>
+        <div class="p-4 pt-0">
+          <button onclick="openDoctorModal('fernando')" class="w-full py-2 px-3 rounded-xl bg-cfa-navy hover:bg-cfa-cyan text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 font-title cursor-pointer">
+            <span>Ver más</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. Nombre Apellido -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-52 bg-cfa-iceBlue overflow-hidden">
+            <img src="IMAGENES/doctores/doctorasteph.webp" alt="Nombre Apellido" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-cfa-navy/80 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-md text-cfa-navy text-[9px] font-bold px-2 py-0.5 rounded-full font-title">Reproducción Asistida</span>
+          </div>
+          <div class="p-4 space-y-1">
+            <h4 class="font-title font-bold text-cfa-navy text-sm leading-snug">Nombre Apellido</h4>
+            <p class="text-[11px] text-cfa-cyan font-bold font-title">Especialista en Reproducción</p>
+            <p class="text-[11px] text-cfa-grayDark font-sans line-clamp-2">Ginecología, Obstetricia y transferencias embrionarias.</p>
+          </div>
+        </div>
+        <div class="p-4 pt-0">
+          <button onclick="openDoctorModal('jose')" class="w-full py-2 px-3 rounded-xl bg-cfa-navy hover:bg-cfa-cyan text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 font-title cursor-pointer">
+            <span>Ver más</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 5. Dra. Stephanie Lizmi -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full h-52 bg-cfa-iceBlue overflow-hidden">
+            <img src="IMAGENES/doctores/doctorasteph.webp" alt="Dra. Stephanie Lizmi" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-cfa-navy/80 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-md text-cfa-navy text-[9px] font-bold px-2 py-0.5 rounded-full font-title">Endocrinología & PGD</span>
+          </div>
+          <div class="p-4 space-y-1">
+            <h4 class="font-title font-bold text-cfa-navy text-sm leading-snug">Dra. Stephanie Lizmi</h4>
+            <p class="text-[11px] text-cfa-cyan font-bold font-title">Bióloga de la Reproducción</p>
+            <p class="text-[11px] text-cfa-grayDark font-sans line-clamp-2">Endocrinología ginecológica y diagnóstico genético PGD.</p>
+          </div>
+        </div>
+        <div class="p-4 pt-0">
+          <button onclick="openDoctorModal('stephanie')" class="w-full py-2 px-3 rounded-xl bg-cfa-navy hover:bg-cfa-cyan text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 font-title cursor-pointer">
+            <span>Ver más</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Agenda tu Cita Directa -->
+  <section id="cita" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-cfa-softBlue shadow-xl max-w-3xl mx-auto space-y-6">
+      <div class="text-center space-y-2">
+        <span id="app-tag" class="text-xs font-bold text-cfa-cyan uppercase tracking-wider bg-cfa-softBlue px-3 py-1 rounded-full font-title">Agenda tu Cita</span>
+        <h2 id="app-title" class="font-title text-2xl sm:text-3xl font-bold text-cfa-navy mt-1">Primera Consulta de Diagnóstico</h2>
+        <p id="app-sub" class="text-xs sm:text-sm text-cfa-grayText font-sans">Completa tus datos para que nuestro equipo médico se comunique contigo a la brevedad:</p>
+      </div>
+
+      <!-- Formulario Directo de Cita -->
+      <form onsubmit="handleDirectAppointment(event)" class="space-y-4 font-sans pt-2">
+        <div>
+          <label id="lbl-name" class="block text-xs font-semibold text-cfa-navy mb-1 font-title">Nombre completo *</label>
+          <input type="text" id="app-name" required placeholder="Ej. María Elena Pérez" class="w-full px-4 py-2.5 rounded-xl border border-cfa-grayBorder text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label id="lbl-phone" class="block text-xs font-semibold text-cfa-navy mb-1 font-title">Teléfono *</label>
+            <input type="tel" id="app-phone" required placeholder="(55) 1234 5678" class="w-full px-4 py-2.5 rounded-xl border border-cfa-grayBorder text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan">
+          </div>
+          <div>
+            <label id="lbl-email" class="block text-xs font-semibold text-cfa-navy mb-1 font-title">Correo electrónico *</label>
+            <input type="email" id="app-email" required placeholder="correo@ejemplo.com" class="w-full px-4 py-2.5 rounded-xl border border-cfa-grayBorder text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan">
+          </div>
+        </div>
+        <div>
+          <label id="lbl-msg" class="block text-xs font-semibold text-cfa-navy mb-1 font-title">¿Cómo podemos ayudarte? *</label>
+          <textarea id="app-msg" required rows="3" placeholder="Describe brevemente tus dudas o antecedentes..." class="w-full px-4 py-2.5 rounded-xl border border-cfa-grayBorder text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan resize-none"></textarea>
+        </div>
+        <button type="submit" id="btn-submit-app" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-deepBlue text-white font-bold text-sm shadow-md hover:brightness-105 transition-all flex items-center justify-center gap-2 font-title cursor-pointer">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Enviar Solicitud a recepcion@infertilidadabc.com</span>
+        </button>
+      </form>
+      <div id="appointment-success" class="hidden mt-4 p-4 bg-emerald-50 text-emerald-800 rounded-2xl border border-emerald-200 text-xs text-center font-medium font-sans">
+        ✓ ¡Solicitud recibida! Se ha canalizado a recepcion@infertilidadabc.com.
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor Detail Modal (Ver más) -->
+  <div id="doctor-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-cfa-navy/70 backdrop-blur-sm animate-fadeIn">
+    <div class="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-cfa-softBlue overflow-hidden max-h-[92vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="relative bg-gradient-to-r from-cfa-navy via-cfa-midnight to-cfa-deepBlue text-white p-6 overflow-hidden">
+        <div class="flex items-center justify-between relative z-10">
+          <div class="flex items-center gap-4">
+            <img id="doc-modal-img" src="IMAGENES/doctores/doctorcarlos.webp" alt="Doctor" class="w-16 h-16 rounded-2xl object-cover object-top border-2 border-white/40 shadow-md">
+            <div>
+              <h3 id="doc-modal-name" class="font-title text-xl sm:text-2xl font-bold text-white drop-shadow-sm">Dr. Carlos Navarro Martínez</h3>
+              <p id="doc-modal-role" class="text-xs text-cfa-light font-sans font-medium">Fundador y Director Médico • Centro Médico ABC</p>
+            </div>
+          </div>
+          <button onclick="closeDoctorModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-5 text-sm text-cfa-grayDark leading-relaxed font-sans">
+        <div class="p-4 bg-cfa-iceBlue rounded-2xl border border-cfa-softBlue space-y-1">
+          <span class="text-[10px] font-bold text-cfa-cyan uppercase tracking-wider font-title">Especialidad Principal</span>
+          <h4 id="doc-modal-specialty" class="font-title text-base font-bold text-cfa-navy">Ginecología, Obstetricia y Biología de la Reproducción</h4>
+          <p id="doc-modal-brief" class="text-xs text-cfa-grayDark font-sans">Con más de 35 años de experiencia médica.</p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-title text-sm font-bold text-cfa-navy uppercase tracking-wider flex items-center gap-2">
+            <i data-lucide="stethoscope" class="w-4 h-4 text-cfa-cyan"></i>
+            <span>Trayectoria Médica & Formación</span>
+          </h4>
+          <div id="doc-modal-bio" class="space-y-2 text-xs sm:text-sm text-cfa-grayDark leading-relaxed"></div>
+        </div>
+
+        <div class="space-y-2 pt-2 border-t border-cfa-grayBorder">
+          <h4 class="font-title text-sm font-bold text-cfa-navy uppercase tracking-wider flex items-center gap-2">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-cfa-cyan"></i>
+            <span>Credenciales Médicas</span>
+          </h4>
+          <ul id="doc-modal-edu" class="space-y-1.5 text-xs text-cfa-grayDark"></ul>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-cfa-grayLight border-t border-cfa-grayBorder flex items-center justify-between">
+        <span class="text-xs text-cfa-grayText font-sans">Centro Médico ABC Campus Santa Fe</span>
+        <div class="flex items-center gap-2">
+          <button onclick="closeDoctorModal(); openAppointmentModal();" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-deepBlue text-white text-xs font-bold shadow-sm hover:brightness-105 transition-all flex items-center gap-1.5 font-title cursor-pointer">
+            <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+            <span>Agendar Cita con este Especialista</span>
+          </button>
+          <button onclick="closeDoctorModal()" class="px-4 py-2.5 rounded-xl bg-white border border-cfa-grayBorder text-cfa-navy text-xs font-semibold hover:bg-cfa-graySlate font-title cursor-pointer">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer con YouTube @infertilidadabc -->
+  <footer class="bg-cfa-navy text-white pt-12 pb-8 border-t border-cfa-cyan/20 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-white/10 text-xs font-sans">
+      <div class="space-y-3">
+        <h4 id="ft-about-title" class="font-title text-sm font-bold text-white">Nosotros</h4>
+        <p id="ft-about-desc" class="text-slate-200 leading-relaxed">Contamos con más de 30 años de experiencia en el diagnóstico y tratamiento de los problemas reproductivos más complejos.</p>
+        <div class="pt-2">
+          <span id="ft-follow" class="font-title font-bold text-cfa-light block mb-2">Síguenos</span>
+          <div class="flex gap-2">
+            <a href="https://www.youtube.com/@infertilidadabc" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-red-600 flex items-center justify-center text-white transition-colors" title="YouTube @infertilidadabc">
+              <i data-lucide="youtube" class="w-4 h-4"></i>
+            </a>
+            <a href="https://www.instagram.com/clinicadefertilizacionenelabc/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 flex items-center justify-center text-white transition-colors" title="Instagram @clinicadefertilizacionenelabc">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-cfa-cyan flex items-center justify-center text-white transition-colors">
+              <i data-lucide="facebook" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <h4 id="ft-loc-title" class="font-title text-sm font-bold text-white">Ubicación</h4>
+        <p class="font-semibold text-white">Centro Médico ABC Santa Fé</p>
+        <p class="text-slate-200">Av. Carlos Graef Fernández #154, Cons.332</p>
+        <p class="text-cfa-light">(entrada por Av. Vasco de Quiroga)</p>
+      </div>
+      <div class="space-y-2">
+        <h4 id="ft-cont-title" class="font-title text-sm font-bold text-white">Contacto</h4>
+        <p class="font-semibold text-white">(55) 5273 5194 / (55) 5276 54 63</p>
+        <p class="text-slate-200 pt-1">Email:</p>
+        <a href="mailto:recepcion@infertilidadabc.com" class="text-cfa-light hover:underline font-medium">recepcion@infertilidadabc.com</a>
+      </div>
+      <div class="space-y-2">
+        <h4 class="font-title text-sm font-bold text-white">YouTube Oficial</h4>
+        <p id="ft-yt-sub" class="text-slate-200">Visita nuestro canal para podcasts y testimonios:</p>
+        <a href="https://www.youtube.com/@infertilidadabc" target="_blank" rel="noopener noreferrer" class="text-red-400 hover:text-red-300 font-bold flex items-center gap-1 mt-1">
+          <i data-lucide="youtube" class="w-4 h-4"></i>
+          <span>@infertilidadabc</span>
+        </a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 pt-6 text-center text-slate-300 text-xs font-sans">
+      © 2026 Clínica de Fertilización Asistida en el Centro Médico ABC.
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    let currentLang = 'es';
+
+    const langData = {
+      es: {
+        topLoc: "Centro Médico ABC Santa Fe, Consultorio 332 (Entrada por Av. Vasco de Quiroga)",
+        navHome: "Inicio",
+        navAbout: "Sobre la Clínica",
+        navTreatments: "Tratamientos",
+        navInnovation: "Innovación & IA",
+        navTeam: "El Equipo",
+        navContact: "Citas",
+        navBook: "Agendar Cita",
+        badge1: "Pioneros en México desde 1990",
+        title1: "Ayudando a formar familias – tratamientos de reproducción asistida desde 1990.",
+        btn1: "Conoce Sobre Nosotros",
+        badge2: "Compromiso Ético y Científico",
+        title2: "La ética, nuestro valor fundamental",
+        btn2: "Nuestra Misión y Visión",
+        badge3: "Excelencia Médica Acreditada",
+        title3: "Más de 30 años de experiencia, en el diagnóstico y tratamiento de problemas reproductivos",
+        btn3: "Ver Tratamientos Especializados",
+        featBadge: "Centro de Fertilidad de Alta Especialidad",
+        featTitle: "Más de 30 años ayudando a transformar familias",
+        featDesc: "Contamos con más de 30 años de experiencia en el diagnóstico y tratamiento de los problemas reproductivos más complejos. Nuestras instalaciones en el Centro Médico ABC Campus Santa Fe ofrecen lo último en tecnología de primer mundo para los tratamientos de Fertilización in Vitro y Reproducción Asistida.",
+        tlTag: "Cronología Histórica",
+        tlHeading: "Línea de Tiempo Interactiva",
+        tlSub: "Haz clic en cada hito para explorar la trayectoria médica",
+        aboutTag: "Quiénes Somos",
+        aboutTitle: "Grupo Multidisciplinario Especializado",
+        aboutDesc1: "Somos un grupo multidisciplinario que nace en el año 1994. Brindamos apoyo científico a parejas para formar una familia mediante Ginecólogos, Urólogos, Biólogos de la Reproducción, Genetistas, Psicólogas y Embriólogas. Respaldados por Salles Sainz Grant Thornton desde hace más de 15 años.",
+        aboutMisionTitle: "MISIÓN",
+        aboutMisionDesc: "Ayudar a nuestras pacientes a cumplir su anhelo de formar una Familia.",
+        aboutVisionTitle: "VISIÓN",
+        aboutVisionDesc: "Ofrecer a nuestras pacientes resultados comparables a las mejores Clínicas de reproducción en el mundo.",
+        treatTag: "Catálogo Completo",
+        treatHeading: "Los 11 Tratamientos de Reproducción Asistida",
+        treatSub: "Procedimientos especializados con tecnología de primer mundo en el Centro Médico ABC",
+        t1Title: "1. Fertilización in Vitro (FIV)",
+        t1Desc: "Ciclo de 5 fases: Estimulación ovárica con monitoreo seriado, captura en quirófano con sedación de 5-10 min, fertilización e incubación a 37°C hasta blastocisto (día 5/6), transferencia y soporte hormonal.",
+        t2Title: "2. ICSI (Microinyección)",
+        t2Desc: "Inyección intracitoplasmática de un único espermatozoide directamente en el óvulo, logrando tasas de fertilización superiores al 80% en casos de factor masculino severo.",
+        t3Title: "3. Hatch Asistido (Láser)",
+        t3Desc: "Microcirugía láser adaptada a microscopio invertido para abrir una brecha en la zona pelúcida de embriones descongelados y maximizar su implantación.",
+        t4Title: "4. Transferencia de Embriones",
+        t4Desc: "Protocolos en Fresco o Ciclo con Embriones Congelados con preparación endometrial fisiológica, procedimiento guiado por ecografía y 2 horas de reposo.",
+        t5Title: "5. Diagnóstico Genético (PGD/NGS)",
+        t5Desc: "Secuenciación de Nueva Generación en células del trofoectodermo de blastocistos para identificar embriones euploides con carga genética normal.",
+        t6Title: "6. Congelación de Óvulos",
+        t6Desc: "Vitrificación ultra-rápida y criopreservación de corteza ovárica por laparoscopia para preservar la fertilidad por motivos personales o profesionales.",
+        t7Title: "7. Congelación de Embriones",
+        t7Desc: "Vitrificación de blastocistos bajo el método Dr. Kuwayama con sobrevida superior al 95% y transferencias diferidas optimizadas.",
+        t8Title: "8. Congelación de Esperma",
+        t8Desc: "Criopreservación en viales y microperlas para conservar muestras seminales en perfectas condiciones biológicas por más de 15 años.",
+        t9Title: "9. Donación de Óvulos y Esperma",
+        t9Desc: "Más de 26 años de experiencia en donación de gametos en asociación con el Dr. Richard Marrs (California Fertility Partners). Supervisado por la Psic. Nerea Iruretagoyena y Lic. Mónica Hevia.",
+        t10Title: "10. Cáncer y Reproducción",
+        t10Desc: "Protocolos prioritarios de oncofertilidad para mujeres y hombres antes de iniciar tratamientos oncológicos (quimio o radioterapia).",
+        t11Title: "11. Cirugía Reproductiva & Robótica",
+        t11Desc: "Laparoscopia diagnóstica y operatoria (recuperación de 2 días), histeroscopía, miomectomía y microcirugía robótica en el Centro Médico ABC.",
+        flowTitle: "Flujograma de Elección de Donadoras (4 Fases)",
+        f1Title: "1. Evaluación Psicométrica",
+        f1Desc: "Estado mental, cognitivo y estabilidad emocional.",
+        f2Title: "2. Panel Genético",
+        f2Desc: "Cariotipos y descarte de Síndrome de X Frágil.",
+        f3Title: "3. Potencial Reproductivo",
+        f3Desc: "Reserva ovárica y respuesta biológica.",
+        f4Title: "4. Fenomatch Facial",
+        f4Desc: "Reconocimiento facial y parecidos físicos.",
+        eggNotice: "🛡️ Compromiso Ético CFA: En nuestra Clínica NO se hace y está estrictamente prohibido realizar tratamientos con Egg Splitting (dividir los óvulos de una donadora entre varias receptoras). Todos los óvulos obtenidos son exclusividad y prioridad absoluta de la paciente en tratamiento.",
+        innTag: "Vanguardia Científica",
+        innHeading: "Innovación: Machine Learning & Inteligencia Artificial",
+        innSub: "Invertimos en la mejor tecnología en la certeza de brindar las mejores posibilidades de formar una familia.",
+        ytTag: "Canal Oficial de YouTube",
+        ytTitle: "Podcast CFA en YouTube: Historias y Fertilidad",
+        ytDesc: "Entrevistas con el Dr. Carlos Navarro y testimonios médicos reales.",
+        eqTag: "Cuerpo Médico",
+        eqTitle: "Dr. Carlos Navarro Martínez & Especialistas",
+        eqSub: "Pionero de la fertilidad asistida en México con más de 35 años de experiencia.",
+        appTag: "Agenda tu Cita",
+        appTitle: "Primera Consulta de Diagnóstico",
+        appSub: "Elige tu forma preferida para agendar:",
+        calBoxTitle: "📅 Agendar en Línea con Calendly",
+        calBoxDesc: "Selecciona día y hora con confirmación automática.",
+        lblName: "Nombre completo *",
+        lblPhone: "Teléfono *",
+        lblEmail: "Correo electrónico *",
+        lblMsg: "¿Cómo podemos ayudarte? *",
+        btnSubmit: "Enviar Solicitud a recepcion@infertilidadabc.com",
+        calModalTitle: "Agendar con Calendly",
+        ftAboutTitle: "Nosotros",
+        ftAboutDesc: "Contamos con más de 30 años de experiencia en el diagnóstico y tratamiento de los problemas reproductivos más complejos.",
+        ftFollow: "Síguenos",
+        ftLocTitle: "Ubicación",
+        ftContTitle: "Contacto",
+        ftYtSub: "Visita nuestro canal para podcasts y testimonios:"
+      },
+      en: {
+        topLoc: "ABC Medical Center Santa Fe, Suite 332 (Entrance via Vasco de Quiroga Ave)",
+        navHome: "Home",
+        navAbout: "About the Clinic",
+        navTreatments: "Treatments",
+        navInnovation: "Innovation & AI",
+        navTeam: "Medical Team",
+        navContact: "Appointments",
+        navBook: "Book Appointment",
+        badge1: "Pioneers in Mexico since 1990",
+        title1: "Helping build families – assisted reproduction treatments since 1990.",
+        btn1: "Learn About Us",
+        badge2: "Ethical & Scientific Commitment",
+        title2: "Ethics, our fundamental core value",
+        btn2: "Our Mission & Vision",
+        badge3: "Accredited Medical Excellence",
+        title3: "Over 30 years of experience in diagnosing and treating reproductive challenges",
+        btn3: "Explore Specialized Treatments",
+        featBadge: "High-Specialty Fertility Center",
+        featTitle: "Over 30 years helping transform families",
+        featDesc: "We possess over 30 years of experience diagnosing and treating complex reproductive challenges. Our facilities at ABC Medical Center Santa Fe offer world-class technology for In Vitro Fertilization and Assisted Reproduction.",
+        tlTag: "Historical Timeline",
+        tlHeading: "Interactive Medical Timeline",
+        tlSub: "Click on each milestone to explore our clinical journey",
+        aboutTag: "Who We Are",
+        aboutTitle: "Specialized Multidisciplinary Team",
+        aboutDesc1: "We are a multidisciplinary medical team founded in 1994. We provide scientific support to help families overcome reproductive obstacles through Gynecologists, Urologists, Reproductive Biologists, Geneticists, and Embryologists. Supported by Salles Sainz Grant Thornton for 15+ years.",
+        aboutMisionTitle: "MISSION",
+        aboutMisionDesc: "Helping our patients fulfill their deepest dream of building a Family.",
+        aboutVisionTitle: "VISION",
+        aboutVisionDesc: "Offering our patients clinical outcomes benchmarked against the world’s leading reproductive centers.",
+        treatTag: "Complete Catalog",
+        treatHeading: "All 11 Assisted Reproduction Treatments",
+        treatSub: "State-of-the-art procedures developed at ABC Medical Center",
+        t1Title: "1. In Vitro Fertilization (IVF)",
+        t1Desc: "5-phase cycle: Ovarian stimulation with serial monitoring, outpatient retrieval under 5-10 min gentle sedation, fertilization at 37°C to blastocyst (Day 5/6), transfer, and hormonal support.",
+        t2Title: "2. ICSI (Intracytoplasmic Sperm Injection)",
+        t2Desc: "Single sperm micromanipulation injected directly into the egg, achieving fertilization rates exceeding 80% in severe male factor infertility.",
+        t3Title: "3. Assisted Hatching (Laser)",
+        t3Desc: "Precision laser micro-surgery on the zona pellucida of frozen-thawed embryos to facilitate hatching and implantation.",
+        t4Title: "4. Embryo Transfer",
+        t4Desc: "Fresh or Frozen Embryo Transfer protocols with physiological endometrial preparation, ultrasound guidance, and 2-hour recovery.",
+        t5Title: "5. Preimplantation Genetic Testing (PGT/NGS)",
+        t5Desc: "Next-Generation Sequencing on blastocyst trophectoderm cells to identify euploid embryos with normal chromosome count.",
+        t6Title: "6. Egg Freezing",
+        t6Desc: "Ultra-rapid vitrification and laparoscopic ovarian tissue preservation to protect fertility for personal or medical reasons.",
+        t7Title: "7. Embryo Freezing (Vitrification)",
+        t7Desc: "Blastocyst vitrification under the Kuwayama method with >95% post-thaw survival and optimized deferred transfers.",
+        t8Title: "8. Sperm Cryopreservation",
+        t8Desc: "Vial and micro-bead cryopreservation preserving motility and biological integrity for over 15 years.",
+        t9Title: "9. Egg & Sperm Donation",
+        t9Desc: "Over 26 years of donor program excellence in partnership with Dr. Richard Marrs (California Fertility Partners). Supervised by Psych. Nerea Iruretagoyena & Lic. Mónica Hevia.",
+        t10Title: "10. Cancer & Fertility (Oncofertility)",
+        t10Desc: "Urgent fertility preservation protocols for men and women prior to undergoing oncological chemo or radiation therapies.",
+        t11Title: "11. Reproductive & Robotic Surgery",
+        t11Desc: "Diagnostic and operative laparoscopy (48-hr recovery), hysteroscopy, myomectomy, and robotic surgery at ABC Medical Center.",
+        flowTitle: "4-Stage Donor Screening Protocol",
+        f1Title: "1. Psychometric Assessment",
+        f1Desc: "Mental stability, cognitive maturity, and emotional readiness.",
+        f2Title: "2. Genetic Panel",
+        f2Desc: "Karyotypes and molecular screening for Fragile X syndrome.",
+        f3Title: "3. Reproductive Potential",
+        f3Desc: "Ovarian reserve and biological response evaluation.",
+        f4Title: "4. Fenomatch Biometrics",
+        f4Desc: "Facial recognition matching algorithm for physical resemblance.",
+        eggNotice: "🛡️ CFA Ethical Policy: In our clinic, EGG SPLITTING IS STRICTLY PROHIBITED. All retrieved eggs belong 100% exclusively to the designated recipient.",
+        innTag: "Scientific Vanguard",
+        innHeading: "Innovation: Machine Learning & Artificial Intelligence",
+        innSub: "We invest in the best technology to provide the highest probability of building a family.",
+        ytTag: "Official YouTube Channel",
+        ytTitle: "CFA YouTube Podcast: Stories & Fertility",
+        ytDesc: "Interviews with Dr. Carlos Navarro and patient medical stories.",
+        eqTag: "Medical Faculty",
+        eqTitle: "Dr. Carlos Navarro Martínez & Specialists",
+        eqSub: "Pioneer in assisted reproduction in Mexico with over 35 years of medical leadership.",
+        appTag: "Book Your Appointment",
+        appTitle: "Initial Diagnostic Consultation",
+        appSub: "Choose your preferred way to schedule:",
+        calBoxTitle: "📅 Schedule Online with Calendly",
+        calBoxDesc: "Pick your date and time with instant automated confirmation.",
+        lblName: "Full name *",
+        lblPhone: "Phone number *",
+        lblEmail: "Email address *",
+        lblMsg: "How can we assist you? *",
+        btnSubmit: "Send Request to recepcion@infertilidadabc.com",
+        calModalTitle: "Schedule with Calendly",
+        ftAboutTitle: "About Us",
+        ftAboutDesc: "We possess over 30 years of experience diagnosing and treating the most complex reproductive challenges.",
+        ftFollow: "Follow Us",
+        ftLocTitle: "Location",
+        ftContTitle: "Contact",
+        ftYtSub: "Visit our YouTube channel for podcasts and clinical updates:"
+      }
+    };
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const d = langData[lang];
+      document.getElementById('top-loc').innerText = d.topLoc;
+      document.getElementById('nav-home').innerText = d.navHome;
+      document.getElementById('nav-about').innerText = d.navAbout;
+      document.getElementById('nav-treatments').innerText = d.navTreatments;
+      document.getElementById('nav-innovation').innerText = d.navInnovation;
+      document.getElementById('nav-team').innerText = d.navTeam;
+      document.getElementById('nav-contact').innerText = d.navContact;
+      document.getElementById('nav-btn-book').innerText = d.navBook;
+      document.getElementById('hero-badge1').innerText = d.badge1;
+      document.getElementById('hero-title1').innerText = d.title1;
+      document.getElementById('hero-btn1').innerText = d.btn1;
+      document.getElementById('hero-badge2').innerText = d.badge2;
+      document.getElementById('hero-title2').innerText = d.title2;
+      document.getElementById('hero-btn2').innerText = d.btn2;
+      document.getElementById('hero-badge3').innerText = d.badge3;
+      document.getElementById('hero-title3').innerText = d.title3;
+      document.getElementById('hero-btn3').innerText = d.btn3;
+      document.getElementById('feat-badge').innerText = d.featBadge;
+      document.getElementById('feat-title').innerText = d.featTitle;
+      document.getElementById('feat-desc').innerText = d.featDesc;
+
+      document.getElementById('tl-heading').innerText = d.tlHeading;
+      document.getElementById('tl-sub').innerText = d.tlSub;
+
+      document.getElementById('about-tag').innerText = d.aboutTag;
+      document.getElementById('about-title').innerText = d.aboutTitle;
+      document.getElementById('about-desc1').innerText = d.aboutDesc1;
+      document.getElementById('about-mision-title').innerHTML = `<i data-lucide="compass" class="w-5 h-5 text-cfa-cyan"></i> ${d.aboutMisionTitle}`;
+      document.getElementById('about-mision-desc').innerText = d.aboutMisionDesc;
+      document.getElementById('about-vision-title').innerHTML = `<i data-lucide="eye" class="w-5 h-5 text-cfa-cyan"></i> ${d.aboutVisionTitle}`;
+      document.getElementById('about-vision-desc').innerText = d.aboutVisionDesc;
+
+      document.getElementById('treat-tag').innerText = d.treatTag;
+      document.getElementById('treat-heading').innerText = d.treatHeading;
+      document.getElementById('treat-sub').innerText = d.treatSub;
+
+      document.getElementById('t1-title').innerText = d.t1Title;
+      document.getElementById('t1-desc').innerText = d.t1Desc;
+      document.getElementById('t2-title').innerText = d.t2Title;
+      document.getElementById('t2-desc').innerText = d.t2Desc;
+      document.getElementById('t3-title').innerText = d.t3Title;
+      document.getElementById('t3-desc').innerText = d.t3Desc;
+      document.getElementById('t4-title').innerText = d.t4Title;
+      document.getElementById('t4-desc').innerText = d.t4Desc;
+      document.getElementById('t5-title').innerText = d.t5Title;
+      document.getElementById('t5-desc').innerText = d.t5Desc;
+      document.getElementById('t6-title').innerText = d.t6Title;
+      document.getElementById('t6-desc').innerText = d.t6Desc;
+      document.getElementById('t7-title').innerText = d.t7Title;
+      document.getElementById('t7-desc').innerText = d.t7Desc;
+      document.getElementById('t8-title').innerText = d.t8Title;
+      document.getElementById('t8-desc').innerText = d.t8Desc;
+      document.getElementById('t9-title').innerText = d.t9Title;
+      document.getElementById('t9-desc').innerText = d.t9Desc;
+      document.getElementById('t10-title').innerText = d.t10Title;
+      document.getElementById('t10-desc').innerText = d.t10Desc;
+      document.getElementById('t11-title').innerText = d.t11Title;
+      document.getElementById('t11-desc').innerText = d.t11Desc;
+
+      document.getElementById('flow-title').innerText = d.flowTitle;
+      document.getElementById('f1-title').innerText = d.f1Title;
+      document.getElementById('f1-desc').innerText = d.f1Desc;
+      document.getElementById('f2-title').innerText = d.f2Title;
+      document.getElementById('f2-desc').innerText = d.f2Desc;
+      document.getElementById('f3-title').innerText = d.f3Title;
+      document.getElementById('f3-desc').innerText = d.f3Desc;
+      document.getElementById('f4-title').innerText = d.f4Title;
+      document.getElementById('f4-desc').innerText = d.f4Desc;
+      document.getElementById('egg-split-notice').innerText = d.eggNotice;
+
+      document.getElementById('inn-heading').innerText = d.innHeading;
+      document.getElementById('inn-sub').innerText = d.innSub;
+      document.getElementById('yt-tag').innerText = d.ytTag;
+      document.getElementById('yt-title').innerText = d.ytTitle;
+      document.getElementById('yt-desc').innerText = d.ytDesc;
+
+      document.getElementById('eq-tag').innerText = d.eqTag;
+      document.getElementById('eq-title').innerText = d.eqTitle;
+      document.getElementById('eq-sub').innerText = d.eqSub;
+
+      document.getElementById('app-tag').innerText = d.appTag;
+      document.getElementById('app-title').innerText = d.appTitle;
+      document.getElementById('app-sub').innerText = d.appSub;
+      document.getElementById('lbl-name').innerText = d.lblName;
+      document.getElementById('lbl-phone').innerText = d.lblPhone;
+      document.getElementById('lbl-email').innerText = d.lblEmail;
+      document.getElementById('lbl-msg').innerText = d.lblMsg;
+      document.getElementById('btn-submit-app').innerHTML = `<i data-lucide="send" class="w-4 h-4"></i> <span>${d.btnSubmit}</span>`;
+
+      document.getElementById('ft-about-title').innerText = d.ftAboutTitle;
+      document.getElementById('ft-about-desc').innerText = d.ftAboutDesc;
+      document.getElementById('ft-follow').innerText = d.ftFollow;
+      document.getElementById('ft-loc-title').innerText = d.ftLocTitle;
+      document.getElementById('ft-cont-title').innerText = d.ftContTitle;
+      document.getElementById('ft-yt-sub').innerText = d.ftYtSub;
+
+      if (lang === 'en') {
+        document.getElementById('btn-lang-en').className = "px-2.5 py-0.5 rounded-lg text-xs font-bold bg-white text-cfa-navy shadow-xs cursor-pointer";
+        document.getElementById('btn-lang-es').className = "px-2.5 py-0.5 rounded-lg text-xs font-bold text-white hover:text-cfa-light cursor-pointer";
+      } else {
+        document.getElementById('btn-lang-es').className = "px-2.5 py-0.5 rounded-lg text-xs font-bold bg-white text-cfa-navy shadow-xs cursor-pointer";
+        document.getElementById('btn-lang-en').className = "px-2.5 py-0.5 rounded-lg text-xs font-bold text-white hover:text-cfa-light cursor-pointer";
+      }
+
+      updateTimelineView();
+      lucide.createIcons();
+    }
+
+    // Timeline Data Bilingual
+    const timelineDataBilingual = {
+      es: [
+        { year: "1985", title: "Abre la Primera Clínica de Fertilidad", desc: "Inicios pioneros en el diagnóstico y tratamiento médico de la infertilidad en México con los más altos estándares éticos." },
+        { year: "1987", title: "Primer Embarazo de GIFT", desc: "Logro pionero en transferencia intratubaria de gametos (GIFT) en el país, marcando un hito en la medicina reproductiva." },
+        { year: "1991", title: "Primer Nacimiento de FIV en México", desc: "El Dr. Carlos Navarro forma parte del histórico equipo médico que logra el nacimiento del primer bebé por Fertilización in Vitro en la República Mexicana." },
+        { year: "1994", title: "Vida Profesional Independiente y Alianza Internacional", desc: "El Dr. Carlos Navarro inicia su práctica independiente y consolida una colaboración con el Dr. Richard P. Marrs (California Fertility Partners)." },
+        { year: "1999", title: "Inauguración en Anexo de Hospital ABC Observatorio", desc: "El Dr. Carlos Navarro inaugura la Clínica de Fertilización Asistida en el anexo de Hospital ABC Observatorio, logrando el 1er embarazo FIV ese mismo año." },
+        { year: "2000", title: "1er Nacido Vivo en Nuestra Clínica", desc: "Nacimiento del primer bebé fruto de los tratamientos integrales desarrollados dentro de nuestras propias instalaciones." },
+        { year: "2005", title: "CMABC y CNM Inician Proyecto en Santa Fe", desc: "El Centro Médico ABC y el Dr. Carlos Navarro inician la planeación del proyecto del campus médico de alta especialidad en Santa Fe." },
+        { year: "2009", title: "Inauguración CFA en CMABC por el Dr. Zev Rosenwaks", desc: "Inauguración oficial de las modernas instalaciones de la CFA en el Centro Médico ABC por el Dr. Zev Rosenwaks de Cornell University." },
+        { year: "2010", title: "1er Nacimiento en la Clínica en el ABC Santa Fe", desc: "Se registra el primer nacimiento concebido y atendido en la nueva sede del Centro Médico ABC Santa Fe." }
+      ],
+      en: [
+        { year: "1985", title: "First Fertility Clinic Established", desc: "Pioneering beginnings in infertility diagnosis and assisted reproduction in Mexico with high ethical and scientific standards." },
+        { year: "1987", title: "First GIFT Pregnancy in Mexico", desc: "Pioneering milestone in gamete intrafallopian transfer (GIFT) in Mexico, marking a foundational moment." },
+        { year: "1991", title: "1st IVF Baby in Mexico", desc: "Dr. Carlos Navarro was part of the historic team that achieved the first in vitro fertilization birth in Mexico." },
+        { year: "1994", title: "Independent Practice & Global Alliance", desc: "Dr. Carlos Navarro launched his independent clinic and established a scientific alliance with Dr. Richard P. Marrs (California Fertility Partners)." },
+        { year: "1999", title: "Opening at ABC Observatorio Hospital Annex", desc: "Dr. Carlos Navarro inaugurated the Assisted Fertilization Clinic at ABC Hospital Observatorio annex, achieving its first IVF pregnancy that year." },
+        { year: "2000", title: "1st Live Birth in Our Facility", desc: "Birth of the first baby conceived through comprehensive assisted reproduction treatments within our clinic." },
+        { year: "2005", title: "ABC & CNM Begin Santa Fe Project", desc: "ABC Medical Center and Dr. Carlos Navarro initiated planning for the state-of-the-art reproductive center in Santa Fe." },
+        { year: "2009", title: "Grand Opening at ABC Santa Fe by Dr. Zev Rosenwaks", desc: "Official inauguration of the new CFA facilities at ABC Medical Center by Dr. Zev Rosenwaks of Cornell University." },
+        { year: "2010", title: "1st Baby Born at ABC Santa Fe Clinic", desc: "Celebration of the very first baby born conceived through treatments performed at ABC Medical Center Santa Fe." }
+      ]
+    };
+
+    let currentTimelineIdx = 2;
+
+    function setTimelineYear(idx) {
+      currentTimelineIdx = idx;
+      updateTimelineView();
+    }
+
+    function prevTimeline() {
+      const data = timelineDataBilingual[currentLang];
+      currentTimelineIdx = (currentTimelineIdx === 0) ? data.length - 1 : currentTimelineIdx - 1;
+      updateTimelineView();
+    }
+
+    function nextTimeline() {
+      const data = timelineDataBilingual[currentLang];
+      currentTimelineIdx = (currentTimelineIdx + 1) % data.length;
+      updateTimelineView();
+    }
+
+    function updateTimelineView() {
+      const data = timelineDataBilingual[currentLang];
+      const item = data[currentTimelineIdx];
+      document.getElementById('tl-year').innerText = item.year;
+      document.getElementById('tl-title').innerText = item.title;
+      document.getElementById('tl-desc').innerText = item.desc;
+
+      const btns = document.querySelectorAll('.timeline-btn');
+      btns.forEach((b, i) => {
+        if (i === currentTimelineIdx) {
+          b.className = "timeline-btn px-4 py-2.5 rounded-2xl bg-cfa-navy text-white font-title font-bold text-xs shadow-md scale-105 cursor-pointer";
+        } else {
+          b.className = "timeline-btn px-4 py-2.5 rounded-2xl bg-white border border-cfa-grayBorder font-title font-bold text-xs hover:bg-cfa-softBlue transition-all text-cfa-navy cursor-pointer";
+        }
+      });
+    }
+
+    // Carrusel
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        if (i === index) {
+          s.classList.remove('opacity-0', 'z-0');
+          s.classList.add('opacity-100', 'z-10');
+        } else {
+          s.classList.remove('opacity-100', 'z-10');
+          s.classList.add('opacity-0', 'z-0');
+        }
+      });
+    }
+    function nextSlide() {
+      currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+      showSlide(currentSlideIndex);
+    }
+    function prevSlide() {
+      currentSlideIndex = (currentSlideIndex === 0) ? slides.length - 1 : currentSlideIndex - 1;
+      showSlide(currentSlideIndex);
+    }
+    setInterval(nextSlide, 6500);
+
+    async function handleDirectAppointment(e) {
+      e.preventDefault();
+      const payload = {
+        nombre: document.getElementById('app-name').value,
+        telefono: document.getElementById('app-phone').value,
+        correo: document.getElementById('app-email').value,
+        como_te_enteraste: 'internet',
+        como_podemos_ayudarte: document.getElementById('app-msg').value,
+      };
+
+      try {
+        await fetch('/api/appointments', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch {}
+
+      document.getElementById('appointment-success').classList.remove('hidden');
+    }
+
+    // Doctor Details Modal Data
+    const doctorDetailsData = {
+      carlos: {
+        img: "IMAGENES/doctores/doctorcarlos.webp",
+        name: "Dr. Carlos Navarro Martínez",
+        role: "Fundador y Director Médico",
+        specialty: "Ginecología, Obstetricia y Biología de la Reproducción Humana",
+        brief: "Más de 35 años de experiencia médica. Formó parte del equipo que logró el 1er nacimiento por Fertilización in Vitro en México (1991).",
+        bio: [
+          "Egresado de la Universidad La Salle con internado rotatorio en el Hospital ABC (1979-1980).",
+          "Especialidad en Ginecología y Obstetricia con mención honorífica. Mentoreado por el Dr. Alfonso Gutiérrez Nájar (1980-1987).",
+          "Subespecialidad en Infertilidad y Microcirugía en el Texas Women's Hospital (Baylor College of Medicine) con el Dr. Robert Franklin.",
+          "Entrenamiento en Reproducción Asistida en el Greater Baltimore Medical Center con el Dr. Jairo García (equipo pionero del 1er bebé FIV en Norteamérica).",
+          "En 1991 participó en el histórico 1er nacimiento por Fertilización in Vitro en la República Mexicana.",
+          "Alianza continua con el Dr. Richard P. Marrs (California Fertility Partners) y fundación de la CFA en Centro Médico ABC Santa Fe."
+        ],
+        edu: [
+          "Médico Cirujano - Universidad La Salle (CDMX)",
+          "Internado Rotatorio de Pregrado - Hospital ABC (1979-1980)",
+          "Subespecialidad en Infertilidad - Texas Women's Hospital / Baylor College of Medicine",
+          "Fellowship en Reproducción Asistida - Greater Baltimore Medical Center"
+        ]
+      },
+      tanya: {
+        img: "IMAGENES/doctores/doctoratanya.webp",
+        name: "Dra. Tanya I. Montañez Díaz de León",
+        role: "Especialista en Reproducción Asistida",
+        specialty: "Ginecología y Biología de la Reproducción Humana",
+        brief: "Especialista en estimulación ovárica personalizada, protocolos de alta complejidad y preservación de la fertilidad.",
+        bio: [
+          "Médica especialista con destacada trayectoria clínica en biología de la reproducción humana y endocrinología ginecológica.",
+          "Experta en protocolos individualizados para pacientes con baja reserva ovárica, fallos de implantación previos y preservación ovocitaria por vitrificación.",
+          "Lidera consultas de alta especialidad y seguimiento integral de ciclos FIV en el Centro Médico ABC Campus Santa Fe con un enfoque profundamente humano y empático."
+        ],
+        edu: [
+          "Médica Cirujana con Especialidad en Ginecología y Obstetricia",
+          "Alta Especialidad en Biología de la Reproducción Humana",
+          "Certificada por el Consejo Mexicano de Ginecología y Obstetricia"
+        ]
+      },
+      fernando: {
+        img: "IMAGENES/doctores/doctorfernando.webp",
+        name: "Dr. Fernando Galván Duque Rivero",
+        role: "Especialista en Cirugía Reproductiva",
+        specialty: "Ginecología, Laparoscopia y Cirugía Reproductiva",
+        brief: "Experto en microcirugía endoscópica, histeroscopía de alta resolución y optimización anatómica para la implantación embrionaria.",
+        bio: [
+          "Especialista con amplia trayectoria en cirugía laparoscópica e histeroscópica diagnóstica y operatoria en quirófanos de alta tecnología del Centro Médico ABC.",
+          "Enfocado en la resolución de miomas uterinos, endometriosis profunda, pólipos endometriales y adherencias pélvicas.",
+          "Miembro distinguido del cuerpo médico de la Clínica de Fertilización Asistida en Santa Fe."
+        ],
+        edu: [
+          "Médico Cirujano Especialista en Ginecología y Obstetricia",
+          "Entrenamiento Quirúrgico Avanzado en Laparoscopia e Histeroscopía Pélvica",
+          "Certificación vigente por el Consejo Mexicano de Especialistas"
+        ]
+      },
+      jose: {
+        img: "IMAGENES/doctores/doctorasteph.webp",
+        name: "Nombre Apellido",
+        role: "Especialista en Reproducción Humana",
+        specialty: "Ginecología, Obstetricia y Reproducción Asistida",
+        brief: "Especialista en medicina reproductiva, transferencias embrionarias y diagnóstico integral de fertilidad.",
+        bio: [
+          "Médico especialista en biología de la reproducción humana y atención gineco-obstétrica.",
+          "Experto en monitorización folicular precisa, transferencias embrionarias guiadas por ultrasonido y control obstétrico.",
+          "Miembro adscrito a la Clínica de Fertilización Asistida en el Centro Médico ABC Campus Santa Fe."
+        ],
+        edu: [
+          "Médico Cirujano y Partero",
+          "Especialidad en Ginecología y Obstetricia",
+          "Subespecialidad en Biología de la Reproducción Humana"
+        ]
+      },
+      stephanie: {
+        img: "IMAGENES/doctores/doctorasteph.webp",
+        name: "Dra. Stephanie Lizmi Romano",
+        role: "Bióloga de la Reproducción Humana",
+        specialty: "Ginecología, Endocrinología Ginecológica y PGD",
+        brief: "Especialista en endocrinología reproductiva, síndrome de ovario poliquístico y protocolos de diagnóstico genético preimplantacional (PGD).",
+        bio: [
+          "Médica especialista con sólida preparación en endocrinología de la reproducción humana y fertilización in vitro.",
+          "Dedicada a la atención personalizada de parejas con factores hormonales complejos, alteraciones metabólicas y reserva ovárica disminuida.",
+          "Pionera en la aplicación de tecnologías de secuenciación genética embrionaria y monitoreo ecográfico de alta resolución en la CFA del Centro Médico ABC Santa Fe."
+        ],
+        edu: [
+          "Médica Cirujana con Especialidad en Ginecología y Obstetricia",
+          "Subespecialidad en Biología de la Reproducción Humana",
+          "Certificada por el Consejo Mexicano de Ginecología y Obstetricia"
+        ]
+      }
+    };
+
+    function openDoctorModal(docKey) {
+      const doc = doctorDetailsData[docKey];
+      if (!doc) return;
+      document.getElementById('doc-modal-img').src = doc.img;
+      document.getElementById('doc-modal-name').innerText = doc.name;
+      document.getElementById('doc-modal-role').innerText = `${doc.role} • Centro Médico ABC`;
+      document.getElementById('doc-modal-specialty').innerText = doc.specialty;
+      document.getElementById('doc-modal-brief').innerText = doc.brief;
+
+      const bioContainer = document.getElementById('doc-modal-bio');
+      bioContainer.innerHTML = doc.bio.map(p => `<p class="leading-relaxed">${p}</p>`).join('');
+
+      const eduContainer = document.getElementById('doc-modal-edu');
+      eduContainer.innerHTML = doc.edu.map(e => `<li class="flex items-start gap-1.5"><span class="text-cfa-cyan font-bold">•</span><span>${e}</span></li>`).join('');
+
+      document.getElementById('doctor-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeDoctorModal() {
+      document.getElementById('doctor-modal').classList.add('hidden');
+    }
+
+    function openAppointmentModal() {
+      document.getElementById('cita').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
