@@ -85,17 +85,17 @@ export const ValuesSection: React.FC = () => {
       </div>
 
       {/* Selected Value Detailed Showcase */}
-      <div className="bg-gradient-to-br from-cfa-iceBlue/90 via-white to-cfa-grayLight p-6 sm:p-8 rounded-3xl border border-cfa-softBlue shadow-inner transition-all duration-300">
+      <div className="bg-white p-6 sm:p-8 rounded-3xl border-2 border-[#0B2559] shadow-md transition-all duration-300">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cfa-cyan to-cfa-deepBlue text-white flex items-center justify-center shadow-md flex-shrink-0">
-              <Icon className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-2xl bg-[#0B2559] text-white flex items-center justify-center shadow-md flex-shrink-0">
+              <Icon className="w-6 h-6 text-white" />
             </div>
             <div>
-              <span className="text-xs font-bold text-cfa-cyan uppercase tracking-wider font-title">
+              <span className="text-xs font-bold text-[#0B2559] uppercase tracking-wider font-title">
                 {language === 'es' ? 'Valor Institucional' : 'Institutional Value'}
               </span>
-              <h3 className="font-title text-xl sm:text-2xl font-bold text-cfa-navy">
+              <h3 className="font-title text-xl sm:text-2xl font-extrabold text-[#0B2559]">
                 {activeData.title}
               </h3>
             </div>

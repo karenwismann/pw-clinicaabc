@@ -204,7 +204,7 @@ export const TREATMENTS: Treatment[] = [
   {
     id: "hatch-asistido",
     iconName: "Zap",
-    imageSrc: "/imagenes/tratamientos/Hatch.jpeg",
+    imageSrc: "/imagenes/tratamientos/hatch_nuevo.jpg",
     es: {
       title: "Hatch Asistido (Eclosión Asistida)",
       shortTitle: "Hatch Asistido",
@@ -239,7 +239,7 @@ export const TREATMENTS: Treatment[] = [
   {
     id: "transferencia-de-embriones",
     iconName: "HeartHandshake",
-    imageSrc: "/imagenes/tratamientos/transfer_embr.jpg",
+    imageSrc: "/imagenes/tratamientos/transferencia_nueva.jpg",
     isFeatured: true,
     es: {
       title: "Transferencia de Embriones",
@@ -283,7 +283,7 @@ export const TREATMENTS: Treatment[] = [
   {
     id: "diagnostico-genetico-embrionario",
     iconName: "Dna",
-    imageSrc: "/imagenes/tratamientos/maquinadehormonas.jpg",
+    imageSrc: "/imagenes/tratamientos/diagnostico_genetico.jpg",
     isFeatured: true,
     es: {
       title: "Diagnóstico Genético Embrionario (PGD / NGS)",
@@ -321,7 +321,7 @@ export const TREATMENTS: Treatment[] = [
   {
     id: "congelacion-de-ovulos",
     iconName: "Snowflake",
-    imageSrc: "/imagenes/tratamientos/postcaptura.jpg",
+    imageSrc: "/imagenes/tratamientos/congelacion_ovulos.jpg",
     es: {
       title: "Congelación de Óvulos (Preservación de Fertilidad)",
       shortTitle: "Congelación de Óvulos",
@@ -354,7 +354,7 @@ export const TREATMENTS: Treatment[] = [
   {
     id: "congelacion-de-embriones",
     iconName: "Layers",
-    imageSrc: "/imagenes/tratamientos/incubadora_embriones.jpg",
+    imageSrc: "/imagenes/tratamientos/congelaciondeembriones.jpg",
     es: {
       title: "Congelación de Embriones (Vitrificación)",
       shortTitle: "Congelación de Embriones",

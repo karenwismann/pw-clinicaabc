@@ -178,8 +178,8 @@ export default function Home() {
                 </h2>
                 <p className="text-xs sm:text-sm text-blue-50 leading-relaxed font-sans">
                   {language === 'es'
-                    ? 'Diálogos médicos claros con el Dr. Carlos Navarro Martínez y especialistas del Centro Médico ABC Santa Fe. Avances científicos y testimonios reales.'
-                    : 'Clear medical dialogues with Dr. Carlos Navarro Martínez and ABC Medical Center specialists. Scientific breakthroughs and patient stories.'}
+                    ? 'Diálogos médicos claros con el Dr. Carlos Navarro Martínez y especialistas del Centro Médico ABC Santa Fe sobre los últimos avances científicos.'
+                    : 'Clear medical dialogues with Dr. Carlos Navarro Martínez and ABC Medical Center specialists regarding the latest scientific advances.'}
                 </p>
               </div>
 
@@ -269,11 +269,11 @@ export default function Home() {
 
                   {/* LinkedIn Button */}
                   <a
-                    href="https://www.linkedin.com"
+                    href="https://www.linkedin.com/company/cl%C3%ADnica-de-fertilizaci%C3%B3n-asistida/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-[#004C97] border border-white/20 text-white text-xs font-bold shadow-sm hover:scale-105 transition-all font-title"
-                    title="LinkedIn CFA ABC"
+                    title="LinkedIn Clínica de Fertilización Asistida ABC"
                   >
                     <Linkedin className="w-4 h-4 text-white flex-shrink-0" />
                     <span>LinkedIn</span>
@@ -328,9 +328,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. El Equipo Médico - Doctores con Fotos y Ver Más */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+      {/* 6. El Equipo Médico - Doctores con Fotos y Ver Más (Pantalla Completa Uniforme) */}
+      <section className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
+        <div className="text-center max-w-4xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#69B3E7]/20 text-[#004C97] text-xs font-semibold uppercase tracking-wider font-title">
             <Users className="w-3.5 h-3.5 text-[#004C97]" />
             <span>{language === 'es' ? 'Cuerpo Médico de Excelencia' : 'Medical Faculty of Excellence'}</span>
@@ -338,23 +338,24 @@ export default function Home() {
           <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0B2559]">
             {language === 'es' ? 'Dr. Carlos Navarro Martínez & Especialistas' : 'Dr. Carlos Navarro Martínez & Specialists'}
           </h2>
-          <p className="text-xs sm:text-sm text-[#0B2559]/80 font-sans">
+          <p className="text-sm sm:text-base text-[#0B2559]/80 font-sans max-w-4xl mx-auto text-balance leading-relaxed">
             {language === 'es'
-              ? 'Equipo pionero de reproducción asistida con más de 35 años de experiencia en el Centro Médico ABC Santa Fe.'
-              : 'Pioneering assisted reproduction faculty with over 35 years of medical leadership at ABC Medical Center Santa Fe.'}
+              ? 'Equipo pionero de reproducción asistida con más de 35\u00A0años de experiencia en el Centro Médico ABC Santa\u00A0Fe.'
+              : 'Pioneering assisted reproduction faculty with over 35\u00A0years of medical leadership at ABC Medical Center Santa\u00A0Fe.'}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-5 lg:gap-6">
           {DOCTORS.map((doc) => {
             const data = doc[language] || doc.es;
             return (
               <div
                 key={doc.id}
-                className="bg-white rounded-3xl overflow-hidden border border-[#69B3E7]/40 shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group"
+                className="bg-white rounded-3xl overflow-hidden border border-[#69B3E7]/40 shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group h-full"
               >
-                <div>
-                  <div className="relative w-full h-56 bg-[#F0F7FD] overflow-hidden">
+                <div className="flex flex-col flex-1">
+                  {/* Doctor Photo with Uniform Aspect Ratio */}
+                  <div className="relative w-full aspect-[4/5] bg-[#F0F7FD] overflow-hidden">
                     <Image
                       src={doc.imageSrc}
                       alt={doc.name}
@@ -362,34 +363,38 @@ export default function Home() {
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B2559]/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#004C97] shadow-xs font-title inline-block">
+                    <div className="absolute bottom-2.5 left-2.5 right-2.5">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-[#004C97] shadow-xs font-title inline-block line-clamp-1">
                         {data.role}
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-5 space-y-2">
-                    <h4 className="font-title text-base font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
-                      {doc.name}
-                    </h4>
-                    <p className="text-xs font-semibold text-[#004C97] font-title">
-                      {data.specialty}
-                    </p>
-                    <p className="text-xs text-[#0B2559]/70 line-clamp-2 font-sans">
+                  {/* Doctor Info with Consistent Spacing */}
+                  <div className="p-4 sm:p-4.5 flex-1 flex flex-col justify-between space-y-2">
+                    <div>
+                      <h4 className="font-title text-sm sm:text-base font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug min-h-[44px] flex items-center">
+                        {doc.name}
+                      </h4>
+                      <p className="text-[11px] sm:text-xs font-semibold text-[#004C97] font-title min-h-[34px] flex items-center mt-1 leading-snug">
+                        {data.specialty}
+                      </p>
+                    </div>
+                    <p className="text-[11px] sm:text-xs text-[#0B2559]/75 line-clamp-3 font-sans leading-relaxed min-h-[48px]">
                       {data.brief}
                     </p>
                   </div>
                 </div>
 
-                <div className="p-5 pt-0">
-                  <div className="pt-3 border-t border-[#69B3E7]/40 flex items-center justify-between">
+                {/* Card Footer Actions */}
+                <div className="p-4 sm:p-4.5 pt-0 mt-auto">
+                  <div className="pt-2.5 border-t border-[#69B3E7]/40 flex items-center justify-between">
                     <button
                       onClick={() => setSelectedDoctor(doc)}
-                      className="text-xs font-bold text-[#004C97] group-hover:text-[#0B2559] inline-flex items-center gap-1.5 transition-colors cursor-pointer font-title"
+                      className="text-xs font-bold text-[#004C97] group-hover:text-[#0B2559] inline-flex items-center gap-1 transition-colors cursor-pointer font-title"
                     >
                       <span>{language === 'es' ? 'Ver más' : 'View more'}</span>
-                      <ChevronRight className="w-4 h-4" />
+                      <ChevronRight className="w-3.5 h-3.5" />
                     </button>
 
                     {doc.linkedinUrl ? (
@@ -446,7 +451,7 @@ export default function Home() {
               <div className="space-y-3 pt-2 font-sans">
                 <div className="flex items-center gap-3 text-sm text-blue-50">
                   <MapPin className="w-5 h-5 text-[#69B3E7] flex-shrink-0" />
-                  <span>Av. Carlos Graef Fernández #154, Cons. 332, Santa Fe</span>
+                  <span>Av. Carlos Graef Fernández #154, edificio CEGOP, Piso 3, consultorio 332</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-blue-50">
                   <Phone className="w-5 h-5 text-[#69B3E7] flex-shrink-0" />

@@ -175,7 +175,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
   {
     year: "2022",
     badge: "Inteligencia Artificial",
-    imageSrc: "/imagenes/kpi/diagrama-ia-ml-genetica.png",
+    imageSrc: "/imagenes/timeline/2022_ai.jpg",
     es: {
       title: "Comenzamos a implementar tecnología avanzadas como machine learning e inteligencia artificial a nuestro trabajo diario.",
       description: "Comenzamos a implementar tecnologías avanzadas como machine learning e inteligencia artificial a nuestro trabajo diario. Integración de algoritmos predictivos para optimizar la selección embrionaria.",

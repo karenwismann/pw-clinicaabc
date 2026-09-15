@@ -109,8 +109,8 @@ const CLINIC_KNOWLEDGE: ReplyData[] = [
   {
     keywords: ['ubicacion', 'donde', 'direccion', 'llegar', 'telefono', 'contacto', 'santa fe', 'location', 'where', 'address', 'phone', 'contact', 'directions'],
     reply: {
-      es: 'Nuestra clínica se localiza en el **Centro Médico ABC Campus Santa Fe**:\n\n📍 **Dirección:** Av. Carlos Graef Fernández #154, Consultorio 332 (Entrada por Av. Vasco de Quiroga), Col. Tlaxala Santa Fe, Cuajimalpa 05300, CDMX.\n\n📞 **Teléfonos:** (55) 5273 5194 / (55) 5276 5463\n✉️ **Correo:** recepcion@infertilidadabc.com\n🚗 Estacionamiento y valet parking disponibles en el hospital.',
-      en: 'Our clinic is located inside the prestigious **ABC Medical Center Santa Fe Campus**:\n\n📍 **Address:** 154 Carlos Graef Fernández Ave, Suite 332 (Main entrance & parking via Vasco de Quiroga Ave), Col. Tlaxala Santa Fe, Mexico City 05300.\n\n📞 **Phone:** +52 (55) 5273 5194 / +52 (55) 5276 5463\n✉️ **Email:** recepcion@infertilidadabc.com\n🚗 On-site hospital parking and valet service available.'
+      es: 'Nuestra clínica se localiza en el **Centro Médico ABC Campus Santa Fe**:\n\n📍 **Dirección:** Av. Carlos Graef Fernández #154, edificio CEGOP, Piso 3, consultorio 332 (Entrada por Av. Vasco de Quiroga), Col. Tlaxala Santa Fe, Cuajimalpa 05300, CDMX.\n\n📞 **Teléfonos:** (55) 5273 5194 / (55) 5276 5463\n✉️ **Correo:** recepcion@infertilidadabc.com\n🚗 Estacionamiento y valet parking disponibles en el hospital.',
+      en: 'Our clinic is located inside the prestigious **ABC Medical Center Santa Fe Campus**:\n\n📍 **Address:** 154 Carlos Graef Fernández Ave, CEGOP Building, 3rd Floor, Suite 332 (Main entrance & parking via Vasco de Quiroga Ave), Col. Tlaxala Santa Fe, Mexico City 05300.\n\n📞 **Phone:** +52 (55) 5273 5194 / +52 (55) 5276 5463\n✉️ **Email:** recepcion@infertilidadabc.com\n🚗 On-site hospital parking and valet service available.'
     },
     suggested_actions: {
       es: ['Cómo llegar (Concierge)', 'Agendar una cita'],

@@ -14,6 +14,7 @@ export const AppointmentForm: React.FC<{ onSuccess?: () => void; className?: str
   const { language, t } = useLanguage();
   const [formData, setFormData] = useState({
     nombre: '',
+    fecha_nacimiento: '',
     telefono: '',
     correo: '',
     como_te_enteraste: 'internet',
@@ -68,6 +69,7 @@ export const AppointmentForm: React.FC<{ onSuccess?: () => void; className?: str
             setSubmitted(false);
             setFormData({
               nombre: '',
+              fecha_nacimiento: '',
               telefono: '',
               correo: '',
               como_te_enteraste: 'internet',
@@ -91,20 +93,39 @@ export const AppointmentForm: React.FC<{ onSuccess?: () => void; className?: str
         </div>
       )}
 
-      <div>
-        <label className="block text-xs font-semibold text-cfa-navy uppercase tracking-wider mb-1 font-title">
-          {t.home.formName}
-        </label>
-        <div className="relative">
-          <User className="w-4 h-4 text-cfa-grayText absolute left-3.5 top-3.5" />
-          <input
-            type="text"
-            required
-            placeholder={language === 'es' ? "Ej. María Rodríguez Morales" : "e.g. Mary Jane Watson"}
-            value={formData.nombre}
-            onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cfa-grayBorder bg-white text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all"
-          />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-xs font-semibold text-cfa-navy uppercase tracking-wider mb-1 font-title">
+            {t.home.formName}
+          </label>
+          <div className="relative">
+            <User className="w-4 h-4 text-cfa-grayText absolute left-3.5 top-3.5" />
+            <input
+              type="text"
+              required
+              placeholder={language === 'es' ? "Ej. María Rodríguez Morales" : "e.g. Mary Jane Watson"}
+              value={formData.nombre}
+              onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cfa-grayBorder bg-white text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-xs font-semibold text-cfa-navy uppercase tracking-wider mb-1 font-title">
+            {t.home.formBirthDate}
+          </label>
+          <div className="relative">
+            <Calendar className="w-4 h-4 text-cfa-grayText absolute left-3.5 top-3.5" />
+            <input
+              type="date"
+              required
+              max={new Date().toISOString().split('T')[0]}
+              value={formData.fecha_nacimiento}
+              onChange={(e) => setFormData({ ...formData, fecha_nacimiento: e.target.value })}
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cfa-grayBorder bg-white text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all text-[#0B2559]"
+            />
+          </div>
         </div>
       </div>
 

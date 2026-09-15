@@ -40,7 +40,7 @@ export default function ContactoPage() {
                   <MapPin className="w-5 h-5 text-cfa-cyan flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-cfa-navy block font-title">Centro Médico ABC Santa Fe</strong>
-                    <span>Av. Carlos Graef Fernández #154, Consultorio 332 (Entrada por Av. Vasco de Quiroga)</span>
+                    <span>Av. Carlos Graef Fernández #154, edificio CEGOP, Piso 3, consultorio 332 (Entrada por Av. Vasco de Quiroga)</span>
                   </div>
                 </div>
 

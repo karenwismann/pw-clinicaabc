@@ -13,4 +13,8 @@ backend/routers/__pycache__/
 
 # Large media files exceeding GitHub 100MB limit
 video clinica.mov
-frontend/public/videos/video_clinica.*
+frontend/public/videos/video_clinica.mov
+frontend/public/videos/video_clinica.mp4
+cabc.2.mov
+CABC.mov
+VIDA.MOV

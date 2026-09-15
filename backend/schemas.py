@@ -4,6 +4,7 @@ from datetime import datetime
 
 class AppointmentCreate(BaseModel):
     nombre: str
+    fecha_nacimiento: Optional[str] = None
     telefono: str
     correo: EmailStr
     como_te_enteraste: str
@@ -12,6 +13,7 @@ class AppointmentCreate(BaseModel):
 class AppointmentResponse(BaseModel):
     id: int
     full_name: str
+    birth_date: Optional[str] = None
     phone: str
     email: str
     referral_source: str

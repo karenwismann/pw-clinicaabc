@@ -12,6 +12,7 @@ def create_appointment(appointment_in: schemas.AppointmentCreate, db: Session = 
     try:
         new_appointment = models.Appointment(
             full_name=appointment_in.nombre,
+            birth_date=appointment_in.fecha_nacimiento,
             phone=appointment_in.telefono,
             email=appointment_in.correo,
             referral_source=appointment_in.como_te_enteraste,

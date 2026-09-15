@@ -64,7 +64,7 @@ export default function CyberneticIntegrationDiagram() {
     genetics: {
       id: 'genetics',
       title: language === 'es' ? 'Genética Molecular' : 'Molecular Genetics',
-      subtitle: language === 'es' ? 'Secuenciación NGS' : 'NGS Sequencing',
+      subtitle: language === 'es' ? 'Secuenciación Molecular' : 'Molecular Sequencing',
       tag: language === 'es' ? 'PGT-A / 23 Pares' : 'PGT-A / 23 Pairs',
       icon: Dna,
       theme: 'sky',
@@ -73,8 +73,8 @@ export default function CyberneticIntegrationDiagram() {
       activeBg: 'bg-sky-500/20',
       accentColor: 'text-sky-300',
       description: language === 'es'
-        ? 'Biopsia láser de trofoectodermo en estadio de blastocisto y Secuenciación de Nueva Generación (NGS). Permite identificar embriones euploides (con 23 pares cromosómicos completos) antes de la transferencia, descartando aneuploidías.'
-        : 'Laser trophectoderm biopsy at blastocyst stage and Next-Generation Sequencing (NGS). Identifies euploid embryos (with 23 normal chromosome pairs) prior to transfer, ruling out aneuploidies.',
+        ? 'Integración cibernética de técnicas de secuenciación moleculares en correlación morfocinética. Permite identificar embriones euploides (con 23 pares cromosómicos completos) antes de la transferencia, descartando aneuploidías.'
+        : 'Cybernetic integration of molecular sequencing techniques with morphokinetic correlation. Identifies euploid embryos (with 23 normal chromosome pairs) prior to transfer, ruling out aneuploidies.',
       metrics: [
         { label: language === 'es' ? 'Cromosomas analizados' : 'Chromosomes screened', value: '23 pares completos' },
         { label: language === 'es' ? 'Resolución diagnóstica' : 'Diagnostic resolution', value: '>99.2%' },
@@ -93,8 +93,8 @@ export default function CyberneticIntegrationDiagram() {
       activeBg: 'bg-gradient-to-br from-cfa-cyan/30 via-blue-600/30 to-cfa-cyan/30',
       accentColor: 'text-cyan-200',
       description: language === 'es'
-        ? 'El algoritmo de IA procesa e integra simultáneamente las 3 capas: la historia hormonal (ML), la película biológica de desarrollo (Timelapse) y el perfil genómico (NGS). Calcula un índice de viabilidad objetivo para seleccionar el embrión con mayor probabilidad de embarazo.'
-        : 'The AI core simultaneously correlates all 3 layers: hormonal clinical profile (ML), real-time cell development video (Timelapse), and genomic sequencing (NGS). Generates an objective viability score to select the highest-potential embryo.',
+        ? 'El algoritmo de IA procesa e integra simultáneamente las 3 capas: la historia hormonal (ML), la película biológica de desarrollo (Timelapse) y el perfil genómico de secuenciación molecular. Calcula un índice de viabilidad objetivo para seleccionar el embrión con mayor probabilidad de embarazo.'
+        : 'The AI core simultaneously correlates all 3 layers: hormonal clinical profile (ML), real-time cell development video (Timelapse), and molecular genomic profile. Generates an objective viability score to select the highest-potential embryo.',
       metrics: [
         { label: language === 'es' ? 'Integración de datos' : 'Data integration', value: '3 capas simultáneas' },
         { label: language === 'es' ? 'Modelo algorítmico' : 'Algorithmic model', value: 'Red Neuronal Convolucional' },

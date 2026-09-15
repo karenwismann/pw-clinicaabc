@@ -59,23 +59,22 @@ export default function SobreNosotrosPage() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative rounded-3xl overflow-hidden shadow-elevated border border-cfa-softBlue bg-white p-4">
-              <div className="relative w-full h-80 rounded-2xl overflow-hidden">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-[#69B3E7]/40 bg-white p-4">
+              <div className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden">
                 <Image
-                  src="/imagenes/baby1.jpg"
-                  alt="Atención médica cálida en CFA"
+                  src="/imagenes/quienes_somos.jpeg"
+                  alt="Clínica de Fertilización Asistida - Centro Médico ABC"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-cfa-navy/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <p className="text-xs font-bold text-cfa-light drop-shadow-sm font-title">
-                    Centro Médico ABC Campus Santa Fe
-                  </p>
-                  <p className="text-sm font-semibold text-white drop-shadow-sm font-sans">
-                    {language === 'es' ? 'Cuidado integral desde el primer día' : 'Comprehensive care from day one'}
-                  </p>
-                </div>
+              </div>
+              <div className="pt-3 px-2 text-center sm:text-left">
+                <p className="text-xs font-bold text-[#004C97] font-title uppercase tracking-wider">
+                  {language === 'es' ? 'Clínica de Fertilización Asistida' : 'Assisted Fertilization Clinic'}
+                </p>
+                <p className="text-sm font-semibold text-[#0B2559] font-sans">
+                  {language === 'es' ? 'Centro Médico ABC Campus Santa Fe' : 'ABC Medical Center Santa Fe Campus'}
+                </p>
               </div>
             </div>
           </div>
@@ -105,7 +104,7 @@ export default function SobreNosotrosPage() {
                 <p>
                   En el año 1990 – 1991, en el <strong>Hospital Greater Baltimore Medical Center</strong> realiza su entrenamiento en Reproducción Asistida bajo la tutela del <strong>Dr. Jairo García</strong>, miembro del equipo en donde nació el primer bebé de Fertilización in Vitro en Norteamérica.
                 </p>
-                <p className="font-semibold text-cfa-navy bg-cfa-iceBlue p-4 rounded-xl border border-cfa-softBlue">
+                <p className="font-semibold text-[#0B2559] bg-white p-4 rounded-xl border-2 border-[#0B2559]">
                   🌟 En 1991, de regreso en México, formó parte del equipo médico histórico que logró el primer nacimiento de FIV en México.
                 </p>
                 <p>
@@ -123,7 +122,7 @@ export default function SobreNosotrosPage() {
                 <p>
                   Between 1990 and 1991, at <strong>Greater Baltimore Medical Center</strong>, he completed his specialized training in Assisted Reproduction under <strong>Dr. Jairo García</strong>, part of the landmark team where the first North American IVF baby was conceived.
                 </p>
-                <p className="font-semibold text-cfa-navy bg-cfa-iceBlue p-4 rounded-xl border border-cfa-softBlue">
+                <p className="font-semibold text-[#0B2559] bg-white p-4 rounded-xl border-2 border-[#0B2559]">
                   🌟 In 1991, back in Mexico, Dr. Navarro was part of the medical team that achieved the first successful IVF birth in the country.
                 </p>
                 <p>
@@ -252,18 +251,18 @@ export default function SobreNosotrosPage() {
 
       {/* 5. NUESTRAS PACIENTES */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-cfa-softBlue/60 via-white to-cfa-iceBlue/80 rounded-3xl p-8 sm:p-12 border border-cfa-softBlue shadow-soft flex flex-col md:flex-row items-center gap-8">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cfa-cyan to-cfa-navy text-white flex items-center justify-center flex-shrink-0 shadow-md">
-            <Users className="w-8 h-8" />
+        <div className="bg-[#0B2559] text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-[#004C97] flex flex-col md:flex-row items-center gap-8">
+          <div className="w-16 h-16 rounded-2xl bg-white text-[#0B2559] flex items-center justify-center flex-shrink-0 shadow-md">
+            <Users className="w-8 h-8 text-[#0B2559]" />
           </div>
           <div className="space-y-3 flex-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-cfa-softBlue text-cfa-cyan text-xs font-bold uppercase tracking-wider font-title">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-[#0B2559] text-xs font-bold uppercase tracking-wider font-title">
               <span>{language === 'es' ? 'Atención Individualizada' : 'Individualized Care'}</span>
             </div>
-            <h2 className="font-title text-2xl sm:text-3xl font-bold text-cfa-navy">
+            <h2 className="font-title text-2xl sm:text-3xl font-extrabold text-white">
               {language === 'es' ? 'Nuestras Pacientes' : 'Our Patients'}
             </h2>
-            <p className="text-sm sm:text-base text-cfa-grayDark leading-relaxed font-sans">
+            <p className="text-sm sm:text-base text-blue-50 leading-relaxed font-sans">
               {language === 'es'
                 ? 'Trabajamos entendiendo y respetando la individualidad de cada persona. Cada pareja es diferente, sus principios, creencias, religión y preferencias son habladas durante las primeras consultas con el objetivo de diseñar un «traje a medida» que les permita caminar por los procesos terapéuticos de una manera más ligera, tranquila, es decir en paz, dentro de lo que cada problema genera naturalmente. También contamos con un servicio de apoyo psicológico para las personas que así lo desean.'
                 : 'We work understanding and respecting the individuality of each person. Every couple is unique; their principles, beliefs, religion, and preferences are discussed from the initial consultations with the goal of designing a "tailor-made suit" that allows them to walk through therapeutic processes with peace and confidence. We also provide a dedicated psychological support service for those who wish it.'}

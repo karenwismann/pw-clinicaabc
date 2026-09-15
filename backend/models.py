@@ -7,6 +7,7 @@ class Appointment(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     full_name = Column(String(200), nullable=False)
+    birth_date = Column(String(50), nullable=True)
     phone = Column(String(50), nullable=False)
     email = Column(String(150), nullable=False)
     referral_source = Column(String(100), nullable=False) # internet, referido, redes sociales, médico, otro

@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { nombre, telefono, correo, como_te_enteraste, como_podemos_ayudarte } = body;
+    const { nombre, fecha_nacimiento, telefono, correo, como_te_enteraste, como_podemos_ayudarte } = body;
 
     const timestamp = new Date().toLocaleString('es-MX', {
       timeZone: 'America/Mexico_City',
@@ -22,6 +22,7 @@ export async function POST(req: Request) {
         _template: 'table',
         _captcha: 'false',
         Nombre_del_Paciente: nombre || 'No especificado',
+        Fecha_de_Nacimiento: fecha_nacimiento || 'No especificada',
         Telefono_de_Contacto: telefono || 'No especificado',
         Correo_del_Paciente: correo || 'No especificado',
         Como_se_entero: como_te_enteraste || 'Internet',

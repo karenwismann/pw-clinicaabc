@@ -48,7 +48,7 @@ export default function ConciergePage() {
           <div className="p-5 bg-cfa-iceBlue rounded-2xl border border-cfa-softBlue space-y-2.5 text-sm text-cfa-navy font-sans">
             <p className="font-bold text-base text-cfa-navy flex items-center gap-2">
               <Building2 className="w-5 h-5 text-cfa-cyan flex-shrink-0" />
-              <span>Av. Carlos Graef Fernández #154, Consultorio 332</span>
+              <span>Av. Carlos Graef Fernández #154, edificio CEGOP, Piso 3, consultorio 332</span>
             </p>
             <div className="p-3 bg-white/90 rounded-xl border border-cfa-softBlue/80 text-xs sm:text-sm text-cfa-navy font-medium flex items-start gap-2">
               <span className="text-amber-500 font-bold">🚗</span>

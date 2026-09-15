@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin, Youtube, Shield, ArrowUp } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin, Youtube, Shield, ArrowUp, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export const Footer: React.FC = () => {
@@ -52,11 +52,12 @@ export const Footer: React.FC = () => {
                   <Facebook className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/cl%C3%ADnica-de-fertilizaci%C3%B3n-asistida/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn de CFA ABC"
                   className="w-9 h-9 rounded-xl bg-white/10 hover:bg-cfa-cyan flex items-center justify-center text-white transition-all hover:scale-105"
+                  title="LinkedIn Clínica de Fertilización Asistida ABC"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
@@ -164,6 +165,52 @@ export const Footer: React.FC = () => {
                 <Link href="/contacto" className="hover:text-cfa-light transition-colors">{t.nav.bookAppointment}</Link>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Links Útiles y Sociedades Científicas Internacionales */}
+        <div className="py-6 border-b border-white/10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 font-sans text-xs">
+          <div className="flex items-center gap-2 text-cfa-light font-title uppercase font-bold tracking-wider text-[11px] flex-shrink-0">
+            <ExternalLink className="w-3.5 h-3.5 text-cfa-light" />
+            <span>{language === 'es' ? 'Links Útiles & Sociedades Científicas:' : 'Useful Links & Scientific Societies:'}</span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            <a
+              href="https://www.asrm.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-[#004C97] hover:text-white text-blue-100 transition-all flex items-center gap-1.5 font-title font-semibold shadow-xs border border-white/10 hover:border-[#69B3E7]"
+              title="American Society for Reproductive Medicine (ASRM)"
+            >
+              <span className="font-extrabold text-white">ASRM</span>
+              <span className="text-blue-200 text-[11px] hidden sm:inline">• American Society for Reproductive Medicine</span>
+              <ExternalLink className="w-3 h-3 opacity-70 ml-0.5" />
+            </a>
+
+            <a
+              href="https://www.sart.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-[#004C97] hover:text-white text-blue-100 transition-all flex items-center gap-1.5 font-title font-semibold shadow-xs border border-white/10 hover:border-[#69B3E7]"
+              title="Society for Assisted Reproductive Technology (SART)"
+            >
+              <span className="font-extrabold text-white">SART</span>
+              <span className="text-blue-200 text-[11px] hidden sm:inline">• Society for Assisted Reproductive Technology</span>
+              <ExternalLink className="w-3 h-3 opacity-70 ml-0.5" />
+            </a>
+
+            <a
+              href="https://www.eshre.eu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-[#004C97] hover:text-white text-blue-100 transition-all flex items-center gap-1.5 font-title font-semibold shadow-xs border border-white/10 hover:border-[#69B3E7]"
+              title="European Society of Human Reproduction and Embryology (ESHRE)"
+            >
+              <span className="font-extrabold text-white">ESHRE</span>
+              <span className="text-blue-200 text-[11px] hidden sm:inline">• European Society of Human Reproduction and Embryology</span>
+              <ExternalLink className="w-3 h-3 opacity-70 ml-0.5" />
+            </a>
           </div>
         </div>
 

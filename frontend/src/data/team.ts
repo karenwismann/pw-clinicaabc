@@ -31,8 +31,9 @@ export const DOCTORS: Doctor[] = [
   {
     id: "dr-carlos-navarro",
     name: "Dr. Carlos Navarro Martínez",
-    imageSrc: "/imagenes/doctores/doctorcarlos1.jpg",
-    curriculumImageSrc: "/imagenes/doctores/doctorcarlos-desglosecurriculum.jpg",
+    imageSrc: "/imagenes/doctores/drnavarro.jpg",
+    curriculumImageSrc: "/imagenes/doctores/doctorcarlos1.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/carlos-navarro-11651a80/",
     isLeadership: true,
     es: {
       role: "Director",
@@ -94,7 +95,7 @@ export const DOCTORS: Doctor[] = [
     linkedinUrl: "https://www.linkedin.com/in/stephanie-lizmi-671507269",
     es: {
       role: "Coordinadora del Área Médica & Coach de la Fertilidad",
-      specialty: "Ginecología, Reproducción Humana Asistida y Coaching de Fertilidad",
+      specialty: "Reproducción Humana Asistida y Coaching de Fertilidad",
       brief: "Médico Cirujano (Universidad Anáhuac). Coordinadora del Área Médica de la CFA en el Centro Médico ABC y Coach de la Fertilidad, acompañando a las pacientes durante todo su proceso.",
       fullBio: [
         "Médico Cirujano egresada de la Facultad de Ciencias de la Salud de la Universidad Anáhuac México Norte.",
@@ -117,7 +118,7 @@ export const DOCTORS: Doctor[] = [
     },
     en: {
       role: "Medical Area Coordinator & Fertility Coach",
-      specialty: "Gynecology, Assisted Human Reproduction & Fertility Coaching",
+      specialty: "Assisted Human Reproduction & Fertility Coaching",
       brief: "Medical Surgeon (Anáhuac University). Medical Area Coordinator at CFA ABC Medical Center and Certified Fertility Coach guiding patients throughout their entire journey.",
       fullBio: [
         "Medical Surgeon graduate from the Faculty of Health Sciences at Universidad Anáhuac México Norte.",
@@ -195,41 +196,51 @@ export const DOCTORS: Doctor[] = [
     name: "Dr. Fernando Galván Duque Rivero",
     imageSrc: "/imagenes/doctores/doctorfernando.webp",
     es: {
-      role: "Especialista en Cirugía Reproductiva",
-      specialty: "Ginecología, Laparoscopia y Cirugía Reproductiva",
-      brief: "Experto en microcirugía endoscópica, histeroscopía de alta resolución y optimización de cavidad uterina y lecho endometrial en el Centro Médico ABC.",
+      role: "Especialista en Cirugía Reproductiva & Medicina Materno Fetal",
+      specialty: "Ginecología y Obstetricia, Laparoscopía y Medicina Materno Fetal",
+      brief: "Subespecialista en Medicina Materno Fetal por el Instituto Nacional de Perinatología y Máster en Reproducción Asistida y Genética por la Universidad Reina Sofía.",
       fullBio: [
-        "Especialista con amplia trayectoria en cirugía laparoscópica e histeroscópica diagnóstica y operatoria en quirófanos de alta tecnología del Centro Médico ABC.",
-        "Enfocado en la resolución de miomas uterinos, endometriosis profunda, pólipos endometriales y adherencias pélvicas para optimizar el lecho de implantación embrionaria.",
-        "Miembro distinguido del cuerpo médico de la Clínica de Fertilización Asistida en Santa Fe."
+        "Especialista con amplia experiencia en cirugía laparoscópica e histeroscópica, tanto diagnóstica como operatoria, realizada en quirófanos de alta tecnología del Centro Médico ABC.",
+        "Práctica enfocada en el diagnóstico y tratamiento quirúrgico de patologías ginecológicas como miomas uterinos, endometriosis profunda, pólipos endometriales y adherencias pélvicas, con especial atención a la preservación y optimización de la anatomía pélvica y las condiciones uterinas relacionadas con la fertilidad y la implantación embrionaria.",
+        "Forma parte del distinguido cuerpo médico del Centro Médico ABC y de la Clínica de Fertilización Asistida en Santa Fe.",
+        "Cuenta con 13 años de experiencia en Medicina Materno-Fetal, con especial dedicación al manejo y seguimiento de embarazos de alto riesgo."
       ],
       education: [
         "Médico Cirujano Especialista en Ginecología y Obstetricia",
-        "Entrenamiento Quirúrgico Avanzado en Laparoscopia e Histeroscopía Pélvica",
-        "Certificación vigente por el Consejo Mexicano de Ginecología y Obstetricia"
+        "Entrenamiento Quirúrgico Avanzado en Laparoscopía e Histeroscopía Pélvica",
+        "Certificado vigente por el Consejo Mexicano de Ginecología y Obstetricia",
+        "Subespecialidad en Medicina Materno Fetal por el Instituto Nacional de Perinatología",
+        "Master en Reproducción Asistida y Genética por la Universidad Reina Sofia"
       ],
       achievements: [
-        "Especialista en cirugía reproductiva mínimamente invasiva",
-        "Cirujano acreditado en suites quirúrgicas del Centro Médico ABC"
+        "13 Años de Experiencia en Medicina Materno-Fetal",
+        "Subespecialista en Medicina Materno Fetal (INPer)",
+        "Master en Reproducción Asistida y Genética (Universidad Reina Sofia)",
+        "Cirujano Acreditado en Quirófanos de Alta Tecnología del Centro Médico ABC"
       ]
     },
     en: {
-      role: "Reproductive Surgery Specialist",
-      specialty: "Gynecology, Laparoscopy & Reproductive Surgery",
-      brief: "Expert in endoscopic microsurgery, high-definition hysteroscopy, and uterine cavity optimization at ABC Medical Center.",
+      role: "Reproductive Surgery & Maternal-Fetal Medicine Specialist",
+      specialty: "Gynecology & Obstetrics, Laparoscopy & Maternal-Fetal Medicine",
+      brief: "Subspecialist in Maternal-Fetal Medicine (INPer) and Master in Assisted Reproduction & Genetics (Universidad Reina Sofía).",
       fullBio: [
-        "Specialist with extensive surgical mastery in diagnostic and operative hysteroscopy and laparoscopy at ABC Medical Center.",
-        "Dedicated to the surgical treatment of uterine fibroids, severe endometriosis, polyps, and pelvic adhesions to maximize implantation rates.",
-        "Key member of the surgical and clinical reproductive faculty at ABC Santa Fe.",
+        "Specialist with extensive experience in diagnostic and operative laparoscopic and hysteroscopic surgery, performed in high-technology surgical suites at ABC Medical Center.",
+        "Practice focused on the diagnosis and surgical treatment of gynecological conditions such as uterine fibroids, deep endometriosis, endometrial polyps, and pelvic adhesions, with special attention to preserving and optimizing pelvic anatomy and uterine conditions related to fertility and embryo implantation.",
+        "Forma parte del distinguido cuerpo médico del Centro Médico ABC y de la Clínica de Fertilización Asistida en Santa Fe.",
+        "Brings 13 years of specialized experience in Maternal-Fetal Medicine, with dedicated focus on high-risk pregnancy management and specialized prenatal care."
       ],
       education: [
         "Medical Doctor with Specialty in Obstetrics & Gynecology",
-        "Advanced Fellowship in Pelvic Endoscopy & Minimally Invasive Surgery",
-        "Board Certified Reproductive Surgeon"
+        "Advanced Surgical Training in Pelvic Laparoscopy & Hysteroscopy",
+        "Board Certified by the Mexican Council of Gynecology & Obstetrics",
+        "Subspecialty in Maternal-Fetal Medicine - National Institute of Perinatology (INPer)",
+        "Master's Degree in Assisted Reproduction & Genetics - Universidad Reina Sofía"
       ],
       achievements: [
-        "Specialist in minimally invasive reproductive surgery",
-        "Accredited surgeon at ABC Medical Center surgical suites"
+        "13 Years of Clinical Leadership in Maternal-Fetal Medicine",
+        "Subspecialist in Maternal-Fetal Medicine (INPer)",
+        "Master in Assisted Reproduction & Genetics (Universidad Reina Sofía)",
+        "Accredited Surgeon in High-Tech Surgical Suites at ABC Medical Center"
       ]
     }
   },
@@ -400,7 +411,8 @@ export const SPECIALIST_GROUPS: SpecialistGroup[] = [
     members: [
       { name: "Biol. Paola Guerrero Jiménez", title: { es: "Embrióloga Clínica", en: "Clinical Embryologist" } },
       { name: "Biol. Claudia Cipactli Ortega Rodríguez", title: { es: "Embrióloga Clínica", en: "Clinical Embryologist" } },
-      { name: "Biol. María Fernanda Nieto Martínez", title: { es: "Embrióloga Clínica", en: "Clinical Embryologist" } }
+      { name: "Biol. María Fernanda Nieto Martínez", title: { es: "Embrióloga Clínica", en: "Clinical Embryologist" } },
+      { name: "Biol. Safiro Citlali Rodríguez Ruiz", title: { es: "Embrióloga Clínica", en: "Clinical Embryologist" } }
     ]
   },
   {
@@ -411,8 +423,8 @@ export const SPECIALIST_GROUPS: SpecialistGroup[] = [
       en: "Semen processing, gradient sperm capacitation, and quantitative hormonal analysis."
     },
     members: [
-      { name: "Biol. Gabriela Colín Osorio", title: { es: "Especialista en Andrología", en: "Andrology Specialist" } },
-      { name: "Biol. Safiro Citlali Rodríguez Ruiz", title: { es: "Especialista en Andrología", en: "Andrology Specialist" } }
+      { name: "Vanessa Guadalupe Solís Vidal", title: { es: "Bióloga Especialista en Andrología y Hormonas", en: "Biologist Specialist in Andrology & Hormones" } },
+      { name: "Gabriela Colín", title: { es: "Técnico Laboratorista Clínico", en: "Clinical Laboratory Technician" } }
     ]
   },
   {
@@ -451,7 +463,9 @@ export const SPECIALIST_GROUPS: SpecialistGroup[] = [
       { name: "Enf. Judith Reyes Reyes", title: { es: "Enfermera Especialista", en: "Specialist Nurse" } },
       { name: "Enf. Brenda García Hernández", title: { es: "Enfermera Especialista", en: "Specialist Nurse" } },
       { name: "Enf. Julia Alessandra Enríquez Izquierdo", title: { es: "Enfermera Especialista", en: "Specialist Nurse" } },
-      { name: "Enf. Miriam Margarita Montenegro Colín", title: { es: "Enfermera Especialista", en: "Specialist Nurse" } }
+      { name: "Enf. Miriam Margarita Montenegro Colín", title: { es: "Enfermera Especialista", en: "Specialist Nurse" } },
+      { name: "Enf. Valeria Díaz Cid del Prado", title: { es: "Enfermera Especialista", en: "Specialist Nurse" } },
+      { name: "Enf. Diana Karen Villada Garcieras", title: { es: "Enfermera Especialista", en: "Specialist Nurse" } }
     ]
   },
   {
@@ -462,6 +476,7 @@ export const SPECIALIST_GROUPS: SpecialistGroup[] = [
       en: "Administrative management, patient reception, and appointment coordination."
     },
     members: [
+      { name: "Nancy Hernández Ramírez", title: { es: "Recepción y Atención a Pacientes", en: "Patient Reception & Administration" } },
       { name: "Sylvia Osorno", title: { es: "Administración y Recepción", en: "Administration & Reception" } }
     ]
   }

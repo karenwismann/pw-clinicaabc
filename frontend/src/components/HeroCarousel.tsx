@@ -100,17 +100,14 @@ export const HeroCarousel: React.FC = () => {
                 }`}
               />
 
-              {/* Refined Photographic Overlays: Deep left protection for text readability, clear right to let the photo shine vividly */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cfa-navy/90 via-cfa-navy/60 to-transparent sm:via-cfa-navy/40" />
-              <div className="absolute inset-0 bg-gradient-to-t from-cfa-navy/80 via-transparent to-cfa-navy/30" />
             </div>
 
             {/* Content Container */}
             <div className="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
-                {/* Left Text Card: Solid, non-translucent corporate navy card */}
-                <div className="lg:col-span-8 max-w-2xl text-white space-y-5 bg-[#0B2559] p-6 sm:p-10 rounded-3xl border border-[#69B3E7]/40 shadow-2xl animate-fadeIn">
+                {/* Left Text Card: Solid corporate navy card */}
+                <div className="lg:col-span-8 max-w-2xl text-white space-y-5 bg-[#0B2559] p-6 sm:p-10 rounded-3xl border-2 border-[#69B3E7]/60 shadow-2xl animate-fadeIn">
                   
                   {/* Badge */}
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#004C97] border border-[#69B3E7]/60 text-xs font-bold text-white shadow-sm font-title">
@@ -151,21 +148,21 @@ export const HeroCarousel: React.FC = () => {
 
                 {/* Right Floating Highlight Card over image (Desktop) */}
                 <div className="hidden lg:flex lg:col-span-4 justify-end">
-                  <div className="bg-white/90 backdrop-blur-xl p-5 rounded-2xl border border-white/60 shadow-2xl max-w-xs space-y-2 text-cfa-navy animate-fadeIn">
+                  <div className="bg-white p-5 rounded-2xl border-2 border-[#69B3E7] shadow-2xl max-w-xs space-y-2 text-[#0B2559] animate-fadeIn">
                     <div className="flex items-center gap-2">
-                      <span className="w-8 h-8 rounded-lg bg-cfa-cyan text-white flex items-center justify-center font-bold">
-                        <Award className="w-4 h-4" />
+                      <span className="w-8 h-8 rounded-lg bg-[#004C97] text-white flex items-center justify-center font-bold">
+                        <Award className="w-4 h-4 text-[#69B3E7]" />
                       </span>
                       <div>
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-cfa-cyan block font-title">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#004C97] block font-title">
                           Centro de Excelencia
                         </span>
-                        <h4 className="font-title font-bold text-xs leading-tight text-cfa-navy">
+                        <h4 className="font-title font-bold text-xs leading-tight text-[#0B2559]">
                           {slide.floatingTag}
                         </h4>
                       </div>
                     </div>
-                    <p className="text-[11px] text-cfa-navy/80 font-sans border-t border-cfa-softBlue pt-2">
+                    <p className="text-[11px] text-[#0B2559]/80 font-sans border-t border-[#69B3E7]/30 pt-2 font-medium">
                       {slide.floatingSub}
                     </p>
                   </div>
@@ -180,7 +177,7 @@ export const HeroCarousel: React.FC = () => {
       {/* Navigation Arrows */}
       <button
         onClick={handlePrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/40 text-white flex items-center justify-center transition-all border border-white/30 cursor-pointer shadow-lg"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white hover:bg-[#004C97] text-[#0B2559] hover:text-white flex items-center justify-center transition-all border-2 border-[#69B3E7] cursor-pointer shadow-xl"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-6 h-6" />
@@ -188,14 +185,14 @@ export const HeroCarousel: React.FC = () => {
 
       <button
         onClick={handleNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/40 text-white flex items-center justify-center transition-all border border-white/30 cursor-pointer shadow-lg"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white hover:bg-[#004C97] text-[#0B2559] hover:text-white flex items-center justify-center transition-all border-2 border-[#69B3E7] cursor-pointer shadow-xl"
         aria-label="Next slide"
       >
         <ChevronRight className="w-6 h-6" />
       </button>
 
       {/* Bottom Thumbnail Indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3 bg-cfa-navy/60 backdrop-blur-md p-2 rounded-2xl border border-white/20 shadow-xl">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3 bg-[#0B2559] p-2 rounded-2xl border-2 border-[#69B3E7] shadow-xl">
         {slides.map((s, idx) => (
           <button
             key={s.id}
@@ -205,11 +202,11 @@ export const HeroCarousel: React.FC = () => {
             }}
             className={`group relative flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
               idx === currentSlide
-                ? 'bg-white text-cfa-navy shadow-md font-bold'
-                : 'text-white/80 hover:text-white hover:bg-white/10 text-xs'
+                ? 'bg-white text-[#0B2559] shadow-md font-bold'
+                : 'text-white/90 hover:text-white hover:bg-[#004C97] text-xs'
             }`}
           >
-            <span className={`w-2 h-2 rounded-full ${idx === currentSlide ? 'bg-cfa-cyan' : 'bg-white/40'}`} />
+            <span className={`w-2 h-2 rounded-full ${idx === currentSlide ? 'bg-[#004C97]' : 'bg-white/60'}`} />
             <span className="text-xs font-title hidden sm:inline">0{idx + 1}</span>
           </button>
         ))}

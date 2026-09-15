@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, Brain, Cpu, Dna, Activity, ChevronRight, X, Calendar, CheckCircle2, ShieldCheck } from 'lucide-react';
+import Image from 'next/image';
+import { Sparkles, Brain, Cpu, Dna, Activity, ChevronRight, X, Calendar, CheckCircle2, ShieldCheck, Play, Film } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 import CyberneticIntegrationDiagram from '@/components/CyberneticIntegrationDiagram';
@@ -39,8 +40,8 @@ export default function InnovacionPage() {
     {
       title: "GENÉTICA MOLECULAR",
       desc: language === 'es'
-        ? "Integración cibernética de Secuenciación de Nueva Generación (NGS) con correlación morfocinética para embriones cromosómicamente euploides."
-        : "Cybernetic integration of Next Generation Sequencing (NGS) with morphokinetic correlation for euploid embryos.",
+        ? "Integración cibernética de técnicas de secuenciación moleculares en correlación morfocinética."
+        : "Cybernetic integration of molecular sequencing techniques with morphokinetic correlation.",
       icon: Dna,
       status: language === 'es' ? "Avanzado" : "Advanced"
     }
@@ -70,74 +71,132 @@ export default function InnovacionPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* 1. NOTICIA DESTACADA: PIONEROS EN MÉXICO (TIMELAPSE) */}
-        <div id="timelapse" className="bg-white rounded-3xl p-8 sm:p-12 border border-cfa-softBlue shadow-soft space-y-6 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-cfa-softBlue/30 rounded-full blur-3xl pointer-events-none" />
+        <div id="timelapse" className="bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-slate-200 shadow-md space-y-8 relative">
           
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-cfa-softBlue pb-4">
-            <div className="flex items-center gap-3">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cfa-softBlue to-cfa-light text-cfa-navy flex items-center justify-center font-bold shadow-sm">
-                <Activity className="w-7 h-7 text-cfa-cyan" />
+          {/* Encabezado */}
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-5">
+            <div className="flex items-center gap-3.5">
+              <div className="w-12 h-12 rounded-xl bg-[#0B2559] text-white flex items-center justify-center font-bold shadow-sm">
+                <Activity className="w-6 h-6 text-white" />
               </div>
               <div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cfa-navy text-cfa-light text-xs font-bold uppercase tracking-wider font-title">
-                  <Sparkles className="w-3 h-3 text-cfa-light" />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0B2559] text-white text-xs font-bold uppercase tracking-wider font-title">
+                  <Sparkles className="w-3 h-3 text-white" />
                   {language === 'es' ? 'Noticia Destacada • Pioneros en México' : 'Featured News • Pioneers in Mexico'}
                 </span>
-                <h2 className="font-title text-2xl sm:text-3xl font-extrabold text-cfa-navy mt-1">
+                <h2 className="font-title text-2xl sm:text-3xl font-extrabold text-[#0B2559] mt-1">
                   {language === 'es' ? 'Incubadora Timelapse en el Laboratorio FIV' : 'Timelapse Incubator in IVF Laboratory'}
                 </h2>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-cfa-grayLight border border-cfa-softBlue">
-              <ShieldCheck className="w-4 h-4 text-cfa-cyan" />
-              <span className="text-xs font-bold text-cfa-navy font-title">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border-2 border-[#0B2559]">
+              <ShieldCheck className="w-4 h-4 text-[#0B2559]" />
+              <span className="text-xs font-bold text-[#0B2559] font-title">
                 {language === 'es' ? 'Exclusividad Clínica ABC' : 'ABC Exclusive Technology'}
               </span>
             </div>
           </div>
 
-          <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-cfa-softBlue/60 via-cfa-iceBlue/40 to-white border border-cfa-softBlue">
-            <p className="text-base sm:text-lg text-cfa-navy font-bold leading-relaxed font-title">
+          {/* Cita Destacada - Fondo azul sólido y texto blanco */}
+          <div className="p-6 rounded-2xl bg-[#0B2559] text-white shadow-md">
+            <p className="text-base sm:text-lg text-white font-medium leading-relaxed font-title">
               {language === 'es'
-                ? '✨ Estamos emocionados por compartirles que somos la primera y única clínica en México que cuenta con una incubadora de timelapse. Es una tecnología de vanguardia que permite monitorear el desarrollo embrionario de manera continua y detallada en los laboratorios de fertilización in vitro (FIV).'
-                : '✨ We are thrilled to share that we are the first and only clinic in Mexico equipped with a timelapse incubator, providing continuous, non-invasive morphokinetic tracking in assisted reproduction.'}
+                ? 'Estamos emocionados por compartirles que somos la primera y única clínica en México que cuenta con una incubadora de timelapse. Es una tecnología de vanguardia que permite monitorear el desarrollo embrionario de manera continua y detallada en los laboratorios de fertilización in vitro (FIV).'
+                : 'We are thrilled to share that we are the first and only clinic in Mexico equipped with a timelapse incubator. This cutting-edge technology allows continuous and detailed monitoring of embryonic development in in vitro fertilization (IVF) laboratories.'}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            <div className="lg:col-span-8 space-y-4 text-xs sm:text-sm text-cfa-grayDark leading-relaxed font-sans">
-              <p>
-                {language === 'es'
-                  ? 'Una incubadora timelapse es una tecnología de vanguardia utilizada en los laboratorios de fertilización in vitro (FIV) para monitorear el desarrollo embrionario con precisión y detalle. A diferencia de las incubadoras tradicionales, que requieren la extracción intermitente de embriones para su observación, una incubadora de Timelapse captura imágenes continuas de los embriones a medida que crecen y se desarrollan.'
-                  : 'A timelapse incubator is a cutting-edge technology used in IVF laboratories to monitor embryo development with utmost accuracy. Unlike traditional incubators requiring intermittent manual dish removal, Timelapse captures continuous high-definition images as embryos develop.'}
-              </p>
-              <p>
-                {language === 'es'
-                  ? 'Al registrar este proceso de desarrollo, los embriólogos pueden analizar varios parámetros, como las tasas de división celular, la morfología del embrión y los tiempos de las etapas cruciales del desarrollo. Esta gran cantidad de datos les permite seleccionar los mejores embriones para la transferencia, lo que potencialmente aumenta las posibilidades de un embarazo exitoso y minimiza el riesgo de embarazos múltiples.'
-                  : 'By capturing this developmental journey, senior embryologists evaluate critical morphokinetic milestones (cell division rates, synchronicity, blastulation dynamics). This comprehensive dataset enables optimal embryo selection, maximizing pregnancy rates while reducing multiple pregnancy risks.'}
-              </p>
+          {/* DEMOSTRACIÓN VISUAL: VIDEO DE VIDA & FOTOGRAFÍA TIMELAPSE */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            
+            {/* Columna Izquierda / Video: Demostración en Video del Desarrollo Celular (VIDA) */}
+            <div className="lg:col-span-7 bg-[#0B2559] rounded-2xl p-5 sm:p-6 text-white flex flex-col justify-between shadow-lg border border-[#004C97]">
+              <div className="flex items-center justify-between flex-wrap gap-2 mb-3.5">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#0B2559] text-xs font-bold font-title">
+                  <Film className="w-3.5 h-3.5 text-[#0B2559]" />
+                  {language === 'es' ? 'Demostración en Video' : 'Video Demonstration'}
+                </span>
+                <span className="text-[11px] font-mono text-white bg-white/20 px-2.5 py-0.5 rounded-full">
+                  HD
+                </span>
+              </div>
+
+              {/* Video Player */}
+              <div className="relative rounded-xl overflow-hidden bg-black border border-white/10 shadow-inner aspect-video">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/imagenes/instalaciones/timelapse_morphokinetics.jpg"
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/videos/vida.mp4" type="video/mp4" />
+                  <source src="/videos/vida.mov" type="video/quicktime" />
+                  {language === 'es'
+                    ? 'Tu navegador no soporta reproducción de video HTML5.'
+                    : 'Your browser does not support HTML5 video playback.'}
+                </video>
+              </div>
+
+              <div className="mt-3.5 pt-2.5 border-t border-white/15 flex items-center justify-between text-[11px] text-white/90 font-sans">
+                <span className="flex items-center gap-1.5">
+                  <Activity className="w-3.5 h-3.5 text-white" />
+                  {language === 'es' ? 'Monitoreo de desarrollo embrionario' : 'Embryonic development monitoring'}
+                </span>
+                <span className="font-semibold text-white">CFA • Centro Médico ABC</span>
+              </div>
             </div>
 
-            <div className="lg:col-span-4 bg-cfa-grayLight p-5 rounded-2xl border border-cfa-softBlue space-y-3">
-              <h4 className="font-title text-sm font-bold text-cfa-navy">
-                {language === 'es' ? 'Beneficios Clínicos Timelapse' : 'Timelapse Clinical Benefits'}
-              </h4>
-              <ul className="space-y-2 text-xs text-cfa-grayDark font-sans">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cfa-cyan shrink-0 mt-0.5" />
-                  <span>{language === 'es' ? 'Cero perturbación del microambiente' : 'Zero microenvironment disturbance'}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cfa-cyan shrink-0 mt-0.5" />
-                  <span>{language === 'es' ? 'Monitoreo morfocinético 24/7' : 'Continuous 24/7 morphokinetics'}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cfa-cyan shrink-0 mt-0.5" />
-                  <span>{language === 'es' ? 'Mayor probabilidad de implantación' : 'Higher implantation probability'}</span>
-                </li>
-              </ul>
+            {/* Columna Derecha / Foto: Incubadora Timelapse MIRI TL12 en Laboratorio */}
+            <div className="lg:col-span-5 bg-white rounded-2xl p-5 sm:p-6 border-2 border-[#0B2559] flex flex-col justify-between shadow-sm">
+              <div className="flex items-center justify-between flex-wrap gap-2 mb-3.5">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0B2559] text-white text-xs font-bold font-title">
+                  <Sparkles className="w-3.5 h-3.5 text-white" />
+                  {language === 'es' ? 'Incubadora Timelapse' : 'Timelapse Incubator'}
+                </span>
+                <span className="text-[11px] font-bold text-white bg-[#0B2559] px-2.5 py-0.5 rounded-full font-title">
+                  MIRI® TL12
+                </span>
+              </div>
+
+              {/* Imagen en Alta Definición */}
+              <div className="relative rounded-xl overflow-hidden border border-slate-200 shadow-sm aspect-video group">
+                <Image
+                  src="/imagenes/instalaciones/timelapse_miri_tl12.jpg"
+                  alt="Incubadora Timelapse en Laboratorio FIV CFA Centro Médico ABC"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              <div className="mt-3.5 pt-2.5 border-t border-slate-200 flex items-center justify-between text-[11px] text-[#0B2559] font-title">
+                <span className="flex items-center gap-1.5 font-bold">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#0B2559]" />
+                  {language === 'es' ? 'Laboratorio de Reproducción Asistida' : 'Assisted Reproduction Laboratory'}
+                </span>
+              </div>
             </div>
+
+          </div>
+
+          {/* Texto Exacto de la Sección Timelapse según Word */}
+          <div className="space-y-4 text-sm sm:text-base text-[#1A2E40] leading-relaxed font-sans pt-4 border-t border-slate-200">
+            <p>
+              {language === 'es'
+                ? 'Una incubadora timelapse es una tecnología de vanguardia utilizada en los laboratorios de fertilización in vitro (FIV) para monitorear el desarrollo embrionario con precisión y detalle. A diferencia de las incubadoras tradicionales, que requieren la extracción intermitente de embriones para su observación, una incubadora de Timelapse captura imágenes continuas de los embriones a medida que crecen y se desarrollan.'
+                : 'A timelapse incubator is a cutting-edge technology used in in vitro fertilization (IVF) laboratories to monitor embryonic development with precision and detail. Unlike traditional incubators, which require intermittent removal of embryos for observation, a Timelapse incubator captures continuous images of embryos as they grow and develop.'}
+            </p>
+            <p>
+              {language === 'es'
+                ? 'Al registrar este proceso de desarrollo, los embriólogos pueden analizar varios parámetros, como las tasas de división celular, la morfología del embrión y los tiempos de las etapas cruciales del desarrollo. Esta gran cantidad de datos les permite seleccionar los mejores embriones para la transferencia, lo que potencialmente aumenta las posibilidades de un embarazo exitoso y minimiza el riesgo de embarazos múltiples.'
+                : 'By recording this developmental process, embryologists can analyze various parameters, such as cell division rates, embryo morphology, and timings of crucial developmental stages. This wealth of data allows them to select the best embryos for transfer, potentially increasing the chances of a successful pregnancy and minimizing the risk of multiple pregnancies.'}
+            </p>
+            <p>
+              {language === 'es'
+                ? 'En esencia, una incubadora timelapse revoluciona el proceso de selección de embriones en la FIV, ofreciendo mayor conocimiento y control a los especialistas en fertilidad y, en última instancia, mejorando la eficiencia y los resultados de los procedimientos de reproducción asistida.'
+                : 'In essence, a timelapse incubator revolutionizes the embryo selection process in IVF, offering greater knowledge and control to fertility specialists and, ultimately, improving the efficiency and outcomes of assisted reproduction procedures.'}
+            </p>
           </div>
         </div>
 

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BookOpen, Youtube, Sparkles, ExternalLink, Play, Clock, Tag, ArrowRight, Share2, Search, Filter } from 'lucide-react';
+import { BookOpen, Youtube, Sparkles, ExternalLink, Play, Clock, Tag, ArrowRight, Share2, Search, Filter, Linkedin, Globe, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function DivulgacionCientificaPage() {
@@ -170,8 +170,8 @@ export default function DivulgacionCientificaPage() {
 
               <p className="text-xs sm:text-sm text-blue-50 leading-relaxed">
                 {language === 'es'
-                  ? 'Explicaciones médicas claras, casos clínicos de éxito y testimonios reales presentados por el equipo médico del Centro Médico ABC Santa Fe.'
-                  : 'Clear medical explanations, clinical success stories, and patient testimonies from ABC Medical Center specialists.'}
+                  ? 'Explicaciones médicas claras y casos clínicos presentados por el equipo médico del Centro Médico ABC Santa Fe.'
+                  : 'Clear medical explanations and clinical insights from ABC Medical Center specialists.'}
               </p>
 
               <div className="space-y-3 pt-2">
@@ -195,94 +195,221 @@ export default function DivulgacionCientificaPage() {
                   <span>{language === 'es' ? 'Visitar Canal Completo @infertilidadabc' : 'Visit Full Channel @infertilidadabc'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
+
+                <a
+                  href="https://www.linkedin.com/company/cl%C3%ADnica-de-fertilizaci%C3%B3n-asistida/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-2xl bg-[#004C97]/80 hover:bg-[#004C97] border border-[#69B3E7]/40 text-white font-semibold text-xs transition-all font-title shadow-sm"
+                >
+                  <Linkedin className="w-4 h-4 text-white" />
+                  <span>{language === 'es' ? 'Seguir en LinkedIn CFA' : 'Follow on LinkedIn CFA'}</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECCIÓN DE ARTÍCULOS MÉDICOS */}
+      {/* SECCIÓN DE ARTÍCULOS MÉDICOS (PENDIENTE) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-cfa-softBlue pb-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#69B3E7]/40 pb-4">
           <div>
-            <span className="text-xs font-bold text-cfa-cyan uppercase tracking-wider font-title">
-              {language === 'es' ? 'Biblioteca Médica' : 'Medical Library'}
-            </span>
-            <h3 className="font-title text-2xl sm:text-3xl font-bold text-cfa-navy mt-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-700 text-xs font-bold uppercase tracking-wider font-title mb-2">
+              <span>- Pendiente -</span>
+            </div>
+            <h3 className="font-title text-2xl sm:text-3xl font-bold text-[#0B2559]">
               {language === 'es' ? 'Artículos y Novedades Científicas' : 'Articles & Scientific Updates'}
             </h3>
           </div>
-
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all font-title cursor-pointer ${
-                  selectedCategory === cat.id
-                    ? 'bg-cfa-cyan text-white shadow-sm'
-                    : 'bg-white border border-cfa-softBlue text-cfa-navy hover:bg-cfa-iceBlue'
-                }`}
-              >
-                {language === 'es' ? cat.es : cat.en}
-              </button>
-            ))}
-          </div>
+          <span className="text-xs font-semibold text-[#004C97] font-sans">
+            {language === 'es' ? 'Próxima publicación de artículos científicos' : 'Scientific articles coming soon'}
+          </span>
         </div>
 
-        {/* Grid of Articles */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPosts.map((post) => (
-            <div
-              key={post.id}
-              className="bg-white rounded-3xl overflow-hidden border border-cfa-softBlue shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group"
+        {/* Elegant Placeholder Card with - Pendiente - state */}
+        <div className="bg-white rounded-3xl p-8 sm:p-12 border-2 border-dashed border-[#69B3E7] shadow-soft text-center space-y-5">
+          <div className="w-16 h-16 rounded-2xl bg-[#004C97]/10 text-[#004C97] flex items-center justify-center mx-auto border border-[#69B3E7]/40">
+            <BookOpen className="w-8 h-8 text-[#004C97]" />
+          </div>
+          
+          <div className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-black uppercase tracking-widest font-title">
+            - Pendiente de Publicación -
+          </div>
+
+          <h4 className="font-title text-xl sm:text-2xl font-bold text-[#0B2559] max-w-xl mx-auto">
+            {language === 'es'
+              ? 'Nuestra biblioteca de artículos médicos y divulgación científica se encuentra en revisión'
+              : 'Our scientific article library and medical publications are currently under review'}
+          </h4>
+
+          <p className="text-xs sm:text-sm text-[#0B2559]/75 max-w-2xl mx-auto font-sans leading-relaxed">
+            {language === 'es'
+              ? 'El equipo médico de la Clínica de Fertilización Asistida en el Centro Médico ABC está preparando material científico de vanguardia sobre fertilización in vitro, genética embrionaria y avances tecnológicos.'
+              : 'The medical faculty at the Assisted Fertilization Clinic at ABC Medical Center is preparing cutting-edge scientific material on IVF, embryo genetics, and reproductive tech.'}
+          </p>
+
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="https://www.youtube.com/watch?v=GCagLjVF8U4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all font-title"
             >
-              <div>
-                <div className="relative w-full h-48 bg-cfa-iceBlue overflow-hidden">
-                  <Image
-                    src={post.imageSrc}
-                    alt={post.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-cfa-navy/70 via-transparent to-transparent opacity-50" />
-                  <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/95 text-cfa-navy shadow-xs font-title">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
+              <Youtube className="w-4 h-4" />
+              <span>{language === 'es' ? 'Ver Podcast Oficial en YouTube' : 'Watch Official YouTube Podcast'}</span>
+            </a>
+            <Link
+              href="/#agendar-cita"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white border-2 border-[#004C97] text-[#004C97] hover:bg-[#004C97] hover:text-white font-bold text-xs sm:text-sm shadow-soft transition-all font-title"
+            >
+              <span>{language === 'es' ? 'Agendar Consulta Médica' : 'Book Medical Consultation'}</span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-                <div className="p-6 space-y-3 font-sans">
-                  <div className="flex items-center gap-2 text-xs text-cfa-grayText">
-                    <Clock className="w-3.5 h-3.5 text-cfa-cyan" />
-                    <span>{post.readTime}</span>
-                    <span>•</span>
-                    <span>{post.date}</span>
-                  </div>
-
-                  <h4 className="font-title text-base font-bold text-cfa-navy leading-snug group-hover:text-cfa-cyan transition-colors">
-                    {post.title}
-                  </h4>
-
-                  <p className="text-xs text-cfa-grayDark leading-relaxed line-clamp-3">
-                    {post.snippet}
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-6 pt-0 border-t border-cfa-grayBorder/60 mt-4 flex items-center justify-between text-xs font-title">
-                <span className="text-cfa-grayText text-[11px] truncate max-w-[160px]">
-                  {post.author}
-                </span>
-                <span className="text-cfa-cyan font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-                  <span>{language === 'es' ? 'Leer más' : 'Read more'}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-              </div>
+      {/* SECCIÓN DE LINKS ÚTILES & SOCIEDADES CIENTÍFICAS */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#69B3E7]/40 pb-4">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#004C97]/15 border border-[#69B3E7]/40 text-[#004C97] text-xs font-bold uppercase tracking-wider font-title mb-2">
+              <Globe className="w-3.5 h-3.5 text-[#004C97]" />
+              <span>{language === 'es' ? 'Recursos & Referencias Globales' : 'Global Resources & Standards'}</span>
             </div>
-          ))}
+            <h3 className="font-title text-2xl sm:text-3xl font-bold text-[#0B2559]">
+              {language === 'es' ? 'Links Útiles & Sociedades Científicas Internacionales' : 'Useful Links & International Scientific Societies'}
+            </h3>
+          </div>
+          <span className="text-xs font-semibold text-[#004C97] font-sans">
+            {language === 'es' ? 'Organismos Rectores en Medicina Reproductiva' : 'Governing Bodies in Reproductive Medicine'}
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* 1. ASRM */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#69B3E7]/40 shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="px-3 py-1 rounded-full bg-[#004C97] text-white text-xs font-black font-title tracking-wider">
+                  ASRM
+                </span>
+                <span className="text-[11px] font-semibold text-[#004C97] bg-[#F0F7FD] px-2.5 py-1 rounded-lg">
+                  EE. UU. / Global
+                </span>
+              </div>
+
+              <div>
+                <h4 className="font-title text-lg font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
+                  American Society for Reproductive Medicine
+                </h4>
+                <p className="text-xs font-semibold text-[#004C97] font-title mt-1">
+                  {language === 'es' ? 'Sociedad Americana de Medicina Reproductiva' : 'American Society for Reproductive Medicine'}
+                </p>
+              </div>
+
+              <p className="text-xs sm:text-sm text-[#0B2559]/75 font-sans leading-relaxed">
+                {language === 'es'
+                  ? 'Organización multidisciplinaria líder a nivel mundial dedicada al avance de la ciencia y la práctica de la medicina reproductiva, educación a pacientes y emisión de guías éticas y clínicas.'
+                  : 'Leading global multidisciplinary organization dedicated to advancing the science and practice of reproductive medicine, patient education, and clinical practice guidelines.'}
+              </p>
+            </div>
+
+            <div className="pt-6 mt-auto">
+              <a
+                href="https://www.asrm.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-xl bg-[#004C97] hover:bg-[#0B2559] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 font-title shadow-md shadow-[#004C97]/20 cursor-pointer"
+              >
+                <span>{language === 'es' ? 'Visitar asrm.org' : 'Visit asrm.org'}</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+            </div>
+          </div>
+
+          {/* 2. SART */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#69B3E7]/40 shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="px-3 py-1 rounded-full bg-[#0B2559] text-white text-xs font-black font-title tracking-wider">
+                  SART
+                </span>
+                <span className="text-[11px] font-semibold text-[#004C97] bg-[#F0F7FD] px-2.5 py-1 rounded-lg">
+                  Calidad & Reportes FIV
+                </span>
+              </div>
+
+              <div>
+                <h4 className="font-title text-lg font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
+                  Society for Assisted Reproductive Technology
+                </h4>
+                <p className="text-xs font-semibold text-[#004C97] font-title mt-1">
+                  {language === 'es' ? 'Sociedad de Tecnología de Reproducción Asistida' : 'Society for Assisted Reproductive Technology'}
+                </p>
+              </div>
+
+              <p className="text-xs sm:text-sm text-[#0B2559]/75 font-sans leading-relaxed">
+                {language === 'es'
+                  ? 'La principal organización de profesionales de reproducción asistida en Estados Unidos. Establece los estándares de calidad, seguridad de laboratorio y reportes transparentes de tasas de éxito en FIV.'
+                  : 'The primary organization of assisted reproductive technology professionals in the US. Sets rigorous laboratory quality standards and transparent IVF success rate reporting.'}
+              </p>
+            </div>
+
+            <div className="pt-6 mt-auto">
+              <a
+                href="https://www.sart.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-xl bg-[#004C97] hover:bg-[#0B2559] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 font-title shadow-md shadow-[#004C97]/20 cursor-pointer"
+              >
+                <span>{language === 'es' ? 'Visitar sart.org' : 'Visit sart.org'}</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+            </div>
+          </div>
+
+          {/* 3. ESHRE */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#69B3E7]/40 shadow-soft hover:shadow-elevated transition-all flex flex-col justify-between group">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="px-3 py-1 rounded-full bg-[#004C97] text-white text-xs font-black font-title tracking-wider">
+                  ESHRE
+                </span>
+                <span className="text-[11px] font-semibold text-[#004C97] bg-[#F0F7FD] px-2.5 py-1 rounded-lg">
+                  Europa / Internacional
+                </span>
+              </div>
+
+              <div>
+                <h4 className="font-title text-lg font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
+                  European Society of Human Reproduction and Embryology
+                </h4>
+                <p className="text-xs font-semibold text-[#004C97] font-title mt-1">
+                  {language === 'es' ? 'Sociedad Europea de Reproducción Humana y Embriología' : 'European Society of Human Reproduction & Embryology'}
+                </p>
+              </div>
+
+              <p className="text-xs sm:text-sm text-[#0B2559]/75 font-sans leading-relaxed">
+                {language === 'es'
+                  ? 'Máximo referente científico europeo en biología de la reproducción humana y embriología clínica. Publica consensos internacionales y directrices de seguridad para laboratorios de FIV.'
+                  : 'European authority in human reproductive biology and clinical embryology. Publishes international consensus guidelines and safety recommendations for IVF centers.'}
+              </p>
+            </div>
+
+            <div className="pt-6 mt-auto">
+              <a
+                href="https://www.eshre.eu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-xl bg-[#004C97] hover:bg-[#0B2559] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 font-title shadow-md shadow-[#004C97]/20 cursor-pointer"
+              >
+                <span>{language === 'es' ? 'Visitar eshre.eu' : 'Visit eshre.eu'}</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
