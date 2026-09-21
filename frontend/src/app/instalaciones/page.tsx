@@ -9,7 +9,7 @@ import { useLanguage } from '@/context/LanguageContext';
 interface GalleryItem {
   id: string;
   src: string;
-  category: 'embriologia' | 'quirofano' | 'andrologia' | 'clinica';
+  category: 'embriologia' | 'quirofano' | 'hormonas' | 'clinica';
   tag: { es: string; en: string };
   title: { es: string; en: string };
   description: { es: string; en: string };
@@ -46,6 +46,21 @@ const GALLERY_ITEMS: GalleryItem[] = [
       en: 'Sub-micron micromanipulation station for single-sperm ICSI injection and embryo trophectoderm biopsy for PGT.'
     },
     equipmentBrand: 'Research Instruments (RI) / Olympus'
+  },
+  {
+    id: 'estereomicroscopio-nikon-ri-witness',
+    src: '/imagenes/instalaciones/microscopio_nikon_ri_witness.jpg',
+    category: 'embriologia',
+    tag: { es: 'Microscopía & RI Witness', en: 'Microscopy & RI Witness' },
+    title: {
+      es: 'Estereomicroscopio Nikon y Estación de Trabajo con Seguridad RI Witness',
+      en: 'Nikon Stereomicroscope & RI Witness RFID Integrated Workstation'
+    },
+    description: {
+      es: 'Óptica de alta resolución Nikon Plan 1x acoplada a placa térmica con lector RFID integrado para búsqueda de ovocitos y validación de muestras en tiempo real.',
+      en: 'High-resolution Nikon Plan 1x optics paired with a thermal stage and integrated RFID reader plate for real-time oocyte recovery and electronic sample verification.'
+    },
+    equipmentBrand: 'Nikon Instruments & CooperSurgical RI Witness'
   },
   {
     id: 'ri-witness-rfid',
@@ -138,32 +153,17 @@ const GALLERY_ITEMS: GalleryItem[] = [
     equipmentBrand: 'COOK Medical & Thermo Scientific'
   },
   {
-    id: 'andrologia-microscopio',
-    src: '/imagenes/instalaciones/andrologia_microscopio.jpg',
-    category: 'andrologia',
-    tag: { es: 'Laboratorio de Andrología', en: 'Andrology Cleanroom' },
-    title: {
-      es: 'Microscopía Nikon en Campana de Flujo Laminar de Andrología',
-      en: 'Nikon Microscopy in Andrology Laminar Flow Hood'
-    },
-    description: {
-      es: 'Evaluación seminal computarizada, capacitación espermática por gradientes y selección morfológica bajo flujo estéril.',
-      en: 'Semen analysis, density gradient capacitation, and morphological sperm assessment inside sterile laminar airflow.'
-    },
-    equipmentBrand: 'Nikon Eclipse & LabGard'
-  },
-  {
     id: 'analizador-hormonas-cobas',
     src: '/imagenes/instalaciones/analizador_hormonas_cobas.jpg',
-    category: 'andrologia',
-    tag: { es: 'Perfil Hormonal Rápido', en: 'Rapid Hormone Analyzer' },
+    category: 'hormonas',
+    tag: { es: 'Hormonas', en: 'Hormones' },
     title: {
       es: 'Analizador Bioquímico Automatizado Cobas e 411 Roche',
       en: 'Roche Cobas e 411 Automated Chemiluminescence Analyzer'
     },
     description: {
       es: 'Determinación ultrarrápida de estradiol, progesterona, LH y beta-hCG en menos de 60 minutos para tomas de decisión en tiempo real.',
-      en: 'Rapid in-house assays for Estradiol, Progesterone, LH, and beta-hCG delivered in under 60 minutes for real-time cycle decisions.'
+      en: 'Ultra-rapid determination of estradiol, progesterone, LH, and beta-hCG in under 60 minutes for real-time decision making.'
     },
     equipmentBrand: 'Roche / Hitachi'
   },
@@ -238,7 +238,7 @@ export default function InstalacionesPage() {
     { id: 'todos', es: 'Todas las Instalaciones (14)', en: 'All Facilities (14)' },
     { id: 'embriologia', es: 'Laboratorio de Embriología & RI Witness', en: 'Embryology Lab & RI Witness' },
     { id: 'quirofano', es: 'Quirófano & Cirugía', en: 'Surgical Suite & O.R.' },
-    { id: 'andrologia', es: 'Andrología & Hormonas', en: 'Andrology & Hormones' },
+    { id: 'hormonas', es: 'Hormonas', en: 'Hormones' },
     { id: 'clinica', es: 'Consultorios & Sede Hospitalaria', en: 'Consultation & Campus' }
   ];
 
@@ -301,7 +301,7 @@ export default function InstalacionesPage() {
               href="/media"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-xs sm:text-sm transition-all font-title self-start md:self-auto"
             >
-              <span>{language === 'es' ? 'Ver todos los videos en MEDIA' : 'View all videos in MEDIA'}</span>
+              <span>{language === 'es' ? 'Ver todos los videos en Centro de Recursos' : 'View all videos in Resource Center'}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -347,7 +347,7 @@ export default function InstalacionesPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#69B3E7] flex-shrink-0" />
-                  <span>{language === 'es' ? 'Analizador hormonal Cobas e 411 y laboratorio de Andrología' : 'Cobas e 411 hormone analyzer & Andrology cleanroom'}</span>
+                  <span>{language === 'es' ? 'Analizador Bioquímico Automatizado Cobas e 411 Roche' : 'Roche Cobas e 411 Automated Biochemistry Analyzer'}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#69B3E7] flex-shrink-0" />

@@ -113,7 +113,7 @@ const MEDIA_VIDEOS: VideoItem[] = [
     videoUrl: "https://www.youtube.com/@infertilidadabc",
     localVideoSrc: "/videos/vida.mp4",
     duration: "1:10 min • HD",
-    category: { es: "Vida & Esperanza", en: "Life & Hope" }
+    category: { es: "Timelapse", en: "Timelapse" }
   },
   {
     id: "video-institucional-2026",
@@ -131,38 +131,6 @@ const MEDIA_VIDEOS: VideoItem[] = [
     localVideoSrc: "/videos/recorrido_instalaciones.mp4",
     duration: "1:26 min • Full HD",
     category: { es: "Instalaciones & Lab", en: "Facilities & Lab" }
-  },
-  {
-    id: "podcast-cfa-historias",
-    title: {
-      es: "Podcast CFA: Preguntas Frecuentes, Ciencia y Casos de Éxito",
-      en: "CFA Podcast: FAQ, Science & Patient Success Stories"
-    },
-    description: {
-      es: "Diálogos médicos con respuestas claras a las dudas más comunes sobre tratamientos de fertilización in vitro.",
-      en: "Medical dialogues with clear answers to common questions regarding IVF treatments."
-    },
-    doctors: ["Dr. Carlos Navarro Martínez", "Dra. Tanya I. Montañez Díaz de León"],
-    thumbnail: "/imagenes/youtube_podcast_thumb.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=GCagLjVF8U4",
-    duration: "Episodio Semanal • HD",
-    category: { es: "Podcast Oficial", en: "Official Podcast" }
-  },
-  {
-    id: "video-timelapse-ia",
-    title: {
-      es: "Innovación Tecnológica: Incubadora Timelapse e Inteligencia Artificial en FIV",
-      en: "Technological Innovation: Timelapse Incubator & AI in IVF"
-    },
-    description: {
-      es: "Monitoreo morfocinético continuo del desarrollo embrionario y aplicación de algoritmos de selección para optimizar tasas de implantación.",
-      en: "Continuous morphokinetic monitoring of embryonic development and predictive selection algorithms to enhance implantation rates."
-    },
-    doctors: ["Dr. Jorge Manuel Rodríguez Purata (Director Científico)", "Dr. Carlos Navarro Martínez"],
-    thumbnail: "/imagenes/baby3.jpg",
-    videoUrl: "https://www.youtube.com/@infertilidadabc",
-    duration: "3:40 min",
-    category: { es: "Innovación & IA", en: "Innovation & AI" }
   }
 ];
 
@@ -181,12 +149,12 @@ export default function MediaPage() {
             <span>{language === 'es' ? 'Multimedia & Audiovisual' : 'Multimedia & Audiovisual'}</span>
           </div>
           <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
-            {language === 'es' ? 'MEDIA: Videos, Podcast & Guías' : 'MEDIA: Videos, Podcast & Guides'}
+            {language === 'es' ? 'Centro de Recursos' : 'Resource Center'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
             {language === 'es'
-              ? 'Conoce a nuestro equipo médico, instalaciones de vanguardia, podcast educativo y consulta las instrucciones oficiales de preparación de medicamentos.'
-              : 'Discover our medical faculty, cutting-edge facilities, educational podcast, and official medication preparation guidelines.'}
+              ? 'Accede a instrucciones médicas, videos, y links de referencia.'
+              : 'Access medical instructions, videos, and reference links.'}
           </p>
         </div>
       </section>

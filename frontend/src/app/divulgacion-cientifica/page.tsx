@@ -3,102 +3,47 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BookOpen, Youtube, Sparkles, ExternalLink, Play, Clock, Tag, ArrowRight, Share2, Search, Filter, Linkedin, Globe, ShieldCheck } from 'lucide-react';
+import {
+  BookOpen,
+  Youtube,
+  Sparkles,
+  ExternalLink,
+  Play,
+  Clock,
+  Tag,
+  ArrowRight,
+  Share2,
+  Search,
+  Filter,
+  Linkedin,
+  Globe,
+  ShieldCheck,
+  Calendar,
+  ChevronRight,
+  Stethoscope,
+  Microscope,
+  CheckCircle2
+} from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { getAllBlogPosts, BlogPost } from '@/data/blog';
 
 export default function DivulgacionCientificaPage() {
   const { language } = useLanguage();
-  const [selectedCategory, setSelectedCategory] = useState<string>('todos');
+  const [activeTab, setActiveTab] = useState<'ultimo' | 'todos'>('ultimo');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
-  const categories = [
-    { id: 'todos', es: 'Todos los Artículos', en: 'All Articles' },
-    { id: 'ia-tech', es: 'Tecnología & IA', en: 'Tech & AI' },
-    { id: 'femenina', es: 'Fertilidad Femenina', en: 'Female Fertility' },
-    { id: 'seguridad', es: 'Seguridad & Laboratorio', en: 'Safety & Lab' },
-    { id: 'genetica', es: 'Genética Reproductiva', en: 'Reproductive Genetics' }
-  ];
+  const blogPosts = getAllBlogPosts();
+  const featuredPost = blogPosts.find((p) => p.isFeatured) || blogPosts[0];
 
-  const blogPosts = [
-    {
-      id: 'ia-seleccion-embriones',
-      categoryKey: 'ia-tech',
-      title: language === 'es'
-        ? "Cómo la Inteligencia Artificial y Morfocinética están revolucionando la selección de embriones"
-        : "How Artificial Intelligence & Morphokinetics are Revolutionizing Embryo Selection",
-      category: language === 'es' ? "Tecnología Médica" : "Medical Tech",
-      date: language === 'es' ? "Agosto 2026" : "August 2026",
-      readTime: language === 'es' ? "4 min lectura" : "4 min read",
-      author: "Dr. Carlos Navarro Martínez",
-      imageSrc: "/imagenes/baby1.jpg",
-      snippet: language === 'es'
-        ? "El análisis morfocinético computarizado mediante incubadoras Timelapse y algoritmos de Machine Learning permite evaluar con precisión matemática la velocidad y simetría de división celular sin perturbar el ambiente estéril del cultivo."
-        : "Computerized morphokinetic analysis via Timelapse incubators and Machine Learning algorithms accurately evaluates cellular division speed and symmetry without disrupting the sterile culture environment."
-    },
-    {
-      id: 'preservacion-vs-embriones',
-      categoryKey: 'femenina',
-      title: language === 'es'
-        ? "Preservación de Óvulos vs. Vitrificación de Embriones: ¿Cuál es la mejor opción?"
-        : "Egg Freezing vs. Embryo Vitrification: What is the Best Option?",
-      category: language === 'es' ? "Fertilidad Femenina" : "Female Fertility",
-      date: language === 'es' ? "Julio 2026" : "July 2026",
-      readTime: language === 'es' ? "5 min lectura" : "5 min read",
-      author: "Dra. Stephanie Lizmi Romano",
-      imageSrc: "/imagenes/tratamientos/congelacion.jpeg",
-      snippet: language === 'es'
-        ? "Factores clave como edad materna, reserva ovárica y metas de vida para tomar una decisión informada. La técnica de vitrificación ultra-rápida garantiza sobrevidas celulares superiores al 95%."
-        : "Key factors including maternal age, ovarian reserve, and life plans to make an informed decision. Ultra-rapid vitrification guarantees cellular survival rates exceeding 95%."
-    },
-    {
-      id: 'seguridad-ri-witness',
-      categoryKey: 'seguridad',
-      title: language === 'es'
-        ? "Seguridad RI Witness: Por qué es crucial la radiofrecuencia británica en laboratorios de FIV"
-        : "RI Witness Security: Why British RFID is Crucial in IVF Laboratories",
-      category: language === 'es' ? "Seguridad Clínica" : "Clinical Security",
-      date: language === 'es' ? "Junio 2026" : "June 2026",
-      readTime: language === 'es' ? "3 min lectura" : "3 min read",
-      author: "Equipo de Embriología CFA",
-      imageSrc: "/imagenes/doctores/doctorcarlos1.jpg",
-      snippet: language === 'es'
-        ? "Descubre cómo funciona el sistema RFID pionero en México que realiza trazabilidad electrónica de cada tubo y placa de cultivo, eliminando cualquier margen de error o confusión humana."
-        : "Discover how the British RFID tracking system pioneers sample traceability across every tube and culture dish in Mexico, eliminating human error.",
-    },
-    {
-      id: 'genetica-pgd-ngs',
-      categoryKey: 'genetica',
-      title: language === 'es'
-        ? "Diagnóstico Genético Preimplantacional (PGT/NGS): Maximizando el éxito por transferencia"
-        : "Preimplantation Genetic Testing (PGT/NGS): Maximizing Live Birth per Transfer",
-      category: language === 'es' ? "Genética Reproductiva" : "Reproductive Genetics",
-      date: language === 'es' ? "Mayo 2026" : "May 2026",
-      readTime: language === 'es' ? "6 min lectura" : "6 min read",
-      author: "Dra. Luisa Fernanda Mariscal Mendizabal",
-      imageSrc: "/imagenes/tratamientos/diagnosticogenetico.jpg",
-      snippet: language === 'es'
-        ? "La biopsia de trofoectodermo analizada mediante Secuenciación de Nueva Generación identifica embriones cromosómicamente euploides, reduciendo drásticamente el riesgo de pérdida gestacional."
-        : "Trophectoderm biopsy analyzed via Next-Generation Sequencing identifies euploid embryos, dramatically reducing pregnancy loss risks."
-    },
-    {
-      id: 'donacion-sin-egg-splitting',
-      categoryKey: 'femenina',
-      title: language === 'es'
-        ? "Ovodonación Ética: Por qué en CFA está estrictamente prohibido el Egg Splitting"
-        : "Ethical Egg Donation: Why CFA Strictly Prohibits Egg Splitting",
-      category: language === 'es' ? "Ética Médica" : "Medical Ethics",
-      date: language === 'es' ? "Abril 2026" : "April 2026",
-      readTime: language === 'es' ? "4 min lectura" : "4 min read",
-      author: "Comité de Bioética CFA",
-      imageSrc: "/imagenes/baby2.jpg",
-      snippet: language === 'es'
-        ? "En nuestra clínica todos los óvulos obtenidos de una donante son de prioridad exclusiva para una sola pareja receptora. Proteger el bienestar de donantes y pacientes es nuestro estándar bioético."
-        : "At our clinic, all retrieved oocytes from a donor belong exclusively to a single recipient couple, honoring our strict bioethical standard."
-    }
-  ];
-
-  const filteredPosts = selectedCategory === 'todos'
-    ? blogPosts
-    : blogPosts.filter(p => p.categoryKey === selectedCategory);
+  const filteredPosts = blogPosts.filter((post) => {
+    const postTitle = post.title[language] || post.title.es;
+    const postSnippet = post.snippet[language] || post.snippet.es;
+    const matchesSearch =
+      searchQuery.trim() === '' ||
+      postTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      postSnippet.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesSearch;
+  });
 
   return (
     <div className="space-y-16 pb-20">
@@ -107,15 +52,15 @@ export default function DivulgacionCientificaPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-cfa-light text-xs font-semibold uppercase tracking-wider font-title">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>{language === 'es' ? 'Educación & Ciencia Médica' : 'Medical Education & Science'}</span>
+            <span>{language === 'es' ? 'Educación & Divulgación Médica' : 'Medical Education & Science'}</span>
           </div>
           <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
             {language === 'es' ? 'Divulgación Científica & Blog' : 'Scientific Outreach & Medical Blog'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
             {language === 'es'
-              ? 'Artículos médicos, avances en reproducción asistida y el podcast oficial con el Dr. Carlos Navarro Martínez.'
-              : 'Medical articles, assisted reproduction breakthroughs, and our official video podcast with Dr. Carlos Navarro Martínez.'}
+              ? 'Artículos médicos especializados, avances en reproducción asistida y el podcast oficial con el Dr. Carlos Navarro Martínez.'
+              : 'Specialized medical articles, assisted reproduction breakthroughs, and our official video podcast with Dr. Carlos Navarro Martínez.'}
           </p>
         </div>
       </section>
@@ -212,62 +157,257 @@ export default function DivulgacionCientificaPage() {
         </div>
       </section>
 
-      {/* SECCIÓN DE ARTÍCULOS MÉDICOS (PENDIENTE) */}
+      {/* SECCIÓN DE ARTÍCULOS MÉDICOS Y BLOG */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#69B3E7]/40 pb-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-700 text-xs font-bold uppercase tracking-wider font-title mb-2">
-              <span>- Pendiente -</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#004C97]/15 border border-[#69B3E7]/40 text-[#004C97] text-xs font-bold uppercase tracking-wider font-title mb-2">
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>{language === 'es' ? 'Artículos & Publicaciones' : 'Articles & Publications'}</span>
             </div>
-            <h3 className="font-title text-2xl sm:text-3xl font-bold text-[#0B2559]">
-              {language === 'es' ? 'Artículos y Novedades Científicas' : 'Articles & Scientific Updates'}
-            </h3>
+            <h2 className="font-title text-2xl sm:text-3xl font-bold text-[#0B2559]">
+              {language === 'es' ? 'Biblioteca Médica & Divulgación' : 'Medical Library & Scientific Updates'}
+            </h2>
           </div>
           <span className="text-xs font-semibold text-[#004C97] font-sans">
-            {language === 'es' ? 'Próxima publicación de artículos científicos' : 'Scientific articles coming soon'}
+            {language === 'es' ? 'Escrito y revisado por especialistas certificados' : 'Authored & reviewed by certified specialists'}
           </span>
         </div>
 
-        {/* Elegant Placeholder Card with - Pendiente - state */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border-2 border-dashed border-[#69B3E7] shadow-soft text-center space-y-5">
-          <div className="w-16 h-16 rounded-2xl bg-[#004C97]/10 text-[#004C97] flex items-center justify-center mx-auto border border-[#69B3E7]/40">
-            <BookOpen className="w-8 h-8 text-[#004C97]" />
-          </div>
-          
-          <div className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-black uppercase tracking-widest font-title">
-            - Pendiente de Publicación -
-          </div>
-
-          <h4 className="font-title text-xl sm:text-2xl font-bold text-[#0B2559] max-w-xl mx-auto">
-            {language === 'es'
-              ? 'Nuestra biblioteca de artículos médicos y divulgación científica se encuentra en revisión'
-              : 'Our scientific article library and medical publications are currently under review'}
-          </h4>
-
-          <p className="text-xs sm:text-sm text-[#0B2559]/75 max-w-2xl mx-auto font-sans leading-relaxed">
-            {language === 'es'
-              ? 'El equipo médico de la Clínica de Fertilización Asistida en el Centro Médico ABC está preparando material científico de vanguardia sobre fertilización in vitro, genética embrionaria y avances tecnológicos.'
-              : 'The medical faculty at the Assisted Fertilization Clinic at ABC Medical Center is preparing cutting-edge scientific material on IVF, embryo genetics, and reproductive tech.'}
-          </p>
-
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="https://www.youtube.com/watch?v=GCagLjVF8U4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all font-title"
+        {/* Filter Bar: Only "Último blog" and "Todos los blogs" */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5 w-full sm:w-auto">
+            <button
+              onClick={() => setActiveTab('ultimo')}
+              className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all font-title cursor-pointer ${
+                activeTab === 'ultimo'
+                  ? 'bg-cfa-navy text-white shadow-md'
+                  : 'bg-white text-cfa-navy hover:bg-slate-100 border border-slate-200'
+              }`}
             >
-              <Youtube className="w-4 h-4" />
-              <span>{language === 'es' ? 'Ver Podcast Oficial en YouTube' : 'Watch Official YouTube Podcast'}</span>
-            </a>
-            <Link
-              href="/#agendar-cita"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white border-2 border-[#004C97] text-[#004C97] hover:bg-[#004C97] hover:text-white font-bold text-xs sm:text-sm shadow-soft transition-all font-title"
+              {language === 'es' ? 'Último blog' : 'Latest blog'}
+            </button>
+            <button
+              onClick={() => setActiveTab('todos')}
+              className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all font-title cursor-pointer ${
+                activeTab === 'todos'
+                  ? 'bg-cfa-navy text-white shadow-md'
+                  : 'bg-white text-cfa-navy hover:bg-slate-100 border border-slate-200'
+              }`}
             >
-              <span>{language === 'es' ? 'Agendar Consulta Médica' : 'Book Medical Consultation'}</span>
-            </Link>
+              {language === 'es' ? 'Todos los blogs' : 'All blogs'}
+            </button>
+          </div>
+
+          {/* Search bar */}
+          <div className="relative w-full sm:w-64">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                if (e.target.value.trim() !== '' && activeTab !== 'todos') {
+                  setActiveTab('todos');
+                }
+              }}
+              placeholder={language === 'es' ? 'Buscar en los blogs...' : 'Search blogs...'}
+              className="w-full pl-9 pr-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-sans text-cfa-navy placeholder-slate-400 focus:outline-none focus:border-cfa-cyan transition-colors"
+            />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
           </div>
         </div>
+
+        {/* VISTA: ÚLTIMO BLOG */}
+        {activeTab === 'ultimo' && featuredPost && (
+          <div className="space-y-6">
+            <div className="relative overflow-hidden rounded-3xl bg-white border-2 border-cfa-cyan/40 shadow-xl hover:shadow-2xl transition-all group">
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                {/* Image side */}
+                <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto overflow-hidden bg-slate-900">
+                  <img
+                    src={featuredPost.imageSrc}
+                    alt={featuredPost.title[language] || featuredPost.title.es}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95"
+                  />
+                  <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2">
+                    <span className="px-3 py-1 rounded-full bg-amber-500 text-white text-[11px] font-black uppercase tracking-wider font-title shadow-md flex items-center gap-1.5">
+                      <Sparkles className="w-3 h-3" />
+                      <span>{language === 'es' ? 'Borrador Interactivo' : 'Interactive Draft'}</span>
+                    </span>
+                    <span className="px-3 py-1 rounded-full bg-cfa-navy/85 backdrop-blur-md text-white text-[11px] font-bold font-title">
+                      {featuredPost.category[language] || featuredPost.category.es}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content side */}
+                <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 text-xs text-slate-500 font-sans">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-3.5 h-3.5 text-cfa-cyan" />
+                        <span>{featuredPost.date[language] || featuredPost.date.es}</span>
+                      </div>
+                      <span>•</span>
+                      <div className="flex items-center gap-1">
+                        <Clock className="w-3.5 h-3.5 text-cfa-cyan" />
+                        <span>{featuredPost.readTime[language] || featuredPost.readTime.es}</span>
+                      </div>
+                    </div>
+
+                    <Link href={`/divulgacion-cientifica/${featuredPost.id}`}>
+                      <h3 className="font-title text-xl sm:text-2xl lg:text-3xl font-extrabold text-cfa-navy group-hover:text-cfa-cyan transition-colors leading-snug">
+                        {featuredPost.title[language] || featuredPost.title.es}
+                      </h3>
+                    </Link>
+
+                    <p className="text-xs sm:text-sm text-slate-600 font-sans leading-relaxed">
+                      {featuredPost.subtitle[language] || featuredPost.subtitle.es}
+                    </p>
+
+                    {/* Bullet Highlights */}
+                    <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 space-y-2">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-cfa-navy font-title">
+                        {language === 'es' ? 'Aspectos destacados del artículo:' : 'Article Highlights:'}
+                      </span>
+                      <ul className="text-xs text-slate-600 space-y-1.5 font-sans">
+                        {(featuredPost.keyTakeaways[language] || featuredPost.keyTakeaways.es).slice(0, 2).map((takeaway, tIdx) => (
+                          <li key={tIdx} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                            <span>{takeaway}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Author & Button */}
+                  <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={featuredPost.author.avatar}
+                        alt={featuredPost.author.name}
+                        className="w-10 h-10 rounded-full object-cover border-2 border-cfa-cyan"
+                      />
+                      <div>
+                        <div className="font-title text-xs font-bold text-cfa-navy">
+                          {featuredPost.author.name}
+                        </div>
+                        <div className="text-[11px] text-slate-500 font-sans">
+                          {featuredPost.author.role[language] || featuredPost.author.role.es}
+                        </div>
+                      </div>
+                    </div>
+
+                    <Link
+                      href={`/divulgacion-cientifica/${featuredPost.id}`}
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-cfa-navy hover:bg-cfa-cyan text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all font-title group/btn cursor-pointer"
+                    >
+                      <span>{language === 'es' ? 'Leer Artículo Completo' : 'Read Full Article'}</span>
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick switcher to all blogs */}
+            <div className="text-center pt-2">
+              <button
+                onClick={() => setActiveTab('todos')}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-cfa-navy hover:text-cfa-cyan transition-colors font-title underline cursor-pointer"
+              >
+                <span>{language === 'es' ? '¿Deseas ver más publicaciones? Ver todos los blogs →' : 'Looking for more publications? View all blogs →'}</span>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* VISTA: TODOS LOS BLOGS */}
+        {activeTab === 'todos' && (
+          <div className="space-y-6">
+            {filteredPosts.length === 0 ? (
+              <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 text-slate-500">
+                <p className="text-sm font-sans">
+                  {language === 'es' ? 'No se encontraron artículos con ese término de búsqueda.' : 'No articles found matching that search.'}
+                </p>
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="mt-3 text-xs font-bold text-cfa-cyan hover:underline font-title cursor-pointer"
+                >
+                  {language === 'es' ? 'Limpiar búsqueda' : 'Clear search'}
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredPosts.map((post) => {
+                  const hasFullContent = Boolean(post.content);
+                  return (
+                    <div
+                      key={post.id}
+                      className="bg-white rounded-3xl p-6 border border-slate-200 shadow-soft hover:shadow-lg hover:border-cfa-cyan/50 transition-all flex flex-col justify-between group"
+                    >
+                      <div className="space-y-4">
+                        {/* Thumbnail Image */}
+                        <div className="relative rounded-2xl overflow-hidden aspect-video bg-slate-100 border border-slate-100">
+                          <img
+                            src={post.imageSrc}
+                            alt={post.title[language] || post.title.es}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                          <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-cfa-navy/85 backdrop-blur-sm text-white text-[10px] font-bold font-title">
+                            {post.category[language] || post.category.es}
+                          </span>
+                        </div>
+
+                        {/* Metadata */}
+                        <div className="flex items-center gap-2 text-[11px] text-slate-500 font-sans">
+                          <span>{post.date[language] || post.date.es}</span>
+                          <span>•</span>
+                          <span>{post.readTime[language] || post.readTime.es}</span>
+                        </div>
+
+                        {/* Title */}
+                        <h4 className="font-title text-base sm:text-lg font-bold text-cfa-navy group-hover:text-cfa-cyan transition-colors line-clamp-2 leading-snug">
+                          {post.title[language] || post.title.es}
+                        </h4>
+
+                        {/* Snippet */}
+                        <p className="text-xs text-slate-600 font-sans line-clamp-3 leading-relaxed">
+                          {post.snippet[language] || post.snippet.es}
+                        </p>
+                      </div>
+
+                      {/* Footer */}
+                      <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between">
+                        <span className="text-[11px] font-semibold text-slate-500 font-sans truncate max-w-[130px]">
+                          {post.author.name}
+                        </span>
+
+                        {hasFullContent ? (
+                          <Link
+                            href={`/divulgacion-cientifica/${post.id}`}
+                            className="inline-flex items-center gap-1 text-xs font-bold text-cfa-navy hover:text-cfa-cyan font-title"
+                          >
+                            <span>{language === 'es' ? 'Leer' : 'Read'}</span>
+                            <ChevronRight className="w-3.5 h-3.5" />
+                          </Link>
+                        ) : (
+                          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-700 bg-amber-50 border border-amber-200/60 px-2 py-0.5 rounded-md font-sans">
+                            <span>{language === 'es' ? 'En revisión médica' : 'In review'}</span>
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
+
       </section>
 
       {/* SECCIÓN DE LINKS ÚTILES & SOCIEDADES CIENTÍFICAS */}
@@ -352,8 +492,8 @@ export default function DivulgacionCientificaPage() {
 
               <p className="text-xs sm:text-sm text-[#0B2559]/75 font-sans leading-relaxed">
                 {language === 'es'
-                  ? 'La principal organización de profesionales de reproducción asistida en Estados Unidos. Establece los estándares de calidad, seguridad de laboratorio y reportes transparentes de tasas de éxito en FIV.'
-                  : 'The primary organization of assisted reproductive technology professionals in the US. Sets rigorous laboratory quality standards and transparent IVF success rate reporting.'}
+                  ? 'Organización principal que establece estándares de calidad, seguridad y auditoría transparente para los laboratorios de tecnología de reproducción asistida en Norteamérica.'
+                  : 'The primary organization establishing quality standards, safety benchmarks, and transparent auditing for ART laboratories in North America.'}
               </p>
             </div>
 
@@ -378,7 +518,7 @@ export default function DivulgacionCientificaPage() {
                   ESHRE
                 </span>
                 <span className="text-[11px] font-semibold text-[#004C97] bg-[#F0F7FD] px-2.5 py-1 rounded-lg">
-                  Europa / Internacional
+                  Europa / Global
                 </span>
               </div>
 
@@ -387,14 +527,14 @@ export default function DivulgacionCientificaPage() {
                   European Society of Human Reproduction and Embryology
                 </h4>
                 <p className="text-xs font-semibold text-[#004C97] font-title mt-1">
-                  {language === 'es' ? 'Sociedad Europea de Reproducción Humana y Embriología' : 'European Society of Human Reproduction & Embryology'}
+                  {language === 'es' ? 'Sociedad Europea de Reproducción Humana y Embriología' : 'European Society of Human Reproduction and Embryology'}
                 </p>
               </div>
 
               <p className="text-xs sm:text-sm text-[#0B2559]/75 font-sans leading-relaxed">
                 {language === 'es'
-                  ? 'Máximo referente científico europeo en biología de la reproducción humana y embriología clínica. Publica consensos internacionales y directrices de seguridad para laboratorios de FIV.'
-                  : 'European authority in human reproductive biology and clinical embryology. Publishes international consensus guidelines and safety recommendations for IVF centers.'}
+                  ? 'Autoridad científica europea que promueve el estudio de la biología reproductiva y embriología, recopila datos clínicos y emite consensos médicos de referencia internacional.'
+                  : 'European scientific authority advancing reproductive biology and embryology research, clinical registries, and international consensus.'}
               </p>
             </div>
 
