@@ -26,7 +26,7 @@ export default function EquipoPage() {
             <Users className="w-3.5 h-3.5" />
             <span>{language === 'es' ? 'Cuerpo Médico de Excelencia' : 'Medical Faculty of Excellence'}</span>
           </div>
-          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-light text-white">
             {language === 'es' ? 'El Equipo Médico' : 'Our Medical Team'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
@@ -53,8 +53,9 @@ export default function EquipoPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-cfa-navy/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                 <div className="absolute bottom-3 left-3 right-3 text-center">
-                  <span className="text-[11px] font-bold bg-[#004C97] text-white px-3 py-1 rounded-full shadow-md border border-white/60 font-title inline-block">
-                    ★ {language === 'es' ? '1er Bebé FIV en México (1991)' : '1st IVF Baby in Mexico (1991)'}
+                  <span className="text-[11px] font-medium bg-[#004C97] text-white px-3 py-1 rounded-full shadow-md border border-white/60 font-title inline-flex items-center gap-1.5">
+                    <Award className="w-3.5 h-3.5 text-white flex-shrink-0" />
+                    <span>{language === 'es' ? '1er Bebé FIV en México (1991)' : '1st IVF Baby in Mexico (1991)'}</span>
                   </span>
                 </div>
               </div>
@@ -62,16 +63,16 @@ export default function EquipoPage() {
 
             {/* Content & Bio */}
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-bold uppercase tracking-wider font-title">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-medium uppercase tracking-wider font-title">
                 <GraduationCap className="w-3.5 h-3.5" />
                 <span>{directorData.role}</span>
               </div>
 
-              <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-cfa-navy">
+              <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-cfa-navy">
                 {director.name}
               </h2>
 
-              <p className="text-xs sm:text-sm font-semibold text-cfa-cyan font-title">
+              <p className="text-xs sm:text-sm font-light text-cfa-cyan font-title">
                 {directorData.specialty}
               </p>
 
@@ -92,7 +93,7 @@ export default function EquipoPage() {
               <div className="pt-3 flex flex-wrap items-center gap-3">
                 <button
                   onClick={() => setSelectedDoctor(director)}
-                  className="px-6 py-3 rounded-xl bg-cfa-navy hover:bg-cfa-cyan text-white text-xs sm:text-sm font-bold shadow-md transition-all flex items-center gap-2 font-title cursor-pointer"
+                  className="px-6 py-3 rounded-xl bg-cfa-navy hover:bg-cfa-cyan text-white text-xs sm:text-sm font-medium shadow-md transition-all flex items-center gap-2 font-title cursor-pointer"
                 >
                   <span>{language === 'es' ? 'Ver Trayectoria Completa' : 'View Full Medical Profile'}</span>
                   <ChevronRight className="w-4 h-4" />
@@ -100,7 +101,7 @@ export default function EquipoPage() {
 
                 <button
                   onClick={() => setIsAppointmentOpen(true)}
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-deepBlue text-white text-xs sm:text-sm font-bold shadow-md hover:brightness-105 transition-all flex items-center gap-2 font-title cursor-pointer"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-deepBlue text-white text-xs sm:text-sm font-medium shadow-md hover:brightness-105 transition-all flex items-center gap-2 font-title cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>{language === 'es' ? 'Agendar Consulta con el Dr. Navarro' : 'Book Consultation with Dr. Navarro'}</span>
@@ -119,7 +120,7 @@ export default function EquipoPage() {
             <Stethoscope className="w-3.5 h-3.5" />
             <span>{language === 'es' ? 'Especialistas Adscritos' : 'Faculty Specialists'}</span>
           </div>
-          <h3 className="font-title text-2xl sm:text-3xl font-bold text-cfa-navy">
+          <h3 className="font-title text-2xl sm:text-3xl font-light text-cfa-navy">
             {language === 'es' ? 'Médicos Especialistas de la Clínica' : 'Specialized Clinical Faculty'}
           </h3>
           <p className="text-xs sm:text-sm text-cfa-grayText font-sans">
@@ -129,7 +130,7 @@ export default function EquipoPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {facultyDoctors.map((doc) => {
             const data = doc[language] || doc.es;
             return (
@@ -147,8 +148,8 @@ export default function EquipoPage() {
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-cfa-navy/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
-                    <div className="absolute bottom-3 left-4 right-4">
-                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-cfa-navy shadow-xs font-title inline-block">
+                    <div className="absolute bottom-3 left-4 right-4 flex justify-center">
+                      <span className="w-full text-center text-xs font-medium px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-[#004C97] shadow-sm font-title border border-white/60 truncate">
                         {data.role}
                       </span>
                     </div>
@@ -156,10 +157,10 @@ export default function EquipoPage() {
 
                   {/* Body Content */}
                   <div className="p-6 space-y-2.5">
-                    <h4 className="font-title text-lg font-bold text-cfa-navy group-hover:text-cfa-cyan transition-colors leading-snug">
+                    <h4 className="font-title text-lg font-normal text-cfa-navy group-hover:text-cfa-cyan transition-colors leading-snug">
                       {doc.name}
                     </h4>
-                    <p className="text-xs font-semibold text-cfa-cyan font-title">
+                    <p className="text-xs font-light text-cfa-cyan font-title">
                       {data.specialty}
                     </p>
                     <p className="text-xs sm:text-sm text-cfa-grayDark leading-relaxed line-clamp-3 font-sans">
@@ -208,7 +209,7 @@ export default function EquipoPage() {
             <Users className="w-3.5 h-3.5" />
             <span>{language === 'es' ? 'Directorio Multidisciplinario' : 'Multidisciplinary Directory'}</span>
           </div>
-          <h3 className="font-title text-2xl sm:text-3xl font-bold text-cfa-navy">
+          <h3 className="font-title text-2xl sm:text-3xl font-light text-cfa-navy">
             {language === 'es' ? 'Todas las Subespecialidades en un Solo Lugar' : 'All Reproductive Subspecialties in One Place'}
           </h3>
           <p className="text-xs sm:text-sm text-cfa-grayText font-sans">
@@ -233,7 +234,7 @@ export default function EquipoPage() {
                   <div className="w-10 h-10 rounded-xl bg-cfa-softBlue text-cfa-cyan flex items-center justify-center font-bold">
                     <Sparkles className="w-5 h-5" />
                   </div>
-                  <h4 className="font-title text-lg font-bold text-cfa-navy">
+                  <h4 className="font-title text-lg font-medium text-cfa-navy">
                     {title}
                   </h4>
                   <p className="text-xs text-cfa-grayDark leading-relaxed font-sans">
@@ -265,7 +266,7 @@ export default function EquipoPage() {
                       href={group.linkUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-cfa-cyan hover:underline font-bold inline-flex items-center gap-1 font-title"
+                      className="text-xs text-cfa-cyan hover:underline font-medium inline-flex items-center gap-1 font-title"
                     >
                       <span>{linkText || group.linkUrl}</span>
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -296,10 +297,10 @@ export default function EquipoPage() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-title text-xl sm:text-2xl font-bold text-white drop-shadow-sm">
+                    <h3 className="font-title text-xl sm:text-2xl font-light text-white drop-shadow-sm">
                       {selectedDoctor.name}
                     </h3>
-                    <p className="text-xs text-cfa-light drop-shadow-sm font-sans font-medium">
+                    <p className="text-xs text-cfa-light drop-shadow-sm font-sans font-light">
                       {(selectedDoctor[language] || selectedDoctor.es).role} • Centro Médico ABC
                     </p>
                   </div>
@@ -327,14 +328,14 @@ export default function EquipoPage() {
                   />
                 </div>
                 <div className="space-y-3 text-center sm:text-left flex-1">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-cyan text-white text-xs font-bold uppercase tracking-wider font-title">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-cyan text-white text-xs font-medium uppercase tracking-wider font-title">
                     <GraduationCap className="w-3.5 h-3.5 text-white" />
                     <span>{(selectedDoctor[language] || selectedDoctor.es).role}</span>
                   </div>
-                  <h3 className="font-title text-xl sm:text-2xl font-extrabold text-cfa-navy">
+                  <h3 className="font-title text-xl sm:text-2xl font-light text-cfa-navy">
                     {selectedDoctor.name}
                   </h3>
-                  <p className="text-xs sm:text-sm font-bold text-cfa-cyan font-title">
+                  <p className="text-xs sm:text-sm font-light text-cfa-cyan font-title">
                     {(selectedDoctor[language] || selectedDoctor.es).specialty}
                   </p>
                   <p className="text-xs sm:text-sm text-cfa-grayDark font-sans leading-relaxed">
@@ -363,7 +364,7 @@ export default function EquipoPage() {
 
               {/* Full Bio Paragraphs */}
               <div className="space-y-3">
-                <h4 className="font-title text-sm font-bold text-cfa-navy uppercase tracking-wider flex items-center gap-2">
+                <h4 className="font-title text-sm font-semibold text-cfa-navy uppercase tracking-wider flex items-center gap-2">
                   <Stethoscope className="w-4 h-4 text-cfa-cyan" />
                   <span>{language === 'es' ? 'Trayectoria Médica & Experiencia' : 'Medical Background & Experience'}</span>
                 </h4>
@@ -379,7 +380,7 @@ export default function EquipoPage() {
               {/* Education & Fellowships */}
               {(selectedDoctor[language] || selectedDoctor.es).education && (
                 <div className="space-y-3 pt-2 border-t border-cfa-grayBorder">
-                  <h4 className="font-title text-sm font-bold text-cfa-navy uppercase tracking-wider flex items-center gap-2">
+                  <h4 className="font-title text-sm font-semibold text-cfa-navy uppercase tracking-wider flex items-center gap-2">
                     <GraduationCap className="w-4 h-4 text-cfa-cyan" />
                     <span>{language === 'es' ? 'Formación Académica & Fellowships' : 'Academic Credentials & Fellowships'}</span>
                   </h4>
@@ -397,7 +398,7 @@ export default function EquipoPage() {
               {/* Achievements */}
               {(selectedDoctor[language] || selectedDoctor.es).achievements && (
                 <div className="space-y-3 pt-2 border-t border-cfa-grayBorder">
-                  <h4 className="font-title text-sm font-bold text-cfa-navy uppercase tracking-wider flex items-center gap-2">
+                  <h4 className="font-title text-sm font-semibold text-cfa-navy uppercase tracking-wider flex items-center gap-2">
                     <Award className="w-4 h-4 text-cfa-cyan" />
                     <span>{language === 'es' ? 'Reconocimientos y Acreditaciones' : 'Achievements & Accreditations'}</span>
                   </h4>

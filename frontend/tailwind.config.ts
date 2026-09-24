@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Aloevera Display', 'Prompt', 'Arial', 'Helvetica', 'sans-serif'],
+        sans: ['Prompt', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
         title: ['Prompt', 'sans-serif'],
         prompt: ['Prompt', 'sans-serif'],
       },

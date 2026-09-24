@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Calendar, User, Phone, Mail, HelpCircle, MessageSquare, CheckCircle2, AlertCircle, Loader2, ShieldCheck } from 'lucide-react';
+import { X, Calendar, User, Phone, Mail, HelpCircle, MessageSquare, CheckCircle2, AlertCircle, Loader2, ShieldCheck, MapPin, Lock } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 interface AppointmentModalProps {
@@ -55,14 +55,15 @@ export const AppointmentForm: React.FC<{ onSuccess?: () => void; className?: str
         <div className="w-16 h-16 bg-[#69B3E7]/20 text-[#004C97] rounded-full flex items-center justify-center mx-auto mb-4">
           <CheckCircle2 className="w-10 h-10" />
         </div>
-        <h3 className="font-title text-2xl font-bold text-cfa-navy mb-2">
+        <h3 className="font-title text-2xl font-light text-cfa-navy mb-2">
           {t.home.formSuccess}
         </h3>
         <p className="text-cfa-grayText mb-4 font-sans text-sm leading-relaxed">
           {t.home.formSuccessMsg}
         </p>
-        <div className="p-4 bg-cfa-iceBlue rounded-xl text-xs text-cfa-cyan font-semibold mb-6">
-          📍 Centro Médico ABC Santa Fe • Consultorio 332 • Tel: (55) 5273 5194
+        <div className="p-4 bg-cfa-iceBlue rounded-xl text-xs text-cfa-cyan font-semibold mb-6 flex items-center justify-center gap-2">
+          <MapPin className="w-4 h-4 text-cfa-cyan flex-shrink-0" />
+          <span>Centro Médico ABC Santa Fe • Consultorio 332 • Tel: (55) 5273 5194</span>
         </div>
         <button
           onClick={() => {
@@ -85,141 +86,146 @@ export const AppointmentForm: React.FC<{ onSuccess?: () => void; className?: str
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`space-y-4 font-sans ${className}`}>
+    <form onSubmit={handleSubmit} className={`space-y-2.5 sm:space-y-4 font-sans ${className}`}>
       {error && (
-        <div className="p-3.5 bg-rose-50 border border-rose-200 rounded-xl text-rose-700 text-sm flex items-center gap-2">
-          <AlertCircle className="w-5 h-5 flex-shrink-0" />
+        <div className="p-2.5 sm:p-3.5 bg-[#EBF5FC] border border-[#69B3E7] rounded-xl text-[#004C97] text-xs sm:text-sm flex items-center gap-2">
+          <AlertCircle className="w-4 h-4 flex-shrink-0 text-[#004C97]" />
           <span>{error}</span>
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-xs font-semibold text-cfa-navy uppercase tracking-wider mb-1 font-title">
-            {t.home.formName}
-          </label>
-          <div className="relative">
-            <User className="w-4 h-4 text-cfa-grayText absolute left-3.5 top-3.5" />
-            <input
-              type="text"
-              required
-              placeholder={language === 'es' ? "Ej. María Rodríguez Morales" : "e.g. Mary Jane Watson"}
-              value={formData.nombre}
-              onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cfa-grayBorder bg-white text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className="block text-xs font-semibold text-cfa-navy uppercase tracking-wider mb-1 font-title">
-            {t.home.formBirthDate}
-          </label>
-          <div className="relative">
-            <Calendar className="w-4 h-4 text-cfa-grayText absolute left-3.5 top-3.5" />
-            <input
-              type="date"
-              required
-              max={new Date().toISOString().split('T')[0]}
-              value={formData.fecha_nacimiento}
-              onChange={(e) => setFormData({ ...formData, fecha_nacimiento: e.target.value })}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cfa-grayBorder bg-white text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all text-[#0B2559]"
-            />
-          </div>
+      {/* Row 1: Nombre completo */}
+      <div>
+        <label className="block text-[10px] sm:text-xs font-bold text-cfa-navy uppercase tracking-wider mb-1 font-title">
+          {t.home.formName}
+        </label>
+        <div className="relative">
+          <User className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cfa-grayText absolute left-3 top-2.5 sm:top-3.5" />
+          <input
+            type="text"
+            required
+            placeholder={language === 'es' ? "Nombre y apellidos" : "Full name"}
+            value={formData.nombre}
+            onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+            className="w-full pl-8 sm:pl-10 pr-3 py-2 sm:py-2.5 rounded-lg sm:rounded-xl border border-cfa-grayBorder bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all"
+          />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* Row 2: Teléfono & Correo */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
         <div>
-          <label className="block text-xs font-semibold text-cfa-navy uppercase tracking-wider mb-1 font-title">
+          <label className="block text-[10px] sm:text-xs font-bold text-cfa-navy uppercase tracking-wider mb-1 font-title">
             {t.home.formPhone}
           </label>
           <div className="relative">
-            <Phone className="w-4 h-4 text-cfa-grayText absolute left-3.5 top-3.5" />
+            <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cfa-grayText absolute left-3 top-2.5 sm:top-3.5" />
             <input
               type="tel"
               required
-              placeholder={language === 'es' ? "Ej. (55) 1234 5678" : "+1 (555) 123-4567"}
+              placeholder={language === 'es' ? "(55) 1234 5678" : "+1 (555) 123-4567"}
               value={formData.telefono}
               onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cfa-grayBorder bg-white text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all"
+              className="w-full pl-8 sm:pl-10 pr-3 py-2 sm:py-2.5 rounded-lg sm:rounded-xl border border-cfa-grayBorder bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-cfa-navy uppercase tracking-wider mb-1 font-title">
+          <label className="block text-[10px] sm:text-xs font-bold text-cfa-navy uppercase tracking-wider mb-1 font-title">
             {t.home.formEmail}
           </label>
           <div className="relative">
-            <Mail className="w-4 h-4 text-cfa-grayText absolute left-3.5 top-3.5" />
+            <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cfa-grayText absolute left-3 top-2.5 sm:top-3.5" />
             <input
               type="email"
               required
               placeholder="correo@ejemplo.com"
               value={formData.correo}
               onChange={(e) => setFormData({ ...formData, correo: e.target.value })}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cfa-grayBorder bg-white text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all"
+              className="w-full pl-8 sm:pl-10 pr-3 py-2 sm:py-2.5 rounded-lg sm:rounded-xl border border-cfa-grayBorder bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all"
             />
           </div>
         </div>
       </div>
 
-      <div>
-        <label className="block text-xs font-semibold text-cfa-navy uppercase tracking-wider mb-1 font-title">
-          {t.home.formSource}
-        </label>
-        <div className="relative">
-          <HelpCircle className="w-4 h-4 text-cfa-grayText absolute left-3.5 top-3.5" />
-          <select
-            value={formData.como_te_enteraste}
-            onChange={(e) => setFormData({ ...formData, como_te_enteraste: e.target.value })}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cfa-grayBorder bg-white text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all appearance-none cursor-pointer"
-          >
-            <option value="internet">{language === 'es' ? 'Internet / Búsqueda web' : 'Internet / Web search'}</option>
-            <option value="podcast">{language === 'es' ? 'Podcast CFA / YouTube' : 'CFA Podcast / YouTube'}</option>
-            <option value="referido">{language === 'es' ? 'Referido por familiar o amigo' : 'Referred by family or friend'}</option>
-            <option value="redes sociales">{language === 'es' ? 'Redes sociales (Facebook, Instagram)' : 'Social media (Facebook, Instagram)'}</option>
-            <option value="médico">{language === 'es' ? 'Recomendación médica' : 'Doctor recommendation'}</option>
-            <option value="otro">{language === 'es' ? 'Otro' : 'Other'}</option>
-          </select>
+      {/* Row 3: Fecha de Nacimiento & Medio (2 cols en mobile y desktop) */}
+      <div className="grid grid-cols-2 gap-2 sm:gap-4">
+        <div>
+          <label className="block text-[10px] sm:text-xs font-bold text-cfa-navy uppercase tracking-wider mb-1 font-title truncate">
+            {t.home.formBirthDate}
+          </label>
+          <div className="relative">
+            <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cfa-grayText absolute left-2.5 sm:left-3 top-2.5 sm:top-3.5" />
+            <input
+              type="date"
+              required
+              max={new Date().toISOString().split('T')[0]}
+              value={formData.fecha_nacimiento}
+              onChange={(e) => setFormData({ ...formData, fecha_nacimiento: e.target.value })}
+              className="w-full pl-7 sm:pl-9 pr-2 sm:pr-3 py-2 sm:py-2.5 rounded-lg sm:rounded-xl border border-cfa-grayBorder bg-white text-[11px] sm:text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all text-[#0B2559]"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-[10px] sm:text-xs font-bold text-cfa-navy uppercase tracking-wider mb-1 font-title truncate">
+            {t.home.formSource}
+          </label>
+          <div className="relative">
+            <HelpCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cfa-grayText absolute left-2.5 sm:left-3 top-2.5 sm:top-3.5" />
+            <select
+              value={formData.como_te_enteraste}
+              onChange={(e) => setFormData({ ...formData, como_te_enteraste: e.target.value })}
+              className="w-full pl-7 sm:pl-9 pr-2 sm:pr-3 py-2 sm:py-2.5 rounded-lg sm:rounded-xl border border-cfa-grayBorder bg-white text-[11px] sm:text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all appearance-none cursor-pointer"
+            >
+              <option value="internet">{language === 'es' ? 'Búsqueda web' : 'Web search'}</option>
+              <option value="podcast">{language === 'es' ? 'Podcast CFA' : 'CFA Podcast'}</option>
+              <option value="referido">{language === 'es' ? 'Familiar / Amigo' : 'Friend / Family'}</option>
+              <option value="redes sociales">{language === 'es' ? 'Redes sociales' : 'Social media'}</option>
+              <option value="médico">{language === 'es' ? 'Médico' : 'Doctor'}</option>
+              <option value="otro">{language === 'es' ? 'Otro' : 'Other'}</option>
+            </select>
+          </div>
         </div>
       </div>
 
+      {/* Row 4: Motivo de consulta conciso (2 rows) */}
       <div>
-        <label className="block text-xs font-semibold text-cfa-navy uppercase tracking-wider mb-1 font-title">
+        <label className="block text-[10px] sm:text-xs font-bold text-cfa-navy uppercase tracking-wider mb-1 font-title">
           {t.home.formMsg}
         </label>
         <div className="relative">
-          <MessageSquare className="w-4 h-4 text-cfa-grayText absolute left-3.5 top-3" />
+          <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cfa-grayText absolute left-3 top-2.5" />
           <textarea
             required
-            rows={3}
-            placeholder={language === 'es' ? "Cuéntanos brevemente tu motivo de consulta (ej. FIV, segunda opinión, preservación de óvulos)..." : "Briefly tell us your reason for consultation (e.g. IVF, second opinion, egg freezing)..."}
+            rows={2}
+            placeholder={language === 'es' ? "Motivo breve de consulta (ej. FIV, preservación de óvulos, segunda opinión)..." : "Reason for consultation (e.g. IVF, egg freezing)..."}
             value={formData.como_podemos_ayudarte}
             onChange={(e) => setFormData({ ...formData, como_podemos_ayudarte: e.target.value })}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cfa-grayBorder bg-white text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all resize-none"
+            className="w-full pl-8 sm:pl-10 pr-3 py-2 rounded-lg sm:rounded-xl border border-cfa-grayBorder bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-cfa-cyan focus:border-transparent transition-all resize-none"
           ></textarea>
         </div>
       </div>
 
-      <p className="text-[11px] text-cfa-grayText">
-        🔒 {language === 'es' ? 'Información médica confidencial enviada directamente a' : 'Confidential medical data routed directly to'} <strong>recepcion@infertilidadabc.com</strong>
+      <p className="text-[10px] sm:text-[11px] text-cfa-grayText flex items-center gap-1.5">
+        <Lock className="w-3 h-3 text-cfa-cyan flex-shrink-0" />
+        <span>{language === 'es' ? 'Información médica confidencial directa a recepción.' : 'Confidential medical information sent to reception.'}</span>
       </p>
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-deepBlue text-white font-bold text-sm shadow-md hover:shadow-lg hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 font-title"
+        className="w-full py-2.5 sm:py-3.5 px-6 rounded-lg sm:rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-deepBlue text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 font-title"
       >
         {loading ? (
           <>
-            <Loader2 className="w-4 h-4 animate-spin" />
+            <Loader2 className="w-3.5 h-3.5 animate-spin" />
             <span>{language === 'es' ? 'Procesando...' : 'Processing...'}</span>
           </>
         ) : (
           <>
-            <Calendar className="w-4 h-4" />
+            <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span>{t.home.formSubmit}</span>
           </>
         )}
@@ -243,7 +249,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
               <Calendar className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-title text-lg font-bold text-white">
+              <h3 className="font-title text-lg font-light text-white">
                 {language === 'es' ? 'Agenda tu Cita Médica Directa' : 'Book Direct Consultation'}
               </h3>
               <p className="text-xs text-cfa-light font-sans">

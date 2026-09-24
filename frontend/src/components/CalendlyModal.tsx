@@ -29,7 +29,7 @@ export const CalendlyModal: React.FC<CalendlyModalProps> = ({
               <Calendar className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-title text-lg sm:text-xl font-bold text-white">
+              <h3 className="font-title text-lg sm:text-xl font-light text-white">
                 {language === 'es' ? 'Agendar Cita con Calendly' : 'Schedule with Calendly'}
               </h3>
               <p className="text-xs text-cfa-light font-sans">

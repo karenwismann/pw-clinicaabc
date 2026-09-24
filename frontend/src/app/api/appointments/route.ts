@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     let emailSent = false;
     try {
       const emailPayload = {
-        _subject: `🔔 Nueva Solicitud de Cita Médica - CFA ABC (${nombre || 'Paciente'})`,
+        _subject: `Nueva Solicitud de Cita Médica - CFA ABC (${nombre || 'Paciente'})`,
         _replyto: correo || '',
         _template: 'table',
         _captcha: 'false',

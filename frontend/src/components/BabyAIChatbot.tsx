@@ -150,7 +150,7 @@ export const BabyAIChatbot: React.FC = () => {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h3 className="font-title font-bold text-base text-white tracking-wide">Baby.IA</h3>
+                    <h3 className="font-title font-normal text-base text-white tracking-wide">Baby.IA</h3>
                     <span className="px-2 py-0.5 rounded-full bg-cfa-light/20 text-cfa-light text-[10px] font-semibold tracking-wider uppercase border border-cfa-light/30">
                       Gemini IA
                     </span>

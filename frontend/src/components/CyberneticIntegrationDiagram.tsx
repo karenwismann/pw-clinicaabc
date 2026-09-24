@@ -138,7 +138,7 @@ export default function CyberneticIntegrationDiagram() {
           <Sparkles className="w-3 h-3 text-cfa-cyan animate-pulse" />
           <span>{language === 'es' ? 'Arquitectura Cibernética & Biológica' : 'Cybernetic & Biological Architecture'}</span>
         </div>
-        <h3 className="font-title text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+        <h3 className="font-title text-xl sm:text-2xl md:text-3xl font-light text-white tracking-tight">
           {language === 'es' ? 'Diagrama de Integración Cibernética' : 'Cybernetic Integration Diagram'}
         </h3>
         <p className="text-[11px] sm:text-xs text-blue-100 font-sans leading-relaxed">
@@ -161,7 +161,7 @@ export default function CyberneticIntegrationDiagram() {
               <span className="text-[9px] font-bold text-cfa-cyan uppercase tracking-wider font-title block">
                 {selectedData.tag}
               </span>
-              <h4 className="font-title text-sm sm:text-base font-bold text-white leading-tight">
+              <h4 className="font-title text-sm sm:text-base font-normal text-white leading-tight">
                 {selectedData.title}
               </h4>
             </div>
@@ -245,7 +245,7 @@ export default function CyberneticIntegrationDiagram() {
                 <span className="text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-200 border border-cyan-400/30 font-title mb-1">
                   {nodes.ml.tag}
                 </span>
-                <h4 className="font-title text-xs lg:text-sm font-extrabold text-white leading-tight">
+                <h4 className="font-title text-xs lg:text-sm font-normal text-white leading-tight">
                   {nodes.ml.title}
                 </h4>
                 <p className="text-[10px] text-blue-200 font-sans mt-0.5 line-clamp-1">
@@ -270,7 +270,7 @@ export default function CyberneticIntegrationDiagram() {
                 <span className="text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-200 border border-sky-400/30 font-title mb-1">
                   {nodes.timelapse.tag}
                 </span>
-                <h4 className="font-title text-xs lg:text-sm font-extrabold text-white leading-tight">
+                <h4 className="font-title text-xs lg:text-sm font-normal text-white leading-tight">
                   {nodes.timelapse.title}
                 </h4>
                 <p className="text-[10px] text-blue-200 font-sans mt-0.5 line-clamp-1">
@@ -295,7 +295,7 @@ export default function CyberneticIntegrationDiagram() {
                 <span className="text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-200 border border-sky-400/30 font-title mb-1">
                   {nodes.genetics.tag}
                 </span>
-                <h4 className="font-title text-xs lg:text-sm font-extrabold text-white leading-tight">
+                <h4 className="font-title text-xs lg:text-sm font-normal text-white leading-tight">
                   {nodes.genetics.title}
                 </h4>
                 <p className="text-[10px] text-blue-200 font-sans mt-0.5 line-clamp-1">
@@ -325,7 +325,7 @@ export default function CyberneticIntegrationDiagram() {
                 <span className="text-[9px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-cyan-400/20 text-cyan-100 border border-cyan-300/40 font-title mb-1">
                   {nodes.ai.tag}
                 </span>
-                <h4 className="font-title text-sm lg:text-base font-extrabold text-white leading-tight">
+                <h4 className="font-title text-sm lg:text-base font-normal text-white leading-tight">
                   {nodes.ai.title}
                 </h4>
                 <p className="text-[11px] text-cyan-100 font-sans mt-0.5">
@@ -351,7 +351,7 @@ export default function CyberneticIntegrationDiagram() {
               <span className="text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-200 border border-cyan-400/30 font-title mb-1">
                 {nodes.outcome.tag}
               </span>
-              <h4 className="font-title text-xs lg:text-sm font-extrabold text-white leading-tight">
+              <h4 className="font-title text-xs lg:text-sm font-normal text-white leading-tight">
                 {nodes.outcome.title}
               </h4>
               <p className="text-[10px] text-cyan-200 font-sans mt-0.5">
@@ -392,7 +392,7 @@ export default function CyberneticIntegrationDiagram() {
                 <span className="text-[8px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/10 text-blue-100 font-title mb-0.5">
                   {item.tag}
                 </span>
-                <h4 className="font-title text-[11px] font-bold text-white leading-tight">
+                <h4 className="font-title text-[11px] font-normal text-white leading-tight">
                   {item.title}
                 </h4>
                 <p className="text-[9px] text-blue-200 font-sans mt-0.5">

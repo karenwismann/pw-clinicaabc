@@ -46,18 +46,18 @@ export default function DivulgacionCientificaPage() {
   });
 
   return (
-    <div className="space-y-16 pb-20">
+    <div className="space-y-10 sm:space-y-16 pb-16 sm:pb-20">
       {/* Header Banner */}
-      <section className="bg-gradient-to-r from-cfa-navy via-cfa-midnight to-cfa-deepBlue text-white py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-cfa-light text-xs font-semibold uppercase tracking-wider font-title">
-            <BookOpen className="w-3.5 h-3.5" />
+      <section className="bg-gradient-to-r from-cfa-navy via-cfa-midnight to-cfa-deepBlue text-white py-10 sm:py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 border border-white/25 text-cfa-light text-[11px] sm:text-xs font-semibold uppercase tracking-wider font-title">
+            <BookOpen className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>{language === 'es' ? 'Educación & Divulgación Médica' : 'Medical Education & Science'}</span>
           </div>
-          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h1 className="font-title text-2xl sm:text-4xl md:text-5xl font-light text-white leading-tight">
             {language === 'es' ? 'Divulgación Científica & Blog' : 'Scientific Outreach & Medical Blog'}
           </h1>
-          <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
+          <p className="text-xs sm:text-base text-blue-100/90 leading-relaxed font-sans max-w-2xl mx-auto">
             {language === 'es'
               ? 'Artículos médicos especializados, avances en reproducción asistida y el podcast oficial con el Dr. Carlos Navarro Martínez.'
               : 'Specialized medical articles, assisted reproduction breakthroughs, and our official video podcast with Dr. Carlos Navarro Martínez.'}
@@ -67,15 +67,15 @@ export default function DivulgacionCientificaPage() {
 
       {/* SECCIÓN PODCAST DESTACADO */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#004C97] via-[#0B2559] to-[#071A40] text-white p-6 sm:p-10 shadow-2xl border border-[#69B3E7]/30">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#004C97] via-[#0B2559] to-[#071A40] text-white p-4 sm:p-8 lg:p-10 shadow-xl sm:shadow-2xl border border-[#69B3E7]/30">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             {/* Video Player / Showcase */}
             <div className="lg:col-span-7">
               <a
                 href="https://www.youtube.com/watch?v=GCagLjVF8U4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block relative rounded-2xl overflow-hidden border-2 border-white/40 shadow-2xl bg-[#071A40] aspect-video"
+                className="group block relative rounded-xl sm:rounded-2xl overflow-hidden border border-white/40 shadow-xl bg-[#071A40] aspect-video"
               >
                 <img
                   src="/imagenes/youtube_podcast_thumb.jpg"
@@ -86,16 +86,16 @@ export default function DivulgacionCientificaPage() {
                 
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-2xl border border-white/50 group-hover:scale-110 group-hover:bg-red-600 transition-all">
-                    <Play className="w-8 h-8 fill-white translate-x-0.5" />
+                  <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-full bg-[#004C97] hover:bg-[#69B3E7] text-white flex items-center justify-center shadow-xl border border-white/50 group-hover:scale-110 transition-all">
+                    <Play className="w-5 h-5 sm:w-8 sm:h-8 fill-white translate-x-0.5" />
                   </div>
                 </div>
 
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-red-600 text-white uppercase font-title">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
+                  <span className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#004C97] text-white uppercase font-title">
                     Episodio Destacado
                   </span>
-                  <h4 className="font-title text-base sm:text-lg font-bold text-white mt-1.5 drop-shadow">
+                  <h4 className="font-title text-sm sm:text-lg font-normal text-white mt-1 drop-shadow line-clamp-1">
                     Historias de Fertilidad, Ciencia & Esperanza • Dr. Carlos Navarro
                   </h4>
                 </div>
@@ -103,53 +103,53 @@ export default function DivulgacionCientificaPage() {
             </div>
 
             {/* Information & Channels */}
-            <div className="lg:col-span-5 space-y-4 font-sans">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-bold font-title">
-                <Youtube className="w-3.5 h-3.5" />
+            <div className="lg:col-span-5 space-y-3 sm:space-y-4 font-sans">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#69B3E7]/20 border border-[#69B3E7]/40 text-[#69B3E7] text-[11px] sm:text-xs font-bold font-title">
+                <Youtube className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 <span>Podcast Oficial en YouTube</span>
               </div>
 
-              <h2 className="font-title text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+              <h2 className="font-title text-xl sm:text-2xl lg:text-3xl font-light text-white leading-tight">
                 {language === 'es' ? 'Canal Oficial @infertilidadabc' : 'Official Channel @infertilidadabc'}
               </h2>
 
-              <p className="text-xs sm:text-sm text-blue-50 leading-relaxed">
+              <p className="text-xs sm:text-sm text-blue-50/90 leading-relaxed">
                 {language === 'es'
                   ? 'Explicaciones médicas claras y casos clínicos presentados por el equipo médico del Centro Médico ABC Santa Fe.'
                   : 'Clear medical explanations and clinical insights from ABC Medical Center specialists.'}
               </p>
 
-              <div className="space-y-3 pt-2">
+              <div className="space-y-2 sm:space-y-3 pt-1 sm:pt-2">
                 <a
                   href="https://www.youtube.com/watch?v=GCagLjVF8U4"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-red-600/50 hover:bg-red-600/75 border border-red-400/40 backdrop-blur-md text-white font-extrabold text-sm shadow-lg shadow-red-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all font-title"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl sm:rounded-2xl bg-[#004C97] hover:bg-[#69B3E7] border border-white/20 backdrop-blur-md text-white font-extrabold text-xs sm:text-sm shadow-md transition-all font-title"
                 >
-                  <Youtube className="w-5 h-5 text-white" />
+                  <Youtube className="w-4 h-4 text-white" />
                   <span>{language === 'es' ? 'Ver Video en YouTube' : 'Watch Video on YouTube'}</span>
-                  <ExternalLink className="w-4 h-4 opacity-80" />
+                  <ExternalLink className="w-3.5 h-3.5 opacity-80" />
                 </a>
 
                 <a
                   href="https://www.youtube.com/@infertilidadabc"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs transition-all font-title"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-[11px] sm:text-xs transition-all font-title"
                 >
                   <span>{language === 'es' ? 'Visitar Canal Completo @infertilidadabc' : 'Visit Full Channel @infertilidadabc'}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </a>
 
                 <a
                   href="https://www.linkedin.com/company/cl%C3%ADnica-de-fertilizaci%C3%B3n-asistida/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-2xl bg-[#004C97]/80 hover:bg-[#004C97] border border-[#69B3E7]/40 text-white font-semibold text-xs transition-all font-title shadow-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-6 py-2.5 rounded-xl sm:rounded-2xl bg-[#004C97]/80 hover:bg-[#004C97] border border-[#69B3E7]/40 text-white font-semibold text-[11px] sm:text-xs transition-all font-title shadow-xs"
                 >
-                  <Linkedin className="w-4 h-4 text-white" />
+                  <Linkedin className="w-3.5 h-3.5 text-white" />
                   <span>{language === 'es' ? 'Seguir en LinkedIn CFA' : 'Follow on LinkedIn CFA'}</span>
-                  <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                  <ExternalLink className="w-3 h-3 opacity-80" />
                 </a>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function DivulgacionCientificaPage() {
       </section>
 
       {/* SECCIÓN DE ARTÍCULOS MÉDICOS Y BLOG */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#69B3E7]/40 pb-4">
@@ -167,7 +167,7 @@ export default function DivulgacionCientificaPage() {
               <BookOpen className="w-3.5 h-3.5" />
               <span>{language === 'es' ? 'Artículos & Publicaciones' : 'Articles & Publications'}</span>
             </div>
-            <h2 className="font-title text-2xl sm:text-3xl font-bold text-[#0B2559]">
+            <h2 className="font-title text-2xl sm:text-3xl font-light text-[#0B2559]">
               {language === 'es' ? 'Biblioteca Médica & Divulgación' : 'Medical Library & Scientific Updates'}
             </h2>
           </div>
@@ -177,24 +177,24 @@ export default function DivulgacionCientificaPage() {
         </div>
 
         {/* Filter Bar: Only "Último blog" and "Todos los blogs" */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <div className="flex items-center gap-2 w-full sm:w-auto">
             <button
               onClick={() => setActiveTab('ultimo')}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all font-title cursor-pointer ${
+              className={`flex-1 sm:flex-initial text-center px-4 py-2 rounded-full text-xs font-bold transition-all font-title cursor-pointer ${
                 activeTab === 'ultimo'
                   ? 'bg-cfa-navy text-white shadow-md'
-                  : 'bg-white text-cfa-navy hover:bg-slate-100 border border-slate-200'
+                  : 'bg-white text-cfa-navy hover:bg-[#EBF5FC] border border-[#69B3E7]/30'
               }`}
             >
               {language === 'es' ? 'Último blog' : 'Latest blog'}
             </button>
             <button
               onClick={() => setActiveTab('todos')}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all font-title cursor-pointer ${
+              className={`flex-1 sm:flex-initial text-center px-4 py-2 rounded-full text-xs font-bold transition-all font-title cursor-pointer ${
                 activeTab === 'todos'
                   ? 'bg-cfa-navy text-white shadow-md'
-                  : 'bg-white text-cfa-navy hover:bg-slate-100 border border-slate-200'
+                  : 'bg-white text-cfa-navy hover:bg-[#EBF5FC] border border-[#69B3E7]/30'
               }`}
             >
               {language === 'es' ? 'Todos los blogs' : 'All blogs'}
@@ -213,70 +213,70 @@ export default function DivulgacionCientificaPage() {
                 }
               }}
               placeholder={language === 'es' ? 'Buscar en los blogs...' : 'Search blogs...'}
-              className="w-full pl-9 pr-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-sans text-cfa-navy placeholder-slate-400 focus:outline-none focus:border-cfa-cyan transition-colors"
+              className="w-full pl-9 pr-4 py-2 rounded-full bg-white border border-[#69B3E7]/40 text-xs font-sans text-cfa-navy placeholder-[#004C97]/50 focus:outline-none focus:border-cfa-cyan transition-colors"
             />
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+            <Search className="w-4 h-4 text-[#004C97]/60 absolute left-3 top-2.5" />
           </div>
         </div>
 
         {/* VISTA: ÚLTIMO BLOG */}
         {activeTab === 'ultimo' && featuredPost && (
-          <div className="space-y-6">
-            <div className="relative overflow-hidden rounded-3xl bg-white border-2 border-cfa-cyan/40 shadow-xl hover:shadow-2xl transition-all group">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white border-2 border-cfa-cyan/40 shadow-xl hover:shadow-2xl transition-all group">
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 {/* Image side */}
-                <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto overflow-hidden bg-slate-900">
+                <div className="lg:col-span-5 relative aspect-[16/9] lg:aspect-auto max-h-56 sm:max-h-none overflow-hidden bg-[#0B2559]">
                   <img
                     src={featuredPost.imageSrc}
                     alt={featuredPost.title[language] || featuredPost.title.es}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95"
                   />
-                  <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2">
-                    <span className="px-3 py-1 rounded-full bg-amber-500 text-white text-[11px] font-black uppercase tracking-wider font-title shadow-md flex items-center gap-1.5">
-                      <Sparkles className="w-3 h-3" />
+                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex flex-wrap items-center gap-1.5 sm:gap-2">
+                    <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#004C97] text-white text-[10px] sm:text-[11px] font-black uppercase tracking-wider font-title shadow-md flex items-center gap-1">
+                      <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#69B3E7]" />
                       <span>{language === 'es' ? 'Borrador Interactivo' : 'Interactive Draft'}</span>
                     </span>
-                    <span className="px-3 py-1 rounded-full bg-cfa-navy/85 backdrop-blur-md text-white text-[11px] font-bold font-title">
+                    <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-cfa-navy/85 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-bold font-title">
                       {featuredPost.category[language] || featuredPost.category.es}
                     </span>
                   </div>
                 </div>
 
                 {/* Content side */}
-                <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-xs text-slate-500 font-sans">
+                <div className="lg:col-span-7 p-4 sm:p-8 lg:p-10 flex flex-col justify-between space-y-4 sm:space-y-6">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-[#004C97]/70 font-sans">
                       <div className="flex items-center gap-1">
-                        <Calendar className="w-3.5 h-3.5 text-cfa-cyan" />
+                        <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-cfa-cyan" />
                         <span>{featuredPost.date[language] || featuredPost.date.es}</span>
                       </div>
                       <span>•</span>
                       <div className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5 text-cfa-cyan" />
+                        <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-cfa-cyan" />
                         <span>{featuredPost.readTime[language] || featuredPost.readTime.es}</span>
                       </div>
                     </div>
 
                     <Link href={`/divulgacion-cientifica/${featuredPost.id}`}>
-                      <h3 className="font-title text-xl sm:text-2xl lg:text-3xl font-extrabold text-cfa-navy group-hover:text-cfa-cyan transition-colors leading-snug">
+                      <h3 className="font-title text-base sm:text-2xl lg:text-3xl font-light text-cfa-navy group-hover:text-cfa-cyan transition-colors leading-snug">
                         {featuredPost.title[language] || featuredPost.title.es}
                       </h3>
                     </Link>
 
-                    <p className="text-xs sm:text-sm text-slate-600 font-sans leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#004C97]/80 font-sans leading-relaxed line-clamp-3 sm:line-clamp-none">
                       {featuredPost.subtitle[language] || featuredPost.subtitle.es}
                     </p>
 
                     {/* Bullet Highlights */}
-                    <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 space-y-2">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-cfa-navy font-title">
-                        {language === 'es' ? 'Aspectos destacados del artículo:' : 'Article Highlights:'}
+                    <div className="bg-[#EBF5FC]/60 rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-[#69B3E7]/30 space-y-1.5 sm:space-y-2">
+                      <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-cfa-navy font-title">
+                        {language === 'es' ? 'Aspectos destacados:' : 'Highlights:'}
                       </span>
-                      <ul className="text-xs text-slate-600 space-y-1.5 font-sans">
+                      <ul className="text-[11px] sm:text-xs text-[#004C97]/80 space-y-1 sm:space-y-1.5 font-sans">
                         {(featuredPost.keyTakeaways[language] || featuredPost.keyTakeaways.es).slice(0, 2).map((takeaway, tIdx) => (
-                          <li key={tIdx} className="flex items-start gap-2">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                            <span>{takeaway}</span>
+                          <li key={tIdx} className="flex items-start gap-1.5 sm:gap-2">
+                            <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#004C97] flex-shrink-0 mt-0.5" />
+                            <span className="line-clamp-2">{takeaway}</span>
                           </li>
                         ))}
                       </ul>
@@ -284,18 +284,18 @@ export default function DivulgacionCientificaPage() {
                   </div>
 
                   {/* Author & Button */}
-                  <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
+                  <div className="pt-3 sm:pt-4 border-t border-[#69B3E7]/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+                    <div className="flex items-center gap-2.5 sm:gap-3">
                       <img
                         src={featuredPost.author.avatar}
                         alt={featuredPost.author.name}
-                        className="w-10 h-10 rounded-full object-cover border-2 border-cfa-cyan"
+                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-cfa-cyan flex-shrink-0"
                       />
                       <div>
                         <div className="font-title text-xs font-bold text-cfa-navy">
                           {featuredPost.author.name}
                         </div>
-                        <div className="text-[11px] text-slate-500 font-sans">
+                        <div className="text-[10px] sm:text-[11px] text-[#004C97]/70 font-sans">
                           {featuredPost.author.role[language] || featuredPost.author.role.es}
                         </div>
                       </div>
@@ -303,10 +303,10 @@ export default function DivulgacionCientificaPage() {
 
                     <Link
                       href={`/divulgacion-cientifica/${featuredPost.id}`}
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-cfa-navy hover:bg-cfa-cyan text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all font-title group/btn cursor-pointer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl sm:rounded-2xl bg-cfa-navy hover:bg-cfa-cyan text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all font-title group/btn cursor-pointer"
                     >
                       <span>{language === 'es' ? 'Leer Artículo Completo' : 'Read Full Article'}</span>
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>
@@ -314,7 +314,7 @@ export default function DivulgacionCientificaPage() {
             </div>
 
             {/* Quick switcher to all blogs */}
-            <div className="text-center pt-2">
+            <div className="text-center pt-1 sm:pt-2">
               <button
                 onClick={() => setActiveTab('todos')}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-cfa-navy hover:text-cfa-cyan transition-colors font-title underline cursor-pointer"
@@ -327,62 +327,62 @@ export default function DivulgacionCientificaPage() {
 
         {/* VISTA: TODOS LOS BLOGS */}
         {activeTab === 'todos' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {filteredPosts.length === 0 ? (
-              <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 text-slate-500">
-                <p className="text-sm font-sans">
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center border border-[#69B3E7]/30 text-[#004C97]/70">
+                <p className="text-xs sm:text-sm font-sans">
                   {language === 'es' ? 'No se encontraron artículos con ese término de búsqueda.' : 'No articles found matching that search.'}
                 </p>
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="mt-3 text-xs font-bold text-cfa-cyan hover:underline font-title cursor-pointer"
+                  className="mt-2 text-xs font-bold text-cfa-cyan hover:underline font-title cursor-pointer"
                 >
                   {language === 'es' ? 'Limpiar búsqueda' : 'Clear search'}
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {filteredPosts.map((post) => {
                   const hasFullContent = Boolean(post.content);
                   return (
                     <div
                       key={post.id}
-                      className="bg-white rounded-3xl p-6 border border-slate-200 shadow-soft hover:shadow-lg hover:border-cfa-cyan/50 transition-all flex flex-col justify-between group"
+                      className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-[#69B3E7]/30 shadow-soft hover:shadow-lg hover:border-cfa-cyan/50 transition-all flex flex-col justify-between group"
                     >
-                      <div className="space-y-4">
+                      <div className="space-y-3 sm:space-y-4">
                         {/* Thumbnail Image */}
-                        <div className="relative rounded-2xl overflow-hidden aspect-video bg-slate-100 border border-slate-100">
+                        <div className="relative rounded-xl sm:rounded-2xl overflow-hidden aspect-video bg-[#EBF5FC] border border-[#69B3E7]/20">
                           <img
                             src={post.imageSrc}
                             alt={post.title[language] || post.title.es}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
-                          <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-cfa-navy/85 backdrop-blur-sm text-white text-[10px] font-bold font-title">
+                          <span className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full bg-cfa-navy/85 backdrop-blur-sm text-white text-[9px] sm:text-[10px] font-bold font-title">
                             {post.category[language] || post.category.es}
                           </span>
                         </div>
 
                         {/* Metadata */}
-                        <div className="flex items-center gap-2 text-[11px] text-slate-500 font-sans">
+                        <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] text-[#004C97]/70 font-sans">
                           <span>{post.date[language] || post.date.es}</span>
                           <span>•</span>
                           <span>{post.readTime[language] || post.readTime.es}</span>
                         </div>
 
                         {/* Title */}
-                        <h4 className="font-title text-base sm:text-lg font-bold text-cfa-navy group-hover:text-cfa-cyan transition-colors line-clamp-2 leading-snug">
+                        <h4 className="font-title text-sm sm:text-base lg:text-lg font-normal text-cfa-navy group-hover:text-cfa-cyan transition-colors line-clamp-2 leading-snug">
                           {post.title[language] || post.title.es}
                         </h4>
 
                         {/* Snippet */}
-                        <p className="text-xs text-slate-600 font-sans line-clamp-3 leading-relaxed">
+                        <p className="text-xs text-[#004C97]/80 font-sans line-clamp-2 sm:line-clamp-3 leading-relaxed">
                           {post.snippet[language] || post.snippet.es}
                         </p>
                       </div>
 
                       {/* Footer */}
-                      <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between">
-                        <span className="text-[11px] font-semibold text-slate-500 font-sans truncate max-w-[130px]">
+                      <div className="pt-3 mt-4 sm:pt-4 sm:mt-6 border-t border-[#69B3E7]/20 flex items-center justify-between">
+                        <span className="text-[10px] sm:text-[11px] font-semibold text-[#004C97]/70 font-sans truncate max-w-[130px]">
                           {post.author.name}
                         </span>
 
@@ -392,11 +392,11 @@ export default function DivulgacionCientificaPage() {
                             className="inline-flex items-center gap-1 text-xs font-bold text-cfa-navy hover:text-cfa-cyan font-title"
                           >
                             <span>{language === 'es' ? 'Leer' : 'Read'}</span>
-                            <ChevronRight className="w-3.5 h-3.5" />
+                            <ChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                           </Link>
                         ) : (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-700 bg-amber-50 border border-amber-200/60 px-2 py-0.5 rounded-md font-sans">
-                            <span>{language === 'es' ? 'En revisión médica' : 'In review'}</span>
+                          <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-[#004C97] bg-[#EBF5FC] border border-[#69B3E7]/40 px-2 py-0.5 rounded-md font-sans">
+                            <span>{language === 'es' ? 'En revisión' : 'In review'}</span>
                           </span>
                         )}
                       </div>
@@ -418,7 +418,7 @@ export default function DivulgacionCientificaPage() {
               <Globe className="w-3.5 h-3.5 text-[#004C97]" />
               <span>{language === 'es' ? 'Recursos & Referencias Globales' : 'Global Resources & Standards'}</span>
             </div>
-            <h3 className="font-title text-2xl sm:text-3xl font-bold text-[#0B2559]">
+            <h3 className="font-title text-2xl sm:text-3xl font-light text-[#0B2559]">
               {language === 'es' ? 'Links Útiles & Sociedades Científicas Internacionales' : 'Useful Links & International Scientific Societies'}
             </h3>
           </div>
@@ -441,7 +441,7 @@ export default function DivulgacionCientificaPage() {
               </div>
 
               <div>
-                <h4 className="font-title text-lg font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
+                <h4 className="font-title text-lg font-normal text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
                   American Society for Reproductive Medicine
                 </h4>
                 <p className="text-xs font-semibold text-[#004C97] font-title mt-1">
@@ -482,7 +482,7 @@ export default function DivulgacionCientificaPage() {
               </div>
 
               <div>
-                <h4 className="font-title text-lg font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
+                <h4 className="font-title text-lg font-normal text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
                   Society for Assisted Reproductive Technology
                 </h4>
                 <p className="text-xs font-semibold text-[#004C97] font-title mt-1">
@@ -523,7 +523,7 @@ export default function DivulgacionCientificaPage() {
               </div>
 
               <div>
-                <h4 className="font-title text-lg font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
+                <h4 className="font-title text-lg font-normal text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
                   European Society of Human Reproduction and Embryology
                 </h4>
                 <p className="text-xs font-semibold text-[#004C97] font-title mt-1">

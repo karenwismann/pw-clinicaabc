@@ -1,15 +1,14 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { ValuesSection } from '@/components/ValuesSection';
 import { InternationalMap } from '@/components/InternationalMap';
-import { Award, Compass, Eye, Users, Building2, ShieldCheck, Sparkles, Globe } from 'lucide-react';
+import { Award, Users, Building2, ShieldCheck, Globe } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function SobreNosotrosPage() {
   const { language } = useLanguage();
-  const [missionVisionTab, setMissionVisionTab] = useState<'mision' | 'vision'>('mision');
 
   return (
     <div className="space-y-20 pb-20">
@@ -20,7 +19,7 @@ export default function SobreNosotrosPage() {
             <Award className="w-3.5 h-3.5" />
             <span>{language === 'es' ? 'Nuestra Identidad Médica' : 'Our Medical Identity'}</span>
           </div>
-          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-light text-white">
             {language === 'es' ? 'Sobre la Clínica' : 'About the Clinic'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
@@ -36,12 +35,12 @@ export default function SobreNosotrosPage() {
         {/* Quiénes somos */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-bold uppercase tracking-wider font-title">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-medium uppercase tracking-wider font-title">
               <Users className="w-3.5 h-3.5" />
               <span>{language === 'es' ? 'Equipo Multidisciplinario' : 'Multidisciplinary Team'}</span>
             </div>
 
-            <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-cfa-navy">
+            <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-cfa-navy">
               {language === 'es' ? 'Quiénes Somos' : 'Who We Are'}
             </h2>
 
@@ -83,11 +82,11 @@ export default function SobreNosotrosPage() {
         {/* Nuestra Historia */}
         <div className="bg-white rounded-3xl p-6 sm:p-12 border border-cfa-softBlue shadow-soft space-y-6">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-bold uppercase tracking-wider mb-3 font-title">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-medium uppercase tracking-wider mb-3 font-title">
               <Award className="w-3.5 h-3.5" />
               <span>{language === 'es' ? 'Legado Científico' : 'Scientific Legacy'}</span>
             </div>
-            <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-cfa-navy">
+            <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-cfa-navy">
               {language === 'es' ? 'Nuestra Historia' : 'Our History'}
             </h2>
           </div>
@@ -104,9 +103,12 @@ export default function SobreNosotrosPage() {
                 <p>
                   En el año 1990 – 1991, en el <strong>Hospital Greater Baltimore Medical Center</strong> realiza su entrenamiento en Reproducción Asistida bajo la tutela del <strong>Dr. Jairo García</strong>, miembro del equipo en donde nació el primer bebé de Fertilización in Vitro en Norteamérica.
                 </p>
-                <p className="font-semibold text-[#0B2559] bg-white p-4 rounded-xl border-2 border-[#0B2559]">
-                  🌟 En 1991, de regreso en México, formó parte del equipo médico histórico que logró el primer nacimiento de FIV en México.
-                </p>
+                <div className="bg-[#F0F7FD] p-4.5 sm:p-5 rounded-2xl border border-[#69B3E7]/40 text-[#0B2559] flex items-start gap-3.5 shadow-xs">
+                  <Award className="w-5 h-5 text-[#004C97] flex-shrink-0 mt-0.5" />
+                  <p className="text-sm sm:text-[15px] font-medium leading-relaxed">
+                    <strong>Hito Histórico:</strong> En 1991, tras su entrenamiento internacional, el Dr. Navarro formó parte del distinguido equipo médico pionero que logró con éxito el primer nacimiento mediante Fertilización in Vitro (FIV) en México.
+                  </p>
+                </div>
                 <p>
                   En 1999 inicia la construcción de la CFA original en un edificio anexo al <strong>Hospital ABC Observatorio</strong>. En 2008 inicia la construcción en el <strong>Centro Médico ABC Campus Santa Fe</strong>, inaugurado formalmente junto al Dr. Zev Rosenwaks de Cornell University.
                 </p>
@@ -122,9 +124,12 @@ export default function SobreNosotrosPage() {
                 <p>
                   Between 1990 and 1991, at <strong>Greater Baltimore Medical Center</strong>, he completed his specialized training in Assisted Reproduction under <strong>Dr. Jairo García</strong>, part of the landmark team where the first North American IVF baby was conceived.
                 </p>
-                <p className="font-semibold text-[#0B2559] bg-white p-4 rounded-xl border-2 border-[#0B2559]">
-                  🌟 In 1991, back in Mexico, Dr. Navarro was part of the medical team that achieved the first successful IVF birth in the country.
-                </p>
+                <div className="bg-[#F0F7FD] p-4.5 sm:p-5 rounded-2xl border border-[#69B3E7]/40 text-[#0B2559] flex items-start gap-3.5 shadow-xs">
+                  <Award className="w-5 h-5 text-[#004C97] flex-shrink-0 mt-0.5" />
+                  <p className="text-sm sm:text-[15px] font-medium leading-relaxed">
+                    <strong>Historic Milestone:</strong> In 1991, following his international fellowships, Dr. Navarro was a core member of the pioneering medical team that achieved the first successful IVF live birth in Mexico.
+                  </p>
+                </div>
                 <p>
                   In 1999, the clinic opened at ABC Hospital Observatorio. In 2008, construction began on the current high-tech facility at <strong>ABC Medical Center Santa Fe Campus</strong>, officially inaugurated with Dr. Zev Rosenwaks of Cornell University.
                 </p>
@@ -137,80 +142,51 @@ export default function SobreNosotrosPage() {
       {/* 2. Misión y Visión */}
       <section id="mision-vision" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-cfa-navy via-cfa-midnight to-cfa-deepBlue text-white rounded-3xl p-6 sm:p-12 shadow-xl border border-cfa-cyan/30">
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-cfa-light text-xs font-semibold uppercase tracking-wider mb-2 font-title">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>{language === 'es' ? 'Propósito Institucional' : 'Institutional Purpose'}</span>
-            </div>
-            <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-white">
               {language === 'es' ? 'Misión y Visión' : 'Mission & Vision'}
             </h2>
           </div>
 
-          {/* Toggle Tabs */}
-          <div className="flex justify-center gap-3 mb-8">
-            <button
-              onClick={() => setMissionVisionTab('mision')}
-              className={`px-6 py-2.5 rounded-xl font-bold text-sm transition-all cursor-pointer font-title ${
-                missionVisionTab === 'mision'
-                  ? 'bg-cfa-cyan text-white shadow-md scale-105'
-                  : 'bg-white/15 text-blue-100 hover:bg-white/25'
-              }`}
-            >
-              {language === 'es' ? 'Nuestra Misión' : 'Our Mission'}
-            </button>
-            <button
-              onClick={() => setMissionVisionTab('vision')}
-              className={`px-6 py-2.5 rounded-xl font-bold text-sm transition-all cursor-pointer font-title ${
-                missionVisionTab === 'vision'
-                  ? 'bg-cfa-cyan text-white shadow-md scale-105'
-                  : 'bg-white/15 text-blue-100 hover:bg-white/25'
-              }`}
-            >
-              {language === 'es' ? 'Nuestra Visión' : 'Our Vision'}
-            </button>
-          </div>
-
-          {/* Showcase */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15">
-            <div className="md:col-span-5">
-              <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-white/20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            {/* Misión */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15 flex flex-col items-center text-center">
+              <div className="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden mb-6 border border-white/20 shadow-lg">
                 <Image
-                  src={missionVisionTab === 'mision' ? '/imagenes/mision.jpg' : '/imagenes/vision.jpg'}
-                  alt={missionVisionTab === 'mision' ? 'Misión CFA' : 'Visión CFA'}
+                  src="/imagenes/mision.jpg"
+                  alt={language === 'es' ? 'Misión CFA' : 'CFA Mission'}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
+              <h3 className="font-title text-2xl sm:text-3xl font-light text-white mb-3">
+                {language === 'es' ? 'Misión' : 'Mission'}
+              </h3>
+              <p className="text-sm sm:text-base text-blue-100 font-sans leading-relaxed max-w-md">
+                {language === 'es'
+                  ? 'Ayudar a nuestros pacientes a cumplir su anhelo de formar una familia.'
+                  : 'Helping our patients fulfill their dream of building a family.'}
+              </p>
             </div>
 
-            <div className="md:col-span-7 space-y-4">
-              <div className="flex items-center gap-2 text-cfa-light">
-                {missionVisionTab === 'mision' ? <Compass className="w-6 h-6" /> : <Eye className="w-6 h-6" />}
-                <span className="text-xs font-bold uppercase tracking-widest text-white font-title">
-                  {missionVisionTab === 'mision'
-                    ? (language === 'es' ? 'Declaración de Misión' : 'Mission Statement')
-                    : (language === 'es' ? 'Declaración de Visión' : 'Vision Statement')}
-                </span>
+            {/* Visión */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15 flex flex-col items-center text-center">
+              <div className="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden mb-6 border border-white/20 shadow-lg">
+                <Image
+                  src="/imagenes/vision.jpg"
+                  alt={language === 'es' ? 'Visión CFA' : 'CFA Vision'}
+                  fill
+                  className="object-cover object-center"
+                />
               </div>
-
-              {missionVisionTab === 'mision' ? (
-                <div className="space-y-3">
-                  <h3 className="font-title text-2xl sm:text-3xl font-extrabold text-white leading-snug">
-                    {language === 'es'
-                      ? 'Ayudar a nuestros pacientes a cumplir su anhelo de formar una familia'
-                      : 'Helping our patients fulfill their dream of building a family'}
-                  </h3>
-                </div>
-              ) : (
-                <div className="space-y-3">
-                  <h3 className="font-title text-2xl sm:text-3xl font-extrabold text-white leading-snug">
-                    {language === 'es'
-                      ? 'Ofrecer a nuestras pacientes resultados comparables a las mejores clínicas de reproducción en el mundo'
-                      : 'Offering our patients results comparable to the world’s leading reproductive clinics'}
-                  </h3>
-                </div>
-              )}
+              <h3 className="font-title text-2xl sm:text-3xl font-light text-white mb-3">
+                {language === 'es' ? 'Visión' : 'Vision'}
+              </h3>
+              <p className="text-sm sm:text-base text-blue-100 font-sans leading-relaxed max-w-md">
+                {language === 'es'
+                  ? 'Ofrecer a nuestras pacientes resultados comparables a las mejores clínicas de reproducción en el mundo.'
+                  : 'Offering our patients results comparable to the world’s leading reproductive clinics.'}
+              </p>
             </div>
           </div>
         </div>
@@ -222,11 +198,11 @@ export default function SobreNosotrosPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Content */}
             <div className="lg:col-span-6 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-bold uppercase tracking-wider font-title">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cfa-softBlue text-cfa-cyan text-xs font-medium uppercase tracking-wider font-title">
                 <Globe className="w-3.5 h-3.5" />
                 <span>{language === 'es' ? 'Atención Internacional' : 'International Care'}</span>
               </div>
-              <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-cfa-navy">
+              <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-cfa-navy">
                 {language === 'es' ? 'Nuestra Práctica Médica' : 'Our Medical Practice'}
               </h2>
               <p className="text-sm sm:text-base text-cfa-grayDark leading-relaxed font-sans">
@@ -256,10 +232,10 @@ export default function SobreNosotrosPage() {
             <Users className="w-8 h-8 text-[#0B2559]" />
           </div>
           <div className="space-y-3 flex-1">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-[#0B2559] text-xs font-bold uppercase tracking-wider font-title">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-[#0B2559] text-xs font-medium uppercase tracking-wider font-title">
               <span>{language === 'es' ? 'Atención Individualizada' : 'Individualized Care'}</span>
             </div>
-            <h2 className="font-title text-2xl sm:text-3xl font-extrabold text-white">
+            <h2 className="font-title text-2xl sm:text-3xl font-light text-white">
               {language === 'es' ? 'Nuestras Pacientes' : 'Our Patients'}
             </h2>
             <p className="text-sm sm:text-base text-blue-50 leading-relaxed font-sans">

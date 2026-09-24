@@ -84,7 +84,7 @@ export const Navbar: React.FC = () => {
                 href="https://www.youtube.com/watch?v=GCagLjVF8U4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-6 h-6 rounded-md bg-white/10 hover:bg-red-600 flex items-center justify-center text-white transition-colors"
+                className="w-6 h-6 rounded-md bg-white/10 hover:bg-cfa-cyan flex items-center justify-center text-white transition-colors"
                 title="YouTube Podcast @infertilidadabc"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -142,11 +142,11 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
+          <Link href="/" className="flex items-center gap-3 group flex-shrink-0 mr-4 xl:mr-8">
             <img
               src="/LOGOCFABC.png"
               alt="Clínica de Fertilización Asistida ABC"
-              className="h-11 sm:h-12 w-auto max-w-[210px] object-contain transition-transform group-hover:scale-102"
+              className="h-10 sm:h-11 md:h-12 lg:h-[52px] w-auto max-w-[190px] sm:max-w-[220px] md:max-w-[250px] object-contain transition-transform group-hover:scale-102"
             />
           </Link>
 
@@ -320,7 +320,7 @@ export const Navbar: React.FC = () => {
                     : 'text-cfa-navy hover:text-cfa-cyan hover:bg-cfa-grayLight'
                 }`}
               >
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-[#69B3E7] animate-pulse"></span>
                 <span>{t.nav.media}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mediaDropdownOpen ? 'rotate-180 text-cfa-cyan' : ''}`} />
               </button>
@@ -342,7 +342,7 @@ export const Navbar: React.FC = () => {
                     className="block px-4 py-3 text-sm text-cfa-navy hover:bg-cfa-softBlue/60 hover:text-cfa-cyan transition-colors border-t border-cfa-grayBorder/50"
                   >
                     <div className="font-bold flex items-center gap-2">
-                      <BookOpen className="w-4 h-4 text-red-600" />
+                      <BookOpen className="w-4 h-4 text-cfa-cyan" />
                       <span>{t.nav.scientificOutreach}</span>
                     </div>
                     <div className="text-xs text-cfa-grayText font-sans mt-0.5">{t.nav.scientificOutreachDesc}</div>
@@ -363,14 +363,14 @@ export const Navbar: React.FC = () => {
             </Link>
           </nav>
 
-          {/* Right CTA Button (Única llamada a la acción de Citas) */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Right CTA Button (Única llamada a la acción de Citas - Siempre en 1 sola línea) */}
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <button
               onClick={() => setIsAppointmentOpen(true)}
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-deepBlue text-white text-sm font-bold shadow-sm hover:shadow-md hover:brightness-105 active:scale-98 transition-all flex items-center gap-2 font-title cursor-pointer"
+              className="whitespace-nowrap px-4 xl:px-5 py-2.5 rounded-xl bg-gradient-to-r from-cfa-cyan to-cfa-deepBlue text-white text-xs xl:text-sm font-bold shadow-sm hover:shadow-md hover:brightness-105 active:scale-98 transition-all flex items-center gap-2 font-title cursor-pointer flex-shrink-0"
             >
-              <Calendar className="w-4 h-4" />
-              <span>{t.nav.bookAppointment}</span>
+              <Calendar className="w-4 h-4 flex-shrink-0" />
+              <span className="whitespace-nowrap">{t.nav.bookAppointment}</span>
             </button>
           </div>
 
@@ -455,14 +455,14 @@ export const Navbar: React.FC = () => {
             </Link>
 
             <div className="pt-2 pb-1 text-xs font-bold text-cfa-grayText uppercase tracking-wider px-3 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-[#69B3E7] animate-pulse"></span>
               <span>{t.nav.media}</span>
             </div>
             <div className="pl-3 space-y-1">
               <Link href="/media" className="block px-3 py-1.5 text-sm text-cfa-navy hover:text-cfa-cyan">
                 • {t.nav.mediaGallery}
               </Link>
-              <Link href="/divulgacion-cientifica" className="block px-3 py-1.5 text-sm text-cfa-navy hover:text-cfa-cyan font-bold text-red-600">
+              <Link href="/divulgacion-cientifica" className="block px-3 py-1.5 text-sm text-cfa-navy hover:text-cfa-cyan font-bold">
                 • {t.nav.scientificOutreach}
               </Link>
             </div>

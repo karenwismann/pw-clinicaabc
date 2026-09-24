@@ -36,7 +36,7 @@ export const DOCTORS: Doctor[] = [
     linkedinUrl: "https://www.linkedin.com/in/carlos-navarro-11651a80/",
     isLeadership: true,
     es: {
-      role: "Director",
+      role: "Director Médico",
       specialty: "Ginecología, Obstetricia y Biología de la Reproducción Humana",
       brief: "Con más de 35 años de experiencia en reproducción humana, nuestro director formó parte del equipo que logro el nacimiento del 1er bebe de Fertilización in Vitro en México en el año 1991. Dirige la Clínica de Fertilización Asistida desde 1999.",
       fullBio: [
@@ -62,7 +62,7 @@ export const DOCTORS: Doctor[] = [
       ]
     },
     en: {
-      role: "Director",
+      role: "Medical Director",
       specialty: "Gynecology, Obstetrics & Human Reproductive Biology",
       brief: "With over 35 years of experience in human reproduction, our director was part of the medical team that achieved the 1st IVF live birth in Mexico in 1991. He has directed the Assisted Fertilization Clinic since 1999.",
       fullBio: [
@@ -94,7 +94,7 @@ export const DOCTORS: Doctor[] = [
     imageSrc: "/imagenes/doctores/doctorasteph.jpg",
     linkedinUrl: "https://www.linkedin.com/in/stephanie-lizmi-671507269",
     es: {
-      role: "Coordinadora del Área Médica & Coach de la Fertilidad",
+      role: "Coordinación Médica & Coaching",
       specialty: "Reproducción Humana Asistida y Coaching de Fertilidad",
       brief: "Médico Cirujano (Universidad Anáhuac). Coordinadora del Área Médica de la CFA en el Centro Médico ABC y Coach de la Fertilidad, acompañando a las pacientes durante todo su proceso.",
       fullBio: [
@@ -117,7 +117,7 @@ export const DOCTORS: Doctor[] = [
       ]
     },
     en: {
-      role: "Medical Area Coordinator & Fertility Coach",
+      role: "Medical Coordination & Coaching",
       specialty: "Assisted Human Reproduction & Fertility Coaching",
       brief: "Medical Surgeon (Anáhuac University). Medical Area Coordinator at CFA ABC Medical Center and Certified Fertility Coach guiding patients throughout their entire journey.",
       fullBio: [
@@ -146,7 +146,7 @@ export const DOCTORS: Doctor[] = [
     imageSrc: "/imagenes/doctores/dr_jorge.jpg",
     es: {
       role: "Director Científico",
-      specialty: "Ginecología, Endocrinología Ginecológica e Infertilidad",
+      specialty: "Endocrinología Ginecológica e Infertilidad",
       brief: "Director Científico de la CFA. Ex-médico adjunto y jefe de Endocrinología Ginecológica en Instituto Universitario Dexeus (Barcelona) y fellowship en Mount Sinai (Nueva York).",
       fullBio: [
         "Completó su residencia en Ginecología y Obstetricia en el Hospital Ángeles de las Lomas y realizó un fellowship en Endocrinología Ginecológica e Infertilidad en el Hospital de Mount Sinai, en la ciudad de Nueva York, en Estados Unidos.",
@@ -169,7 +169,7 @@ export const DOCTORS: Doctor[] = [
     },
     en: {
       role: "Scientific Director",
-      specialty: "Gynecology, Reproductive Endocrinology & Infertility",
+      specialty: "Gynecological Endocrinology & Infertility",
       brief: "Scientific Director of CFA. Former attending physician and Head of Gynecological Endocrinology at Dexeus University Institute (Barcelona) and fellowship at Mount Sinai (NYC).",
       fullBio: [
         "Completed his residency in Obstetrics & Gynecology at Hospital Ángeles de las Lomas and completed a clinical fellowship in Gynecological Endocrinology and Infertility at The Mount Sinai Hospital in New York City, USA.",
@@ -196,7 +196,7 @@ export const DOCTORS: Doctor[] = [
     name: "Dr. Fernando Galván Duque Rivero",
     imageSrc: "/imagenes/doctores/doctorfernando.webp",
     es: {
-      role: "Especialista en Cirugía Reproductiva & Medicina Materno Fetal",
+      role: "Cirugía Reproductiva & Materno Fetal",
       specialty: "Ginecología y Obstetricia, Laparoscopía y Medicina Materno Fetal",
       brief: "Subespecialista en Medicina Materno Fetal por el Instituto Nacional de Perinatología y Máster en Reproducción Asistida y Genética por la Universidad Reina Sofía.",
       fullBio: [
@@ -220,7 +220,7 @@ export const DOCTORS: Doctor[] = [
       ]
     },
     en: {
-      role: "Reproductive Surgery & Maternal-Fetal Medicine Specialist",
+      role: "Reproductive Surgery & Fetal Medicine",
       specialty: "Gynecology & Obstetrics, Laparoscopy & Maternal-Fetal Medicine",
       brief: "Subspecialist in Maternal-Fetal Medicine (INPer) and Master in Assisted Reproduction & Genetics (Universidad Reina Sofía).",
       fullBio: [
@@ -249,7 +249,7 @@ export const DOCTORS: Doctor[] = [
     name: "Dra. Tanya I. Montañez Díaz de León",
     imageSrc: "/imagenes/doctores/doctoratanya.webp",
     es: {
-      role: "Especialista en Reproducción Asistida",
+      role: "Reproducción Asistida & FIV",
       specialty: "Ginecología y Biología de la Reproducción",
       brief: "Especialista en estimulación ovárica personalizada, fertilización in vitro de alta complejidad y preservación de la fertilidad en el Centro Médico ABC.",
       fullBio: [
@@ -268,7 +268,7 @@ export const DOCTORS: Doctor[] = [
       ]
     },
     en: {
-      role: "Assisted Reproduction Specialist",
+      role: "Assisted Reproduction & IVF",
       specialty: "Gynecology & Reproductive Biology",
       brief: "Specialist in personalized ovarian stimulation, high-complexity IVF, and fertility preservation at ABC Medical Center.",
       fullBio: [
@@ -288,11 +288,50 @@ export const DOCTORS: Doctor[] = [
     }
   },
   {
+    id: "dr-julio-gonzalez-cofrades",
+    name: "Dr. Julio González Cofrades",
+    imageSrc: "/imagenes/doctores/dr_julio_gonzalez.jpg",
+    es: {
+      role: "Reproducción Asistida & Cirugía",
+      specialty: "Ginecología y Obstetricia · Reproducción Asistida y Cirugía de Mínima Invasión",
+      brief: "Especialista en Ginecología y Obstetricia con más de 20 años de experiencia clínica en Reproducción Asistida y Cirugía de Mínima Invasión.",
+      fullBio: [
+        "Egresado de la Facultad de Medicina La Salle. Especialista en Ginecología y Obstetricia con Sub-Especialidad en Reproducción Asistida y cirugía de mínima invasión con más de 20 años de experiencia."
+      ],
+      education: [
+        "Facultad de Medicina La Salle",
+        "Especialidad en Ginecología y Obstetricia",
+        "Sub-Especialidad en Reproducción Asistida",
+        "Cirugía de Mínima Invasión"
+      ],
+      achievements: [
+        "Más de 20 años de experiencia en Reproducción Asistida y Cirugía de Mínima Invasión"
+      ]
+    },
+    en: {
+      role: "Assisted Reproduction & Surgery",
+      specialty: "Gynecology & Obstetrics · Assisted Reproduction & Minimally Invasive Surgery",
+      brief: "Obstetrics and Gynecology Specialist with over 20 years of clinical experience in Assisted Reproduction and Minimally Invasive Surgery.",
+      fullBio: [
+        "Graduate of the Faculty of Medicine La Salle. Specialist in Obstetrics & Gynecology with Subspecialty in Assisted Reproduction and Minimally Invasive Surgery with over 20 years of experience."
+      ],
+      education: [
+        "Faculty of Medicine La Salle",
+        "Obstetrics & Gynecology Specialty",
+        "Subspecialty in Assisted Reproduction",
+        "Minimally Invasive Surgery"
+      ],
+      achievements: [
+        "Over 20 years of experience in Assisted Reproduction & Minimally Invasive Surgery"
+      ]
+    }
+  },
+  {
     id: "dr-gonzalo-eugui",
     name: "Dr. Gonzalo Eugui Velázquez",
     imageSrc: "/imagenes/doctores/dr_gonzalo.jpg",
     es: {
-      role: "Ginecólogo y Obstetra · Médico Adjunto en Reproducción Asistida",
+      role: "Ginecología & Reproducción Asistida",
       specialty: "Ginecología, Obstetricia, Reproducción Asistida y Cirugía Endoscópica",
       brief: "Ginecólogo en la Clínica de Fertilización Asistida del Centro Médico ABC. Médico adjunto en ciclos de reproducción asistida, cirugía abierta, laparoscópica y docencia de residentes en el Centro Médico ABC.",
       fullBio: [
@@ -321,7 +360,7 @@ export const DOCTORS: Doctor[] = [
       ]
     },
     en: {
-      role: "Gynecologist & Obstetrician · Attending in Assisted Reproduction",
+      role: "Gynecology & Assisted Reproduction",
       specialty: "Gynecology, Obstetrics, Assisted Reproduction & Endoscopic Surgery",
       brief: "Gynecologist at the Assisted Fertilization Clinic at ABC Medical Center. Attending physician in assisted reproduction cycles, open and laparoscopic surgery, and residency simulation instructor at ABC Medical Center.",
       fullBio: [
@@ -366,7 +405,6 @@ export const SPECIALIST_GROUPS: SpecialistGroup[] = [
       { name: "Dr. Eduardo Flores Villalón" },
       { name: "Dra. María de los Ángeles Flores Manzur" },
       { name: "Dr. Ricardo Frade Flores" },
-      { name: "Dr. Julio González Cofrades" },
       { name: "Dr. Alejandro Kava Braverman" },
       { name: "Dr. Carlos Linder Efter" },
       { name: "Dra. Martha Luna Rojas" },

@@ -59,7 +59,7 @@ export default function PasosASeguirPage() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>{language === 'es' ? 'Guía para Pacientes' : 'Patient Journey Guide'}</span>
           </div>
-          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-light text-white">
             {language === 'es' ? 'Pasos a Seguir en tu Tratamiento' : 'Steps in Your Treatment Journey'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
@@ -83,7 +83,7 @@ export default function PasosASeguirPage() {
               </div>
 
               <div className="flex-1 space-y-1.5">
-                <h3 className="font-title text-lg sm:text-xl font-bold text-cfa-navy">
+                <h3 className="font-title text-lg sm:text-xl font-normal text-cfa-navy">
                   {s.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-cfa-grayDark leading-relaxed font-sans">

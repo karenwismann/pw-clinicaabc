@@ -100,7 +100,7 @@ export const InternationalMap: React.FC = () => {
         </div>
 
         <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-cfa-softBlue text-[11px] font-semibold text-cfa-cyan shadow-xs">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#69B3E7] animate-pulse" />
           <span>{language === 'es' ? 'Atención Activa' : 'Active Care'}</span>
         </div>
       </div>

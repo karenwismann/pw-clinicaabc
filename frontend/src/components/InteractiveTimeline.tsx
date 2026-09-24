@@ -35,7 +35,7 @@ export const InteractiveTimeline: React.FC = () => {
   return (
     <div className="w-full bg-white rounded-3xl p-6 sm:p-10 shadow-soft border border-cfa-softBlue">
       <div className="text-center max-w-2xl mx-auto mb-10">
-        <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-cfa-navy">
+        <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-cfa-navy">
           {language === 'es' ? 'Más de 35 años transformando familias en México' : 'Over 35 Years Transforming Families in Mexico'}
         </h2>
         <p className="text-sm text-cfa-grayText mt-2 font-sans">
@@ -99,8 +99,8 @@ export const InteractiveTimeline: React.FC = () => {
 
                 {/* Milestone Badge in Brand Blue/White */}
                 {itemData.badge && (
-                  <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#004C97] text-white border border-white absolute -top-3.5 whitespace-nowrap shadow-sm font-title flex items-center gap-0.5">
-                    ★
+                  <span className="text-[10px] font-extrabold px-1.5 py-0.5 rounded-full bg-[#004C97] text-white border border-white absolute -top-3.5 whitespace-nowrap shadow-sm font-title flex items-center gap-0.5">
+                    <Sparkles className="w-2.5 h-2.5" />
                   </span>
                 )}
               </button>
@@ -125,7 +125,7 @@ export const InteractiveTimeline: React.FC = () => {
               )}
             </div>
 
-            <h3 className="font-title text-xl sm:text-2xl font-bold text-cfa-navy">
+            <h3 className="font-title text-xl sm:text-2xl font-light text-cfa-navy">
               {eventData.title}
             </h3>
 

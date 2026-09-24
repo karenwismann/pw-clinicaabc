@@ -44,7 +44,7 @@ export default function Home() {
               <Sparkles className="w-4 h-4 text-[#004C97]" />
               <span>{language === 'es' ? 'Centro de Excelencia' : 'Center of Excellence'}</span>
             </div>
-            <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B2559] leading-tight">
+            <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B2559] leading-tight">
               {language === 'es' ? 'Excelencia en Reproducción Asistida' : 'Excellence in Assisted Reproduction'}
             </h2>
           </div>
@@ -89,68 +89,26 @@ export default function Home() {
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Left Column: Enlarged Video / Podcast Showcase in Transparent Soap Bubble Frame */}
+            {/* Left Column: Clean Video Showcase */}
             <div className="lg:col-span-7 order-2 lg:order-1">
               <a
                 href="https://www.youtube.com/watch?v=GCagLjVF8U4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block relative"
+                className="group block relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/25 hover:border-[#69B3E7] hover:shadow-[0_20px_50px_rgba(105,179,231,0.3)] transition-all duration-300"
               >
-                {/* Iridescent Soap Bubble Glass Container */}
-                <div className="relative rounded-[2.5rem] p-2.5 sm:p-3.5 bg-white/10 backdrop-blur-2xl border-2 border-white/50 shadow-[0_15px_50px_rgba(11,37,89,0.3),inset_0_2px_6px_rgba(255,255,255,0.5)] ring-1 ring-[#69B3E7]/40 hover:border-[#69B3E7]/90 hover:shadow-[0_20px_60px_rgba(105,179,231,0.45)] transition-all duration-500 overflow-hidden">
+                <div className="relative w-full aspect-video bg-black overflow-hidden">
+                  <Image
+                    src="/imagenes/youtube_podcast_thumb.jpg"
+                    alt="Podcast Oficial CFA - Dr. Carlos Navarro Martínez"
+                    fill
+                    className="object-cover group-hover:scale-103 transition-transform duration-500"
+                  />
                   
-                  {/* Soap Bubble Top Glare / Specular Highlight */}
-                  <div className="absolute top-0 inset-x-6 h-28 bg-gradient-to-b from-white/40 via-white/10 to-transparent rounded-t-[2.5rem] pointer-events-none z-20" />
-
-                  {/* Inner Video Surface with Real Original YouTube Thumbnail */}
-                  <div className="relative w-full h-80 sm:h-96 lg:h-[420px] rounded-[2rem] overflow-hidden bg-[#071A40] backdrop-blur-sm">
-                    <Image
-                      src="/imagenes/youtube_podcast_thumb.jpg"
-                      alt="Podcast Oficial CFA - Dr. Carlos Navarro Martínez"
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#071A40]/90 via-[#071A40]/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
-                    
-                    {/* Top Bar with YouTube Transparent Logo */}
-                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                      <div className="px-3.5 py-1.5 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 shadow-md flex items-center gap-2">
-                        <Image
-                          src="/imagenes/logos/youtube_full.png"
-                          alt="YouTube"
-                          width={85}
-                          height={20}
-                          className="object-contain h-4 sm:h-5 w-auto drop-shadow"
-                        />
-                      </div>
-                      <span className="px-3 py-1 rounded-full bg-red-600/90 text-[10px] font-black text-white uppercase font-title tracking-wider shadow-md backdrop-blur-xs">
-                        4K Ultra HD
-                      </span>
-                    </div>
-
-                    {/* Central Luminous Play Button */}
-                    <div className="absolute inset-0 flex items-center justify-center z-10">
-                      <div className="relative flex items-center justify-center">
-                        <div className="absolute w-20 h-20 rounded-full bg-red-500/30 animate-ping pointer-events-none" />
-                        <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-gradient-to-tr from-red-600 to-red-500 text-white flex items-center justify-center shadow-2xl border border-white/40 group-hover:scale-110 transition-transform duration-300">
-                          <Play className="w-7 sm:w-8 h-7 sm:h-8 fill-white translate-x-0.5 text-white" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Card Bottom Meta */}
-                    <div className="absolute bottom-4 left-4 right-4 space-y-1 text-white z-10">
-                      <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#69B3E7] uppercase tracking-wider font-title">
-                        <Mic className="w-3.5 h-3.5 text-red-400" />
-                        <span>Dr. Carlos Navarro Martínez • Conducción Médica</span>
-                      </div>
-                      <h4 className="font-title font-bold text-base sm:text-lg text-white group-hover:text-[#69B3E7] transition-colors leading-snug">
-                        {language === 'es' ? 'Podcast CFA: Preguntas Frecuentes y Casos de Éxito' : 'CFA Podcast: FAQ & Patient Success Stories'}
-                      </h4>
-                      <p className="text-xs text-[#69B3E7]/90 font-sans">
-                        {language === 'es' ? 'Haz clic para reproducir episodios en YouTube' : 'Click to watch full episodes on YouTube'}
-                      </p>
+                  {/* Clean Central Play Button */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/0 transition-colors">
+                    <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-[#004C97] hover:bg-[#69B3E7] text-white flex items-center justify-center shadow-2xl border-2 border-white/80 group-hover:scale-110 transition-transform duration-300">
+                      <Play className="w-7 sm:w-8 h-7 sm:h-8 fill-white translate-x-0.5 text-white" />
                     </div>
                   </div>
                 </div>
@@ -160,8 +118,8 @@ export default function Home() {
             {/* Right Column: Summarized & Concise Podcast Info & CTAs */}
             <div className="lg:col-span-5 space-y-5 order-1 lg:order-2">
               <div className="flex flex-wrap items-center gap-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-bold uppercase tracking-wider font-title">
-                  <Radio className="w-3.5 h-3.5 text-red-500 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#69B3E7]/20 border border-[#69B3E7]/40 text-[#69B3E7] text-xs font-bold uppercase tracking-wider font-title">
+                  <Radio className="w-3.5 h-3.5 text-[#69B3E7] animate-pulse" />
                   <span>{language === 'es' ? 'Podcast Oficial CFA' : 'Official CFA Podcast'}</span>
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[#69B3E7] text-xs font-medium font-sans">
@@ -171,7 +129,7 @@ export default function Home() {
               </div>
 
               <div className="space-y-2">
-                <h2 className="font-title text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                <h2 className="font-title text-2xl sm:text-3xl font-light text-white leading-tight">
                   {language === 'es'
                     ? 'Historias de Fertilidad, Ciencia & Esperanza'
                     : 'Fertility Stories, Science & Hope'}
@@ -186,11 +144,11 @@ export default function Home() {
               {/* Dynamic Equalizer Visual Indicator */}
               <div className="flex items-center gap-3.5 p-3.5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/15">
                 <div className="flex items-end gap-1 h-5 px-1">
-                  <span className="w-1 bg-red-500 rounded-full h-3 animate-pulse" />
+                  <span className="w-1 bg-white rounded-full h-3 animate-pulse" />
                   <span className="w-1 bg-[#69B3E7] rounded-full h-5 animate-pulse" style={{ animationDelay: '150ms' }} />
-                  <span className="w-1 bg-red-400 rounded-full h-2 animate-pulse" style={{ animationDelay: '300ms' }} />
+                  <span className="w-1 bg-white/80 rounded-full h-2 animate-pulse" style={{ animationDelay: '300ms' }} />
                   <span className="w-1 bg-[#69B3E7] rounded-full h-5 animate-pulse" style={{ animationDelay: '450ms' }} />
-                  <span className="w-1 bg-red-500 rounded-full h-3.5 animate-pulse" style={{ animationDelay: '200ms' }} />
+                  <span className="w-1 bg-white rounded-full h-3.5 animate-pulse" style={{ animationDelay: '200ms' }} />
                 </div>
                 <div className="text-xs text-blue-50 font-sans">
                   <strong className="text-white font-title block">
@@ -209,7 +167,7 @@ export default function Home() {
                   href="https://www.youtube.com/watch?v=GCagLjVF8U4"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-2xl bg-red-600/60 hover:bg-red-600/80 border border-red-400/40 backdrop-blur-md text-white font-extrabold text-sm shadow-lg shadow-red-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all font-title group"
+                  className="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-2xl bg-[#004C97] hover:bg-[#69B3E7] border border-white/20 backdrop-blur-md text-white font-extrabold text-sm shadow-lg shadow-[#004C97]/30 hover:scale-[1.02] active:scale-[0.98] transition-all font-title group"
                 >
                   <div className="w-5 h-5 relative flex-shrink-0">
                     <Image
@@ -299,7 +257,7 @@ export default function Home() {
             <Sparkles className="w-3.5 h-3.5 text-[#004C97]" />
             <span>{t.home.treatmentsBadge}</span>
           </div>
-          <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0B2559]">
+          <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B2559]">
             {t.home.treatmentsTitle}
           </h2>
           <p className="text-xs sm:text-sm text-[#0B2559]/80 font-sans">
@@ -320,7 +278,7 @@ export default function Home() {
         <div className="mt-8 text-center">
           <Link
             href="/tratamientos"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white border-2 border-[#004C97] text-[#004C97] font-bold text-sm hover:bg-[#004C97] hover:text-white shadow-soft transition-all font-title"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white border-2 border-[#004C97] text-[#004C97] font-medium text-sm hover:bg-[#004C97] hover:text-white shadow-soft transition-all font-title"
           >
             <span>{t.home.exploreBtn}</span>
             <ArrowRight className="w-4 h-4" />
@@ -335,7 +293,7 @@ export default function Home() {
             <Users className="w-3.5 h-3.5 text-[#004C97]" />
             <span>{language === 'es' ? 'Cuerpo Médico de Excelencia' : 'Medical Faculty of Excellence'}</span>
           </div>
-          <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0B2559]">
+          <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B2559]">
             {language === 'es' ? 'Dr. Carlos Navarro Martínez & Especialistas' : 'Dr. Carlos Navarro Martínez & Specialists'}
           </h2>
           <p className="text-sm sm:text-base text-[#0B2559]/80 font-sans max-w-4xl mx-auto text-balance leading-relaxed">
@@ -345,7 +303,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3.5 sm:gap-4 lg:gap-4.5 xl:gap-4">
           {DOCTORS.map((doc) => {
             const data = doc[language] || doc.es;
             return (
@@ -363,31 +321,31 @@ export default function Home() {
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B2559]/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
-                    <div className="absolute bottom-2.5 left-2.5 right-2.5">
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-[#004C97] shadow-xs font-title inline-block line-clamp-1">
+                    <div className="absolute bottom-2.5 left-2.5 right-2.5 flex justify-center">
+                      <span className="w-full text-center text-[10.5px] font-medium px-2 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#004C97] shadow-xs font-title truncate border border-[#69B3E7]/30">
                         {data.role}
                       </span>
                     </div>
                   </div>
 
                   {/* Doctor Info with Consistent Spacing */}
-                  <div className="p-4 sm:p-4.5 flex-1 flex flex-col justify-between space-y-2">
+                  <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-2.5">
                     <div>
-                      <h4 className="font-title text-sm sm:text-base font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug min-h-[44px] flex items-center">
+                      <h4 className="font-title text-sm sm:text-[14.5px] font-normal text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug min-h-[44px] flex items-center">
                         {doc.name}
                       </h4>
-                      <p className="text-[11px] sm:text-xs font-semibold text-[#004C97] font-title min-h-[34px] flex items-center mt-1 leading-snug">
+                      <p className="text-[11px] font-light text-[#004C97] font-title min-h-[34px] flex items-center mt-1 leading-snug line-clamp-2">
                         {data.specialty}
                       </p>
                     </div>
-                    <p className="text-[11px] sm:text-xs text-[#0B2559]/75 line-clamp-3 font-sans leading-relaxed min-h-[48px]">
+                    <p className="text-[11px] text-[#0B2559]/75 line-clamp-3 font-sans leading-relaxed min-h-[50px]">
                       {data.brief}
                     </p>
                   </div>
                 </div>
 
                 {/* Card Footer Actions */}
-                <div className="p-4 sm:p-4.5 pt-0 mt-auto">
+                <div className="p-3.5 sm:p-4 pt-0 mt-auto">
                   <div className="pt-2.5 border-t border-[#69B3E7]/40 flex items-center justify-between">
                     <button
                       onClick={() => setSelectedDoctor(doc)}
@@ -431,7 +389,7 @@ export default function Home() {
 
       {/* 7. Agenda una cita - Direct Booking Form */}
       <section id="agendar-cita" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-[#004C97] via-[#0B2559] to-[#0B2559] rounded-3xl p-6 sm:p-12 text-white shadow-xl border border-[#69B3E7]/30">
+        <div className="bg-gradient-to-br from-[#004C97] via-[#0B2559] to-[#0B2559] rounded-3xl p-4 sm:p-12 text-white shadow-xl border border-[#69B3E7]/30">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Columna Izquierda: Información de Contacto Directo */}
             <div className="lg:col-span-5 space-y-6">
@@ -440,7 +398,7 @@ export default function Home() {
                 <span>{t.home.appointmentBadge}</span>
               </div>
 
-              <h2 className="font-title text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+              <h2 className="font-title text-2xl sm:text-4xl font-light text-white leading-tight">
                 {t.home.appointmentTitle}
               </h2>
 
@@ -460,7 +418,7 @@ export default function Home() {
               </div>
 
               <div className="p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-xs text-blue-50 font-sans space-y-1">
-                <p className="font-bold text-white flex items-center gap-1.5">
+                <p className="font-medium text-white flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-[#69B3E7]" />
                   <span>{language === 'es' ? 'Atención Médica Directa' : 'Direct Medical Attention'}</span>
                 </p>
@@ -471,8 +429,8 @@ export default function Home() {
             </div>
 
             {/* Columna Derecha: Formulario Completo de Cita */}
-            <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 shadow-2xl text-[#0B2559]">
-              <h3 className="font-title text-xl font-bold text-[#004C97] mb-4">
+            <div className="lg:col-span-7 bg-white rounded-3xl p-4 sm:p-8 shadow-2xl text-[#0B2559]">
+              <h3 className="font-title text-xl font-light text-[#004C97] mb-4">
                 {t.home.formTitle}
               </h3>
               <AppointmentForm />
@@ -497,10 +455,10 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-title text-xl sm:text-2xl font-bold text-white drop-shadow-sm">
+                    <h3 className="font-title text-xl sm:text-2xl font-light text-white drop-shadow-sm">
                       {selectedDoctor.name}
                     </h3>
-                    <p className="text-xs text-[#69B3E7] drop-shadow-sm font-sans font-medium">
+                    <p className="text-xs text-[#69B3E7] drop-shadow-sm font-sans font-light">
                       {(selectedDoctor[language] || selectedDoctor.es).role} • Centro Médico ABC
                     </p>
                   </div>
@@ -526,14 +484,14 @@ export default function Home() {
                   />
                 </div>
                 <div className="space-y-3 text-center sm:text-left flex-1">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#004C97] text-white text-xs font-bold uppercase tracking-wider font-title">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#004C97] text-white text-xs font-medium uppercase tracking-wider font-title">
                     <GraduationCap className="w-3.5 h-3.5 text-white" />
                     <span>{(selectedDoctor[language] || selectedDoctor.es).role}</span>
                   </div>
-                  <h3 className="font-title text-xl sm:text-2xl font-extrabold text-[#0B2559]">
+                  <h3 className="font-title text-xl sm:text-2xl font-light text-[#0B2559]">
                     {selectedDoctor.name}
                   </h3>
-                  <p className="text-xs sm:text-sm font-bold text-[#004C97] font-title">
+                  <p className="text-xs sm:text-sm font-light text-[#004C97] font-title">
                     {(selectedDoctor[language] || selectedDoctor.es).specialty}
                   </p>
                   <p className="text-xs sm:text-sm text-[#0B2559]/80 font-sans leading-relaxed">
@@ -561,7 +519,7 @@ export default function Home() {
               </div>
 
               <div className="space-y-3">
-                <h4 className="font-title text-sm font-bold text-[#004C97] uppercase tracking-wider flex items-center gap-2">
+                <h4 className="font-title text-sm font-semibold text-[#004C97] uppercase tracking-wider flex items-center gap-2">
                   <Stethoscope className="w-4 h-4 text-[#004C97]" />
                   <span>{language === 'es' ? 'Trayectoria Médica & Experiencia' : 'Medical Background & Experience'}</span>
                 </h4>
@@ -576,7 +534,7 @@ export default function Home() {
 
               {(selectedDoctor[language] || selectedDoctor.es).education && (
                 <div className="space-y-3 pt-2 border-t border-[#69B3E7]/40">
-                  <h4 className="font-title text-sm font-bold text-[#004C97] uppercase tracking-wider flex items-center gap-2">
+                  <h4 className="font-title text-sm font-semibold text-[#004C97] uppercase tracking-wider flex items-center gap-2">
                     <GraduationCap className="w-4 h-4 text-[#004C97]" />
                     <span>{language === 'es' ? 'Formación Académica & Fellowships' : 'Academic Credentials & Fellowships'}</span>
                   </h4>

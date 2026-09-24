@@ -16,7 +16,7 @@ export default function ContactoPage() {
             <Calendar className="w-3.5 h-3.5" />
             <span>{language === 'es' ? 'Atención Personalizada' : 'Personalized Patient Care'}</span>
           </div>
-          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-light text-white">
             {language === 'es' ? 'Contacto & Citas Médicas' : 'Contact & Medical Appointments'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
@@ -31,7 +31,7 @@ export default function ContactoPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white p-8 rounded-3xl border border-cfa-softBlue shadow-soft space-y-6">
-              <h3 className="font-title text-xl font-bold text-cfa-navy">
+              <h3 className="font-title text-xl font-normal text-cfa-navy">
                 {language === 'es' ? 'Información de Contacto' : 'Contact Information'}
               </h3>
 
@@ -69,7 +69,7 @@ export default function ContactoPage() {
           </div>
 
           <div className="lg:col-span-7 bg-white p-8 rounded-3xl border border-cfa-softBlue shadow-soft">
-            <h3 className="font-title text-xl font-bold text-cfa-navy mb-4">
+            <h3 className="font-title text-xl font-normal text-cfa-navy mb-4">
               {language === 'es' ? 'Envíanos un Mensaje o Agenda Cita' : 'Send a Message or Book Appointment'}
             </h3>
             <AppointmentForm />

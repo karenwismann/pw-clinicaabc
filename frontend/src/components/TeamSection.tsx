@@ -31,15 +31,15 @@ export const TeamSection: React.FC = () => {
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cfa-navy/80 via-transparent to-transparent opacity-60" />
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-cfa-navy shadow-xs font-title inline-block">
+                  <div className="absolute bottom-3 left-3 right-3 flex justify-center">
+                    <span className="w-full text-center text-[10.5px] font-medium px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#004C97] shadow-xs font-title truncate border border-[#69B3E7]/30">
                       {data.role}
                     </span>
                   </div>
                 </div>
 
                 <div className="p-5 space-y-2">
-                  <h4 className="font-title text-base font-bold text-cfa-navy group-hover:text-cfa-cyan transition-colors leading-snug">
+                  <h4 className="font-title text-base font-normal text-cfa-navy group-hover:text-cfa-cyan transition-colors leading-snug">
                     {doc.name}
                   </h4>
                   <p className="text-xs font-semibold text-cfa-cyan font-title">
@@ -83,7 +83,7 @@ export const TeamSection: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="font-title text-xl font-bold text-white">{selectedDoctor.name}</h3>
+                    <h3 className="font-title text-xl font-light text-white">{selectedDoctor.name}</h3>
                     <p className="text-xs text-cfa-light font-sans">{(selectedDoctor[language] || selectedDoctor.es).role}</p>
                   </div>
                 </div>
@@ -98,12 +98,12 @@ export const TeamSection: React.FC = () => {
 
             <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-sm text-cfa-grayDark leading-relaxed">
               <div className="p-4 bg-cfa-iceBlue rounded-2xl border border-cfa-softBlue space-y-1">
-                <h4 className="font-title text-base font-bold text-cfa-navy">{(selectedDoctor[language] || selectedDoctor.es).specialty}</h4>
+                <h4 className="font-title text-base font-normal text-cfa-navy">{(selectedDoctor[language] || selectedDoctor.es).specialty}</h4>
                 <p className="text-xs text-cfa-grayDark font-sans">{(selectedDoctor[language] || selectedDoctor.es).brief}</p>
               </div>
 
               <div className="space-y-2">
-                <h4 className="font-title text-sm font-bold text-cfa-navy uppercase tracking-wider">Trayectoria Médica</h4>
+                <h4 className="font-title text-sm font-semibold text-cfa-navy uppercase tracking-wider">Trayectoria Médica</h4>
                 <div className="space-y-2 font-sans">
                   {(selectedDoctor[language] || selectedDoctor.es).fullBio.map((p, idx) => (
                     <p key={idx} className="text-xs leading-relaxed">{p}</p>

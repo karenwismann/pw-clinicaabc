@@ -60,7 +60,7 @@ export const DonorFlowchart: React.FC = () => {
       title: language === 'es' ? "Potencial Reproductivo" : "Reproductive Potential",
       subtitle: language === 'es' ? "Reserva ovárica y respuesta biológica" : "Ovarian reserve and biological response",
       icon: Heart,
-      color: "from-sky-600 to-cyan-600",
+      color: "from-[#004C97] to-[#69B3E7]",
       description: language === 'es'
         ? "Examen ginecológico y ecográfico completo para evaluar el conteo de folículos antrales y hormona antimülleriana (AMH), garantizando seguridad y alta respuesta folicular."
         : "Complete gynecological and ultrasound assessment verifying antral follicle count (AFC) and Anti-Müllerian Hormone (AMH), ensuring donor safety and high-quality yield.",
@@ -83,7 +83,7 @@ export const DonorFlowchart: React.FC = () => {
       title: language === 'es' ? "Fenomatch Facial" : "Fenomatch Facial Biometrics",
       subtitle: language === 'es' ? "Biometría y parecido fenotípico" : "Facial recognition and phenotypic matching",
       icon: ScanFace,
-      color: "from-cyan-600 to-teal-600",
+      color: "from-[#004C97] to-[#69B3E7]",
       description: language === 'es'
         ? "Tecnología biométrica digital de reconocimiento facial Fenomatch para comparar más de 12,000 puntos anatómicos faciales y seleccionar a la donadora con la máxima afinidad fenotípica con la receptora."
         : "Fenomatch digital facial biometrics comparing over 12,000 anatomical reference points to find the donor with maximum phenotypic similarity to the recipient mother.",
@@ -114,7 +114,7 @@ export const DonorFlowchart: React.FC = () => {
           <ShieldCheck className="w-3.5 h-3.5" />
           <span>{language === 'es' ? 'Flujograma de Donación' : 'Donation Flowchart'}</span>
         </div>
-        <h3 className="font-title text-xl sm:text-2xl font-bold text-cfa-navy">
+        <h3 className="font-title text-xl sm:text-2xl font-light text-cfa-navy">
           {language === 'es' ? 'Protocolo de Selección de Donadoras en 4 Fases' : '4-Stage Donor Screening Protocol'}
         </h3>
         <p className="text-xs sm:text-sm text-cfa-grayText font-sans">
@@ -148,7 +148,7 @@ export const DonorFlowchart: React.FC = () => {
                 </span>
                 <StageIcon className={`w-5 h-5 ${isActive ? 'text-cfa-light' : 'text-cfa-grayText group-hover:text-cfa-cyan'}`} />
               </div>
-              <h4 className="font-title font-bold text-xs sm:text-sm leading-tight">
+              <h4 className="font-title font-normal text-xs sm:text-sm leading-tight">
                 {stage.title}
               </h4>
             </button>
@@ -166,7 +166,7 @@ export const DonorFlowchart: React.FC = () => {
             <span className="text-[10px] font-bold text-cfa-cyan uppercase tracking-wider font-title">
               {language === 'es' ? `Fase 0${currentStage.step} de 04` : `Stage 0${currentStage.step} of 04`}
             </span>
-            <h4 className="font-title text-base sm:text-lg font-bold text-cfa-navy">
+            <h4 className="font-title text-base sm:text-lg font-normal text-cfa-navy">
               {currentStage.title}
             </h4>
           </div>
@@ -177,7 +177,7 @@ export const DonorFlowchart: React.FC = () => {
         </p>
 
         <div className="pt-2 border-t border-cfa-grayBorder">
-          <h5 className="font-title text-xs font-bold text-cfa-navy uppercase tracking-wider mb-2">
+          <h5 className="font-title text-xs font-semibold text-cfa-navy uppercase tracking-wider mb-2">
             {language === 'es' ? 'Criterios de Acreditación Médica:' : 'Medical Screening Criteria:'}
           </h5>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -192,11 +192,11 @@ export const DonorFlowchart: React.FC = () => {
       </div>
 
       {/* STRICT NO EGG SPLITTING POLICY NOTICE */}
-      <div className="p-4 bg-rose-50 border-2 border-rose-200 rounded-2xl flex items-start gap-3">
-        <AlertTriangle className="w-6 h-6 text-rose-600 flex-shrink-0 mt-0.5" />
-        <div className="space-y-1 text-xs text-rose-900 font-sans leading-relaxed">
-          <h5 className="font-title font-bold text-rose-950 text-xs sm:text-sm">
-            {language === 'es' ? '🛡️ Política Ética Estricta: Prohibición de Egg Splitting' : '🛡️ Strict Ethical Policy: Zero Egg Splitting'}
+      <div className="p-4 bg-[#EBF5FC] border-2 border-[#69B3E7]/50 rounded-2xl flex items-start gap-3">
+        <AlertTriangle className="w-6 h-6 text-[#004C97] flex-shrink-0 mt-0.5" />
+        <div className="space-y-1 text-xs text-[#0B2559] font-sans leading-relaxed">
+          <h5 className="font-title font-semibold text-[#0B2559] text-xs sm:text-sm">
+            {language === 'es' ? 'Política Ética Estricta: Prohibición de Egg Splitting' : 'Strict Ethical Policy: Zero Egg Splitting'}
           </h5>
           <p>
             {language === 'es'

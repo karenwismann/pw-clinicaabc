@@ -18,14 +18,14 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           {/* Columna 1: Nosotros */}
           <div className="space-y-4">
-            <div className="bg-white p-2.5 rounded-2xl inline-block">
+            <div className="bg-white p-3.5 sm:p-4 rounded-2xl inline-block shadow-lg">
               <img
                 src="/LOGOCFABC.png"
                 alt="Clínica de Fertilización Asistida ABC"
-                className="h-10 w-auto max-w-[180px] object-contain"
+                className="h-12 sm:h-14 w-auto max-w-[220px] sm:max-w-[260px] object-contain"
               />
             </div>
-            <h4 className="font-title text-base font-bold text-white tracking-tight">{t.footer.aboutTitle}</h4>
+            <h4 className="font-title text-base font-normal text-white tracking-tight">{t.footer.aboutTitle}</h4>
             <p className="text-xs sm:text-sm text-blue-100 leading-relaxed font-sans">
               {t.footer.aboutText}
             </p>
@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Canal oficial de YouTube @infertilidadabc"
-                  className="w-9 h-9 rounded-xl bg-white/10 hover:bg-red-600 flex items-center justify-center text-white transition-all hover:scale-105"
+                  className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#004C97] flex items-center justify-center text-white transition-all hover:scale-105"
                   title="YouTube @infertilidadabc"
                 >
                   <Youtube className="w-4 h-4" />
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
 
           {/* Columna 2: Ubicación */}
           <div className="space-y-3 font-sans">
-            <h4 className="font-title text-base font-bold text-white tracking-tight flex items-center gap-2">
+            <h4 className="font-title text-base font-normal text-white tracking-tight flex items-center gap-2">
               <MapPin className="w-4 h-4 text-cfa-light" />
               {t.footer.locationTitle}
             </h4>
@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
 
           {/* Columna 3: Contacto */}
           <div className="space-y-3 font-sans">
-            <h4 className="font-title text-base font-bold text-white tracking-tight flex items-center gap-2">
+            <h4 className="font-title text-base font-normal text-white tracking-tight flex items-center gap-2">
               <Phone className="w-4 h-4 text-cfa-light" />
               {t.footer.contactTitle}
             </h4>
@@ -132,7 +132,7 @@ export const Footer: React.FC = () => {
 
           {/* Columna 4: Menú (Nav Bar) */}
           <div className="space-y-3 font-title">
-            <h4 className="text-base font-bold text-white tracking-tight">{t.footer.menuTitle}</h4>
+            <h4 className="text-base font-normal text-white tracking-tight">{t.footer.menuTitle}</h4>
             <ul className="grid grid-cols-2 gap-y-2 gap-x-4 text-xs text-blue-100">
               <li>
                 <Link href="/" className="hover:text-cfa-light transition-colors">{t.nav.home}</Link>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador Móvil Pro | Clínica de Fertilización Asistida ABC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .phone-mockup {
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.65), 0 0 0 10px #1e293b, 0 0 0 12px #475569;
+    }
+    .phone-container {
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: top center;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #475569;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased">
+  
+  <!-- Header Bar -->
+  <header class="bg-slate-900/95 border-b border-slate-800 px-4 sm:px-6 py-3 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      
+      <!-- Logo & Title -->
+      <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#004C97] to-[#69B3E7] flex items-center justify-center font-bold text-white shadow-md font-title text-sm">
+            CFA
+          </div>
+          <div>
+            <h1 class="font-title text-sm sm:text-base font-extrabold text-white flex items-center gap-2">
+              <span>Simulador Móvil Pro</span>
+              <span class="text-[9px] uppercase font-bold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/30">Live Sync</span>
+            </h1>
+            <p class="text-[11px] text-slate-400">Inspecciona y prueba la experiencia en smartphone</p>
+          </div>
+        </div>
+
+        <button
+          onclick="reloadIframe()"
+          class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white"
+          title="Recargar"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+        </button>
+      </div>
+
+      <!-- Controls: Device & Scale Toolbar -->
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        
+        <!-- Devices Selector -->
+        <div class="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+          <button
+            onclick="setDevice(375, 667, 'iPhone SE (375px)')"
+            class="device-btn px-2.5 py-1 rounded-lg font-medium transition-colors hover:bg-slate-800 text-slate-400 cursor-pointer"
+            data-device="375"
+          >
+            375px
+          </button>
+          <button
+            onclick="setDevice(390, 844, 'iPhone 15 (390px)')"
+            class="device-btn px-2.5 py-1 rounded-lg font-bold transition-colors bg-[#004C97] text-white cursor-pointer"
+            data-device="390"
+          >
+            iPhone (390px)
+          </button>
+          <button
+            onclick="setDevice(430, 932, 'iPhone Pro Max (430px)')"
+            class="device-btn px-2.5 py-1 rounded-lg font-medium transition-colors hover:bg-slate-800 text-slate-400 cursor-pointer"
+            data-device="430"
+          >
+            430px
+          </button>
+          <button
+            onclick="setDevice(768, 1024, 'iPad / Tablet (768px)')"
+            class="device-btn px-2.5 py-1 rounded-lg font-medium transition-colors hover:bg-slate-800 text-slate-400 hidden sm:inline-block cursor-pointer"
+            data-device="768"
+          >
+            Tablet (768px)
+          </button>
+        </div>
+
+        <!-- Zoom / Scale Controls -->
+        <div class="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+          <span class="text-[10px] text-slate-500 font-bold px-1.5 uppercase hidden sm:inline">Zoom:</span>
+          <button
+            onclick="setScale(0.75)"
+            class="scale-btn px-2 py-1 rounded-lg font-medium text-slate-400 hover:bg-slate-800 transition-colors cursor-pointer"
+            data-scale="0.75"
+          >
+            75%
+          </button>
+          <button
+            onclick="setScale(0.85)"
+            class="scale-btn px-2 py-1 rounded-lg font-bold bg-[#004C97] text-white transition-colors cursor-pointer"
+            data-scale="0.85"
+          >
+            85%
+          </button>
+          <button
+            onclick="setScale(1.0)"
+            class="scale-btn px-2 py-1 rounded-lg font-medium text-slate-400 hover:bg-slate-800 transition-colors cursor-pointer"
+            data-scale="1.0"
+          >
+            100%
+          </button>
+        </div>
+
+        <!-- Rotate Button -->
+        <button
+          onclick="toggleOrientation()"
+          id="btn-rotate"
+          class="p-2 rounded-xl bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer"
+          title="Girar pantalla (Vertical / Horizontal)"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+        </button>
+
+        <!-- Reload -->
+        <button
+          onclick="reloadIframe()"
+          class="p-2 rounded-xl bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer"
+          title="Recargar página"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Quick Navigation Pills Bar -->
+    <div class="max-w-7xl mx-auto mt-2 pt-2 border-t border-slate-800/80 flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+      <span class="text-[10px] uppercase font-bold text-slate-400 mr-1 flex-shrink-0">Secciones:</span>
+      <button
+        onclick="navigateTo('/')"
+        class="nav-pill px-3 py-1 rounded-lg font-semibold bg-[#004C97] text-white border border-[#69B3E7]/40 flex-shrink-0 transition-all cursor-pointer"
+        data-url="/"
+      >
+        🏠 Inicio & Carrusel
+      </button>
+      <button
+        onclick="navigateTo('/#agendar-cita')"
+        class="nav-pill px-3 py-1 rounded-lg font-medium bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800 flex-shrink-0 transition-all cursor-pointer"
+        data-url="/#agendar-cita"
+      >
+        📅 Formulario Cita
+      </button>
+      <button
+        onclick="navigateTo('/divulgacion-cientifica')"
+        class="nav-pill px-3 py-1 rounded-lg font-medium bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800 flex-shrink-0 transition-all cursor-pointer"
+        data-url="/divulgacion-cientifica"
+      >
+        🔬 Blog Catálogo
+      </button>
+      <button
+        onclick="navigateTo('/divulgacion-cientifica/ia-seleccion-embriones')"
+        class="nav-pill px-3 py-1 rounded-lg font-medium bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800 flex-shrink-0 transition-all cursor-pointer"
+        data-url="/divulgacion-cientifica/ia-seleccion-embriones"
+      >
+        📖 Artículo Médico
+      </button>
+      <button
+        onclick="navigateTo('/tratamientos')"
+        class="nav-pill px-3 py-1 rounded-lg font-medium bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800 flex-shrink-0 transition-all cursor-pointer"
+        data-url="/tratamientos"
+      >
+        🩺 Tratamientos
+      </button>
+      <button
+        onclick="navigateTo('/equipo')"
+        class="nav-pill px-3 py-1 rounded-lg font-medium bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800 flex-shrink-0 transition-all cursor-pointer"
+        data-url="/equipo"
+      >
+        👥 Equipo Médico
+      </button>
+      <button
+        onclick="navigateTo('/instalaciones')"
+        class="nav-pill px-3 py-1 rounded-lg font-medium bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800 flex-shrink-0 transition-all cursor-pointer"
+        data-url="/instalaciones"
+      >
+        🏢 Instalaciones
+      </button>
+      <button
+        onclick="navigateTo('/concierge')"
+        class="nav-pill px-3 py-1 rounded-lg font-medium bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800 flex-shrink-0 transition-all cursor-pointer"
+        data-url="/concierge"
+      >
+        ✈️ Concierge
+      </button>
+    </div>
+  </header>
+
+  <!-- Workspace Area -->
+  <main class="flex-1 flex flex-col xl:flex-row items-center xl:items-start justify-center p-4 sm:p-6 gap-8 max-w-7xl mx-auto w-full">
+    
+    <!-- Phone Mockup Container with dynamic scale -->
+    <div class="flex flex-col items-center flex-shrink-0">
+      
+      <!-- Device Label & Viewport Size -->
+      <div class="mb-3 text-xs font-semibold text-slate-400 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span id="device-label">iPhone 15 • 390 × 844 px (Viewport Real)</span>
+        <span class="text-slate-600">|</span>
+        <span id="scale-label" class="text-slate-500 font-mono">Escala: 85%</span>
+      </div>
+
+      <!-- Wrapper for scaling -->
+      <div id="phone-container" class="phone-container">
+        
+        <!-- Smartphone Bezel Shell -->
+        <div
+          id="phone-wrapper"
+          class="phone-mockup relative rounded-[50px] bg-slate-950 overflow-hidden flex flex-col border-[3px] border-slate-700/80"
+          style="width: 390px; height: 844px;"
+        >
+          <!-- Dynamic Island / Speaker Notch -->
+          <div class="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-40 flex items-center justify-between px-3 shadow-inner">
+            <div class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-[#004C97]/30"></div>
+          </div>
+
+          <!-- Phone Top Status Bar Mock -->
+          <div class="w-full h-11 bg-white flex items-center justify-between px-7 pt-1 text-[11px] font-bold text-slate-900 z-30 select-none border-b border-slate-100 flex-shrink-0">
+            <span>9:41</span>
+            <div class="flex items-center gap-1.5 text-xs">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
+              <div class="w-5 h-2.5 border border-slate-900 rounded-sm p-0.5 flex items-center">
+                <div class="w-full h-full bg-slate-900 rounded-2xs"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini Browser URL Bar -->
+          <div class="w-full bg-slate-50 border-b border-slate-200 px-3 py-1.5 flex items-center gap-2 z-30 flex-shrink-0">
+            <button onclick="historyBack()" class="text-slate-400 hover:text-slate-700 p-0.5 rounded cursor-pointer" title="Atrás">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button onclick="historyForward()" class="text-slate-400 hover:text-slate-700 p-0.5 rounded cursor-pointer" title="Adelante">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <div class="flex-1 bg-white border border-slate-200 rounded-lg px-2.5 py-1 flex items-center gap-1.5 shadow-2xs">
+              <svg class="w-3 h-3 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+              <span id="current-url-display" class="text-[11px] text-slate-700 font-mono truncate">infertilidadabc.com/</span>
+            </div>
+            <button onclick="reloadIframe()" class="text-slate-400 hover:text-slate-700 p-0.5 rounded cursor-pointer" title="Recargar">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+            </button>
+          </div>
+
+          <!-- Real Web App Iframe -->
+          <div class="flex-1 w-full bg-white relative overflow-hidden">
+            <iframe
+              id="mobile-iframe"
+              src="/"
+              class="w-full h-full border-0"
+              title="Vista Móvil de la Aplicación"
+            ></iframe>
+          </div>
+
+          <!-- Phone Bottom Bar (Home Indicator) -->
+          <div class="w-full h-5 bg-white flex items-center justify-center z-30 flex-shrink-0 border-t border-slate-100">
+            <div class="w-32 h-1 bg-slate-300 rounded-full"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Optimization Notes & Help Panel -->
+    <div class="flex-1 max-w-xl space-y-5 pt-2">
+      
+      <!-- Card: Adaptaciones del Código Aplicadas -->
+      <div class="bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold font-title">
+          <span>✓ Optimizaciones Móviles Aplicadas al Código</span>
+        </div>
+        
+        <h2 class="font-title text-lg sm:text-xl font-bold text-white">
+          Mejoras visuales implementadas en el código:
+        </h2>
+
+        <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+          <li class="flex items-start gap-2.5">
+            <div class="w-5 h-5 rounded-lg bg-[#004C97]/30 text-[#69B3E7] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">1</div>
+            <div>
+              <strong class="text-white">Fotografía del Carrusel 100% Visible:</strong> 
+              El contenedor de texto en móvil se alinea hacia la parte inferior (<code class="bg-slate-950 px-1.5 py-0.5 rounded text-[#69B3E7]">justify-end pb-14</code>) con gradiente vertical ascendente. Esto deja el <strong>60% superior de la pantalla despejado</strong> para admirar la fotografía de alta definición (bebé / equipo médico) sin que el texto la tape.
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <div class="w-5 h-5 rounded-lg bg-[#004C97]/30 text-[#69B3E7] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">2</div>
+            <div>
+              <strong class="text-white">Tipografía Fluida y Proporcional:</strong>
+              El título principal ahora escala a <code class="bg-slate-950 px-1.5 py-0.5 rounded text-[#69B3E7]">text-xl sm:text-4xl md:text-6xl</code>, evitando saltos bruscos en teléfonos pequeños mientras en computadoras mantiene su tamaño editorial elegante.
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <div class="w-5 h-5 rounded-lg bg-[#004C97]/30 text-[#69B3E7] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">3</div>
+            <div>
+              <strong class="text-white">Botones Ergonómicos de Acción:</strong>
+              Los botones CTA ahora tienen tamaño compacto <code class="bg-slate-950 px-1.5 py-0.5 rounded text-[#69B3E7]">px-4 py-2 text-xs</code> en móvil, dejando espacio libre para leer y tocar cómodamente con una sola mano.
+            </div>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <div class="w-5 h-5 rounded-lg bg-[#004C97]/30 text-[#69B3E7] flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">4</div>
+            <div>
+              <strong class="text-white">Formulario Conciso:</strong>
+              El agendamiento de cita comprime fecha de nacimiento y recomendación en 2 columnas, el motivo en 2 filas y reduce los paddings a <code class="bg-slate-950 px-1.5 py-0.5 rounded text-[#69B3E7]">py-2 text-xs</code>, ahorrando más de 180px de scroll vertical.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Tips de Uso del Simulador -->
+      <div class="bg-[#004C97]/15 rounded-3xl p-5 border border-[#69B3E7]/30 text-xs sm:text-sm text-blue-100/90 space-y-2.5">
+        <h3 class="font-title font-bold text-white text-sm flex items-center gap-2">
+          <span>💡 Nuevas funciones del simulador</span>
+        </h3>
+        <p class="leading-relaxed text-xs text-slate-300">
+          • Usa los botones de <strong>Zoom (75%, 85%, 100%)</strong> arriba para que el smartphone encaje en la pantalla de tu laptop sin hacer scroll.<br>
+          • Haz clic en el botón de <strong>Girar</strong> para auditar cómo se acomodan los elementos en modo horizontal.<br>
+          • Usa las píldoras superiores de <strong>Secciones</strong> para navegar rápidamente a cualquier página sin perder la simulación móvil.
+        </p>
+      </div>
+
+      <!-- Action link directly to full screen -->
+      <div class="flex items-center gap-3 pt-1">
+        <a
+          href="/"
+          target="_blank"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#004C97] hover:bg-[#69B3E7] text-white text-xs font-bold transition-colors font-title shadow-sm"
+        >
+          <span>Abrir sitio principal en pestaña completa &rarr;</span>
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    const iframe = document.getElementById('mobile-iframe');
+    const phoneWrapper = document.getElementById('phone-wrapper');
+    const phoneContainer = document.getElementById('phone-container');
+    const deviceLabel = document.getElementById('device-label');
+    const scaleLabel = document.getElementById('scale-label');
+    const currentUrlDisplay = document.getElementById('current-url-display');
+
+    let currentWidth = 390;
+    let currentHeight = 844;
+    let currentScale = 0.85;
+    let isLandscape = false;
+
+    setScale(0.85);
+
+    function navigateTo(url) {
+      iframe.src = url;
+      updateUrlDisplay(url);
+
+      document.querySelectorAll('.nav-pill').forEach(pill => {
+        if (pill.getAttribute('data-url') === url) {
+          pill.className = 'nav-pill px-3 py-1 rounded-lg font-semibold bg-[#004C97] text-white border border-[#69B3E7]/40 flex-shrink-0 transition-all cursor-pointer';
+        } else {
+          pill.className = 'nav-pill px-3 py-1 rounded-lg font-medium bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800 flex-shrink-0 transition-all cursor-pointer';
+        }
+      });
+    }
+
+    function updateUrlDisplay(path) {
+      if (path === '/') {
+        currentUrlDisplay.textContent = 'infertilidadabc.com/';
+      } else {
+        currentUrlDisplay.textContent = 'infertilidadabc.com' + path;
+      }
+    }
+
+    function setDevice(width, height, name) {
+      currentWidth = width;
+      currentHeight = height;
+      isLandscape = false;
+      applyDimensions();
+      deviceLabel.textContent = `${name} • ${width} × ${height} px`;
+
+      document.querySelectorAll('.device-btn').forEach(btn => {
+        if (btn.getAttribute('data-device') === width.toString()) {
+          btn.className = 'device-btn px-2.5 py-1 rounded-lg font-bold transition-colors bg-[#004C97] text-white cursor-pointer';
+        } else {
+          btn.className = 'device-btn px-2.5 py-1 rounded-lg font-medium transition-colors hover:bg-slate-800 text-slate-400 cursor-pointer';
+        }
+      });
+    }
+
+    function setScale(scale) {
+      currentScale = scale;
+      phoneContainer.style.transform = `scale(${scale})`;
+      const effectiveHeight = (isLandscape ? currentWidth : currentHeight) * scale;
+      phoneContainer.parentElement.style.height = `${effectiveHeight + 30}px`;
+      scaleLabel.textContent = `Escala: ${Math.round(scale * 100)}%`;
+
+      document.querySelectorAll('.scale-btn').forEach(btn => {
+        if (parseFloat(btn.getAttribute('data-scale')) === scale) {
+          btn.className = 'scale-btn px-2 py-1 rounded-lg font-bold bg-[#004C97] text-white transition-colors cursor-pointer';
+        } else {
+          btn.className = 'scale-btn px-2 py-1 rounded-lg font-medium text-slate-400 hover:bg-slate-800 transition-colors cursor-pointer';
+        }
+      });
+    }
+
+    function toggleOrientation() {
+      isLandscape = !isLandscape;
+      applyDimensions();
+      setScale(currentScale);
+    }
+
+    function applyDimensions() {
+      const w = isLandscape ? currentHeight : currentWidth;
+      const h = isLandscape ? currentWidth : currentHeight;
+      phoneWrapper.style.width = `${w}px`;
+      phoneWrapper.style.height = `${h}px`;
+    }
+
+    function reloadIframe() {
+      iframe.src = iframe.src;
+    }
+
+    function historyBack() {
+      try {
+        iframe.contentWindow.history.back();
+      } catch (e) {
+        console.warn(e);
+      }
+    }
+
+    function historyForward() {
+      try {
+        iframe.contentWindow.history.forward();
+      } catch (e) {
+        console.warn(e);
+      }
+    }
+  </script>
+</body>
+</html>

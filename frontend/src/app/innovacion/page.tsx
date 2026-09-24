@@ -56,7 +56,7 @@ export default function InnovacionPage() {
             <Cpu className="w-3.5 h-3.5" />
             <span>{language === 'es' ? 'Vanguardia Científica' : 'Scientific Vanguard'}</span>
           </div>
-          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-light text-white">
             {language === 'es' ? 'Innovación Médica & Inteligencia Artificial' : 'Medical Innovation & Artificial Intelligence'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
@@ -80,11 +80,11 @@ export default function InnovacionPage() {
                 <Activity className="w-6 h-6 text-white" />
               </div>
               <div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0B2559] text-white text-xs font-bold uppercase tracking-wider font-title">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0B2559] text-white text-xs font-medium uppercase tracking-wider font-title">
                   <Sparkles className="w-3 h-3 text-white" />
                   {language === 'es' ? 'Noticia Destacada • Pioneros en México' : 'Featured News • Pioneers in Mexico'}
                 </span>
-                <h2 className="font-title text-2xl sm:text-3xl font-extrabold text-[#0B2559] mt-1">
+                <h2 className="font-title text-2xl sm:text-3xl font-light text-[#0B2559] mt-1">
                   {language === 'es' ? 'Incubadora Timelapse en el Laboratorio FIV' : 'Timelapse Incubator in IVF Laboratory'}
                 </h2>
               </div>
@@ -209,11 +209,11 @@ export default function InnovacionPage() {
         <div className="bg-gradient-to-br from-cfa-navy via-cfa-midnight to-cfa-deepBlue text-white rounded-3xl p-8 sm:p-12 space-y-8 shadow-xl border border-cfa-softBlue/30">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-cfa-light text-xs font-bold uppercase tracking-wider font-title mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-cfa-light text-xs font-medium uppercase tracking-wider font-title mb-2">
                 <Sparkles className="w-3.5 h-3.5 text-cfa-light" />
                 <span>{language === 'es' ? 'Trayectoria & Futuro' : 'Roadmap & Future'}</span>
               </div>
-              <h2 className="font-title text-2xl sm:text-3xl font-extrabold text-white">
+              <h2 className="font-title text-2xl sm:text-3xl font-light text-white">
                 {language === 'es' ? 'Cronograma Tecnológico CFA' : 'CFA Technological Roadmap'}
               </h2>
             </div>
@@ -237,12 +237,12 @@ export default function InnovacionPage() {
                       <div className="w-10 h-10 rounded-xl bg-cfa-cyan/30 flex items-center justify-center text-cfa-light shadow-sm">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-cfa-light/20 text-white border border-cfa-light/30 font-title">
+                      <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-cfa-light/20 text-white border border-cfa-light/30 font-title">
                         {item.status}
                       </span>
                     </div>
 
-                    <h3 className="font-title text-base font-bold text-white tracking-wide">
+                    <h3 className="font-title text-base font-normal text-white tracking-wide">
                       {item.title}
                     </h3>
 
@@ -259,10 +259,10 @@ export default function InnovacionPage() {
         {/* 4. MACHINE LEARNING & INTELIGENCIA ARTIFICIAL EN CFA (ABAJO) */}
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-cfa-softBlue shadow-soft space-y-10">
           <div>
-            <span className="text-xs font-bold text-cfa-cyan uppercase tracking-wider bg-cfa-softBlue px-3 py-1 rounded-full font-title">
+            <span className="text-xs font-medium text-cfa-cyan uppercase tracking-wider bg-cfa-softBlue px-3 py-1 rounded-full font-title">
               {language === 'es' ? 'Pilar Tecnológico' : 'Technological Pillar'}
             </span>
-            <h2 className="font-title text-2xl sm:text-3xl font-bold text-cfa-navy mt-3">
+            <h2 className="font-title text-2xl sm:text-3xl font-light text-cfa-navy mt-3">
               {language === 'es' ? 'Machine Learning e Inteligencia Artificial en CFA' : 'Machine Learning & Artificial Intelligence at CFA'}
             </h2>
             <p className="text-sm text-cfa-grayDark mt-2 leading-relaxed font-sans">
@@ -280,7 +280,7 @@ export default function InnovacionPage() {
                 <div className="w-12 h-12 rounded-xl bg-cfa-softBlue text-cfa-cyan flex items-center justify-center font-bold">
                   <Cpu className="w-6 h-6" />
                 </div>
-                <h3 className="font-title text-xl font-bold text-cfa-navy">
+                <h3 className="font-title text-xl font-normal text-cfa-navy">
                   Machine Learning (ML)
                 </h3>
                 <p className="text-xs sm:text-sm text-cfa-grayDark leading-relaxed font-sans">
@@ -292,7 +292,7 @@ export default function InnovacionPage() {
 
               <button
                 onClick={() => setActiveModal('ml')}
-                className="w-full py-2.5 px-4 rounded-xl bg-cfa-navy text-white hover:bg-cfa-cyan text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer font-title"
+                className="w-full py-2.5 px-4 rounded-xl bg-cfa-navy text-white hover:bg-cfa-cyan text-xs font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer font-title"
               >
                 <span>{language === 'es' ? 'Ver más: Machine Learning' : 'Learn More: Machine Learning'}</span>
                 <ChevronRight className="w-4 h-4" />
@@ -305,7 +305,7 @@ export default function InnovacionPage() {
                 <div className="w-12 h-12 rounded-xl bg-cfa-softBlue text-cfa-cyan flex items-center justify-center font-bold">
                   <Brain className="w-6 h-6" />
                 </div>
-                <h3 className="font-title text-xl font-bold text-cfa-navy">
+                <h3 className="font-title text-xl font-normal text-cfa-navy">
                   {language === 'es' ? 'Inteligencia Artificial (IA) & Morfocinética' : 'Artificial Intelligence (AI) & Morphokinetics'}
                 </h3>
                 <p className="text-xs sm:text-sm text-cfa-grayDark leading-relaxed font-sans">
@@ -317,7 +317,7 @@ export default function InnovacionPage() {
 
               <button
                 onClick={() => setActiveModal('ia')}
-                className="w-full py-2.5 px-4 rounded-xl bg-cfa-navy text-white hover:bg-cfa-cyan text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer font-title"
+                className="w-full py-2.5 px-4 rounded-xl bg-cfa-navy text-white hover:bg-cfa-cyan text-xs font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer font-title"
               >
                 <span>{language === 'es' ? 'Ver más: Inteligencia Artificial' : 'Learn More: Artificial Intelligence'}</span>
                 <ChevronRight className="w-4 h-4" />
@@ -327,14 +327,12 @@ export default function InnovacionPage() {
         </div>
       </section>
 
-
-
       {/* Modales de Ver Más: ML e IA */}
       {activeModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-cfa-navy/70 backdrop-blur-sm animate-fadeIn">
           <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-cfa-softBlue/60 ring-1 ring-black/5 overflow-hidden max-h-[85vh] flex flex-col animate-scaleUp">
             <div className="px-6 py-5 bg-gradient-to-r from-cfa-navy to-cfa-deepBlue text-white rounded-t-3xl flex-shrink-0 flex items-center justify-between">
-              <h3 className="font-title text-xl font-bold text-white">
+              <h3 className="font-title text-xl font-light text-white">
                 {activeModal === 'ml'
                   ? (language === 'es' ? 'Machine Learning en Reproducción Asistida' : 'Machine Learning in Assisted Reproduction')
                   : (language === 'es' ? 'Inteligencia Artificial & Morfocinética' : 'Artificial Intelligence & Morphokinetics')}
@@ -360,7 +358,7 @@ export default function InnovacionPage() {
                       ? 'En marzo del año 2021 iniciamos un proyecto conjunto con CercleAI con el fin de optimizar su plataforma de ML. Después de 14 meses de trabajo la plataforma ya es funcional y ahora estamos en el proceso de alimentarla con la información matemática y estadística de nuestra experiencia en los últimos 15 años.'
                       : 'In March 2021, we initiated a joint project with CercleAI to optimize their ML platform. After 14 months of development, the platform is active and continuously updated with clinical statistics from 15+ years of practice.'}
                   </p>
-                  <h4 className="font-title font-bold text-cfa-navy text-sm pt-2">
+                  <h4 className="font-title font-normal text-cfa-navy text-sm pt-2">
                     {language === 'es' ? '¿Cómo funciona?' : 'How does it work?'}
                   </h4>
                   <ul className="space-y-2 pl-2">

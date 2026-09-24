@@ -148,7 +148,7 @@ export default function MediaPage() {
             <Video className="w-3.5 h-3.5 text-[#69B3E7]" />
             <span>{language === 'es' ? 'Multimedia & Audiovisual' : 'Multimedia & Audiovisual'}</span>
           </div>
-          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-light text-white">
             {language === 'es' ? 'Centro de Recursos' : 'Resource Center'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
@@ -169,7 +169,7 @@ export default function MediaPage() {
                 <Pill className="w-3.5 h-3.5 text-[#69B3E7]" />
                 <span>{language === 'es' ? 'Guías Clínicas para Pacientes' : 'Patient Clinical Guides'}</span>
               </div>
-              <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+              <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-white leading-tight">
                 {language === 'es'
                   ? 'Instrucciones Médicas Importantes'
                   : 'Important Medical Instructions'}
@@ -202,14 +202,14 @@ export default function MediaPage() {
                     <span className="px-2.5 py-1 rounded-full bg-[#004C97]/10 text-[#004C97] text-[10px] font-extrabold uppercase tracking-wider font-title">
                       {med.category[language]}
                     </span>
-                    <span className="text-[10px] font-bold text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded-md uppercase font-title">
+                    <span className="text-[10px] font-bold text-[#004C97] bg-[#EBF5FC] border border-[#69B3E7]/40 px-2 py-0.5 rounded-md uppercase font-title">
                       PDF
                     </span>
                   </div>
 
                   {/* Medicine Name */}
                   <div>
-                    <h3 className="font-title text-xl font-extrabold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-tight">
+                    <h3 className="font-title text-xl font-normal text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-tight">
                       {med.name}
                     </h3>
                     <p className="text-xs font-semibold text-[#004C97] font-title mt-0.5">
@@ -267,8 +267,8 @@ export default function MediaPage() {
 
           {/* Medical Advisory Note */}
           <div className="p-4 sm:p-5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-xs sm:text-sm text-blue-50 font-sans flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center flex-shrink-0 border border-amber-400/40">
-              <ShieldCheck className="w-5 h-5 text-amber-300" />
+            <div className="w-10 h-10 rounded-xl bg-white/15 text-[#69B3E7] flex items-center justify-center flex-shrink-0 border border-white/30">
+              <ShieldCheck className="w-5 h-5 text-[#69B3E7]" />
             </div>
             <div className="space-y-1 flex-1">
               <strong className="text-white font-title block">
@@ -292,7 +292,7 @@ export default function MediaPage() {
             <span className="text-xs font-bold text-[#004C97] uppercase tracking-wider font-title">
               {language === 'es' ? 'Biblioteca Audiovisual' : 'Audiovisual Library'}
             </span>
-            <h2 className="font-title text-2xl sm:text-3xl font-bold text-[#0B2559] mt-1">
+            <h2 className="font-title text-2xl sm:text-3xl font-light text-[#0B2559] mt-1">
               {language === 'es' ? 'Videos Institucionales y Podcast' : 'Institutional Videos & Podcast'}
             </h2>
           </div>
@@ -331,13 +331,13 @@ export default function MediaPage() {
                   {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center z-10">
                     {video.isDrivePending ? (
-                      <div className="w-16 h-16 rounded-full bg-[#004C97]/90 border-2 border-white/50 text-white flex items-center justify-center shadow-xl">
+                       <div className="w-16 h-16 rounded-full bg-[#004C97]/90 border-2 border-white/50 text-white flex items-center justify-center shadow-xl">
                         <Video className="w-7 h-7 text-white" />
                       </div>
                     ) : video.localVideoSrc ? (
                       <button
                         onClick={() => setActiveVideo(video)}
-                        className="w-16 h-16 rounded-full bg-red-600 hover:bg-red-500 text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300 border border-white/40 cursor-pointer"
+                        className="w-16 h-16 rounded-full bg-[#004C97] hover:bg-[#69B3E7] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300 border border-white/40 cursor-pointer"
                         title={video.title[language]}
                       >
                         <Play className="w-7 h-7 fill-white translate-x-0.5 text-white" />
@@ -347,7 +347,7 @@ export default function MediaPage() {
                         href={video.videoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-16 h-16 rounded-full bg-red-600 text-white flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-red-500 transition-all duration-300 border border-white/40 cursor-pointer"
+                        className="w-16 h-16 rounded-full bg-[#004C97] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-[#69B3E7] transition-all duration-300 border border-white/40 cursor-pointer"
                         title={video.title[language]}
                       >
                         <Play className="w-7 h-7 fill-white translate-x-0.5 text-white" />
@@ -358,7 +358,7 @@ export default function MediaPage() {
 
                 {/* Content & Metadata */}
                 <div className="p-6 space-y-4">
-                  <h3 className="font-title text-lg sm:text-xl font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
+                  <h3 className="font-title text-lg sm:text-xl font-normal text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
                     {video.title[language]}
                   </h3>
 
@@ -384,7 +384,7 @@ export default function MediaPage() {
                     href={video.videoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 font-title shadow-md shadow-red-600/20 cursor-pointer"
+                    className="w-full py-3 px-4 rounded-xl bg-[#004C97] hover:bg-[#69B3E7] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 font-title shadow-md shadow-[#004C97]/20 cursor-pointer"
                   >
                     <Youtube className="w-4 h-4" />
                     <span>{language === 'es' ? 'Ver en Canal Oficial @infertilidadabc' : 'Watch on Official Channel @infertilidadabc'}</span>
@@ -403,7 +403,7 @@ export default function MediaPage() {
               <span className="text-xs font-bold text-[#004C97] uppercase tracking-wider font-title">
                 {language === 'es' ? 'Recorrido Visual' : 'Visual Tour'}
               </span>
-              <h3 className="font-title text-2xl font-bold text-[#0B2559]">
+              <h3 className="font-title text-2xl font-light text-[#0B2559]">
                 {language === 'es' ? 'Laboratorio de FIV, Timelapse & Quirófano' : 'IVF Laboratory, Timelapse & Surgical Suites'}
               </h3>
             </div>
@@ -474,20 +474,16 @@ export default function MediaPage() {
         <div className="rounded-3xl bg-gradient-to-br from-[#004C97] to-[#0B2559] p-8 sm:p-12 text-white text-center space-y-5 shadow-xl border border-[#69B3E7]/40">
           <div className="flex items-center justify-center gap-3">
             <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/30">
-              <Youtube className="w-8 h-8 text-red-400" />
+              <Youtube className="w-8 h-8 text-white" />
             </div>
             <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/30">
-              <Instagram className="w-8 h-8 text-pink-300" />
+              <Instagram className="w-8 h-8 text-white" />
             </div>
           </div>
 
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 border border-white/25 text-[#69B3E7] text-xs font-bold uppercase tracking-wider font-title">
-              <Share2 className="w-3.5 h-3.5 text-[#69B3E7]" />
-              <span>{language === 'es' ? 'Redes Sociales Oficiales' : 'Official Social Networks'}</span>
-            </div>
-            <h2 className="font-title text-2xl sm:text-3xl font-extrabold">
-              {language === 'es' ? 'Redes Sociales • Canal Oficial en YouTube @infertilidadabc' : 'Social Networks • Official YouTube Channel @infertilidadabc'}
+            <h2 className="font-title text-2xl sm:text-3xl font-light text-white">
+              {language === 'es' ? 'Redes Sociales' : 'Social Media'}
             </h2>
             <p className="text-xs sm:text-sm text-blue-100 max-w-2xl mx-auto font-sans leading-relaxed">
               {language === 'es'
@@ -502,9 +498,9 @@ export default function MediaPage() {
               href="https://www.youtube.com/@infertilidadabc"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm shadow-xl shadow-red-600/30 transition-all font-title hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm shadow-xl transition-all font-title hover:scale-105"
             >
-              <Youtube className="w-5 h-5" />
+              <Youtube className="w-5 h-5 text-white" />
               <span>{language === 'es' ? 'Canal de YouTube @infertilidadabc' : 'YouTube Channel @infertilidadabc'}</span>
               <ExternalLink className="w-4 h-4 opacity-80" />
             </a>
@@ -514,9 +510,9 @@ export default function MediaPage() {
               href="https://www.instagram.com/clinicafertilizacionasistida/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:brightness-110 text-white font-bold text-sm shadow-xl shadow-pink-600/30 transition-all font-title hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm shadow-xl transition-all font-title hover:scale-105"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-5 h-5 text-white" />
               <span>Instagram @clinicafertilizacionasistida</span>
               <ExternalLink className="w-4 h-4 opacity-80" />
             </a>
@@ -526,9 +522,9 @@ export default function MediaPage() {
               href="https://www.facebook.com/ClinicadeFertilizacionAsistida"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#1877F2] hover:bg-[#166fe5] text-white font-bold text-sm shadow-xl shadow-blue-600/30 transition-all font-title hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm shadow-xl transition-all font-title hover:scale-105"
             >
-              <Facebook className="w-5 h-5" />
+              <Facebook className="w-5 h-5 text-white" />
               <span>Facebook CFA</span>
               <ExternalLink className="w-4 h-4 opacity-80" />
             </a>
@@ -538,9 +534,9 @@ export default function MediaPage() {
               href="https://www.linkedin.com/company/cl%C3%ADnica-de-fertilizaci%C3%B3n-asistida/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#0A66C2] hover:bg-[#084e96] text-white font-bold text-sm shadow-xl shadow-[#0A66C2]/30 transition-all font-title hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm shadow-xl transition-all font-title hover:scale-105"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-5 h-5 text-white" />
               <span>LinkedIn Institucional</span>
               <ExternalLink className="w-4 h-4 opacity-80" />
             </a>
@@ -659,7 +655,7 @@ export default function MediaPage() {
                 href={activeVideo.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-red-400 hover:text-red-300 font-bold font-title"
+                className="inline-flex items-center gap-1.5 text-[#69B3E7] hover:text-white font-bold font-title transition-colors"
               >
                 <Youtube className="w-4 h-4" />
                 <span>YouTube</span>
@@ -679,7 +675,7 @@ export default function MediaPage() {
                   <FileText className="w-4 h-4 text-[#69B3E7]" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold font-title leading-tight">{activePdf.name}</h3>
+                  <h3 className="text-sm font-normal font-title leading-tight">{activePdf.name}</h3>
                   <p className="text-[11px] text-[#69B3E7] font-sans">{activePdf.activeSubstance}</p>
                 </div>
               </div>
@@ -710,7 +706,7 @@ export default function MediaPage() {
               </div>
             </div>
 
-            <div className="flex-1 w-full h-full bg-gray-100 relative">
+            <div className="flex-1 w-full h-full bg-[#EBF5FC] relative">
               <iframe
                 src={`${activePdf.pdfUrl}#toolbar=1&navpanes=0`}
                 className="w-full h-full border-0"

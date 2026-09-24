@@ -68,7 +68,7 @@ export const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, onOpenM
 
         {/* Content Body */}
         <div className="p-6 space-y-3">
-          <h3 className="font-title text-lg sm:text-xl font-bold text-cfa-navy group-hover:text-cfa-cyan transition-colors leading-snug">
+          <h3 className="font-title text-lg sm:text-xl font-normal text-cfa-navy group-hover:text-cfa-cyan transition-colors leading-snug">
             {data.title}
           </h3>
 
@@ -94,7 +94,7 @@ export const TreatmentCard: React.FC<TreatmentCardProps> = ({ treatment, onOpenM
         <div className="pt-4 border-t border-cfa-grayBorder flex items-center justify-between">
           <button
             onClick={() => onOpenModal && onOpenModal(treatment)}
-            className="text-xs font-bold text-cfa-cyan group-hover:text-cfa-deepBlue inline-flex items-center gap-1.5 transition-colors cursor-pointer font-title"
+            className="text-xs font-medium text-cfa-cyan group-hover:text-cfa-deepBlue inline-flex items-center gap-1.5 transition-colors cursor-pointer font-title"
           >
             <span>{language === 'es' ? 'Ver protocolo y detalles' : 'View full protocol'}</span>
             <ChevronRight className="w-4 h-4" />
@@ -131,8 +131,8 @@ export const TreatmentDetailModal: React.FC<{
                   <Icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-title text-xl sm:text-2xl font-bold text-white drop-shadow-sm">{data.title}</h3>
-                  <p className="text-xs text-cfa-light drop-shadow-sm font-sans">
+                  <h3 className="font-title text-xl sm:text-2xl font-light text-white drop-shadow-sm">{data.title}</h3>
+                  <p className="text-xs text-cfa-light drop-shadow-sm font-sans font-light">
                     {language === 'es' ? 'Clínica de Fertilización Asistida en el Centro Médico ABC' : 'Assisted Fertilization Clinic at ABC Medical Center'}
                   </p>
                 </div>
@@ -170,7 +170,7 @@ export const TreatmentDetailModal: React.FC<{
             {/* Steps Breakdown if FIV */}
             {data.steps && treatment.id !== "donacion-de-ovulos-y-esperma" && (
               <div className="space-y-4 pt-2">
-                <h4 className="font-title text-sm font-bold text-cfa-navy uppercase tracking-wider">
+                <h4 className="font-title text-sm font-medium text-cfa-navy uppercase tracking-wider">
                   {language === 'es' ? 'Etapas y Ciclo del Procedimiento' : 'Procedure Stages & Cycle'}
                 </h4>
                 <div className="space-y-3">
@@ -183,7 +183,7 @@ export const TreatmentDetailModal: React.FC<{
                         <span className="w-6 h-6 rounded-lg bg-cfa-cyan text-white text-xs font-bold flex items-center justify-center uppercase font-title">
                           {step.letter || step.number}
                         </span>
-                        <h5 className="font-title font-bold text-cfa-navy text-xs sm:text-sm">
+                        <h5 className="font-title font-medium text-cfa-navy text-xs sm:text-sm">
                           {step.title}
                         </h5>
                       </div>

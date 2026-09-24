@@ -273,7 +273,7 @@ export default function InstalacionesPage() {
             <Building2 className="w-3.5 h-3.5 text-[#69B3E7]" />
             <span>{language === 'es' ? 'Infraestructura de Clase Mundial' : 'World-Class Infrastructure'}</span>
           </div>
-          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-light text-white">
             {language === 'es' ? 'Instalaciones & Laboratorio' : 'Facilities & Laboratory'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
@@ -289,11 +289,11 @@ export default function InstalacionesPage() {
         <div className="bg-gradient-to-br from-[#0B2559] to-[#004C97] text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-[#69B3E7]/40 space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/15 pb-4">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/30 text-red-300 border border-red-500/40 text-xs font-bold uppercase tracking-wider mb-1 font-title">
-                <Video className="w-3.5 h-3.5 text-red-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#69B3E7]/20 text-[#69B3E7] border border-[#69B3E7]/40 text-xs font-medium uppercase tracking-wider mb-1 font-title">
+                <Video className="w-3.5 h-3.5 text-[#69B3E7]" />
                 <span>{language === 'es' ? 'Recorrido Virtual Oficial' : 'Official Virtual Tour'}</span>
               </div>
-              <h2 className="font-title text-2xl sm:text-3xl font-bold text-white">
+              <h2 className="font-title text-2xl sm:text-3xl font-light text-white">
                 {language === 'es' ? 'Recorrido por Nuestras Instalaciones & Laboratorio' : 'Tour of Our Facilities & Laboratory'}
               </h2>
             </div>
@@ -359,7 +359,7 @@ export default function InstalacionesPage() {
                 href="https://www.youtube.com/@infertilidadabc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs sm:text-sm font-bold shadow-md transition-all flex items-center justify-center gap-2 font-title"
+                className="w-full py-3 rounded-xl bg-[#004C97] hover:bg-[#69B3E7] text-white text-xs sm:text-sm font-bold shadow-md transition-all flex items-center justify-center gap-2 font-title"
               >
                 <span>{language === 'es' ? 'Suscribirse al Canal @infertilidadabc' : 'Subscribe to @infertilidadabc'}</span>
               </a>
@@ -376,16 +376,16 @@ export default function InstalacionesPage() {
               <Sparkles className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-xs font-bold text-[#004C97] uppercase tracking-wider font-title">
+              <span className="text-xs font-medium text-[#004C97] uppercase tracking-wider font-title">
                 {language === 'es' ? 'Infraestructura Tecnológica' : 'Technological Infrastructure'}
               </span>
-              <h2 className="font-title text-2xl sm:text-3xl font-bold text-[#0B2559]">
+              <h2 className="font-title text-2xl sm:text-3xl font-light text-[#0B2559]">
                 {language === 'es' ? 'Laboratorio de Fertilización in Vitro' : 'In Vitro Fertilization Laboratory'}
               </h2>
             </div>
           </div>
 
-          <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed font-sans">
+          <div className="space-y-4 text-sm sm:text-base text-[#004C97]/90 leading-relaxed font-sans">
             <p>
               {language === 'es'
                 ? 'Nuestras instalaciones cuentan con tecnología de punta, importada en su mayoría de Australia, Reino Unido y Estados Unidos. Nuestro sistema de filtrado de aire garantiza una calidad de pureza, certificada por la Casa De Vechi especializada en ambientes estériles. Los espacios amplios nos permiten llevar a cabo los procesos en diferentes áreas, como por ejemplo el área de preparación de medios de cultivo, área para identificación de ovocitos, área para ICSI y Hatch Asistido, un área para cultivo de embriones, otra área para análisis genético de embriones y una más para criopreservación de tejidos.'
@@ -408,31 +408,31 @@ export default function InstalacionesPage() {
           {/* 3 Pillars Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
             <div className="p-5 bg-[#F0F7FD] rounded-2xl border border-[#69B3E7]/40 space-y-2 font-sans">
-              <span className="font-title font-bold text-[#0B2559] text-sm block flex items-center gap-1.5">
+              <span className="font-title font-medium text-[#0B2559] text-sm block flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#004C97]" />
                 <span>{language === 'es' ? 'Certificación Casa De Vechi' : 'Casa De Vechi Certification'}</span>
               </span>
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-[#004C97]/80">
                 {language === 'es' ? 'Filtrado de aire de grado médico estéril con presión positiva y control de COVs.' : 'Sterile medical-grade air filtration with positive pressure and VOC elimination.'}
               </p>
             </div>
 
             <div className="p-5 bg-[#F0F7FD] rounded-2xl border border-[#69B3E7]/40 space-y-2 font-sans">
-              <span className="font-title font-bold text-[#0B2559] text-sm block flex items-center gap-1.5">
+              <span className="font-title font-medium text-[#0B2559] text-sm block flex items-center gap-1.5">
                 <Lock className="w-4 h-4 text-[#004C97]" />
                 <span>{language === 'es' ? 'Plataforma RI Witness' : 'RI Witness RFID Platform'}</span>
               </span>
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-[#004C97]/80">
                 {language === 'es' ? 'Seguridad por radiofrecuencia británica para trazabilidad del 100% sin margen de error.' : 'British RFID radiofrequency security for 100% error-free sample tracking.'}
               </p>
             </div>
 
             <div className="p-5 bg-[#F0F7FD] rounded-2xl border border-[#69B3E7]/40 space-y-2 font-sans">
-              <span className="font-title font-bold text-[#0B2559] text-sm block flex items-center gap-1.5">
+              <span className="font-title font-medium text-[#0B2559] text-sm block flex items-center gap-1.5">
                 <Zap className="w-4 h-4 text-[#004C97]" />
                 <span>{language === 'es' ? 'Generador Láser CO2' : 'CO2 Laser Generator'}</span>
               </span>
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-[#004C97]/80">
                 {language === 'es' ? 'Biopsias embrionarias para PGT y eclosión asistida de máxima precisión celular.' : 'Precision cellular biopsy for PGT and assisted hatching with zero collateral damage.'}
               </p>
             </div>
@@ -444,19 +444,19 @@ export default function InstalacionesPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#69B3E7]/40 pb-4">
           <div>
-            <span className="text-xs font-bold text-[#004C97] uppercase tracking-wider font-title">
+            <span className="text-xs font-medium text-[#004C97] uppercase tracking-wider font-title">
               {language === 'es' ? 'Recorrido Fotográfico en Alta Definición' : 'High-Definition Photo Tour'}
             </span>
-            <h3 className="font-title text-2xl sm:text-3xl font-bold text-[#0B2559] mt-1">
+            <h3 className="font-title text-2xl sm:text-3xl font-light text-[#0B2559] mt-1">
               {language === 'es' ? 'Galería de Instalaciones & Equipamiento' : 'Facilities & Equipment Gallery'}
             </h3>
-            <p className="text-xs sm:text-sm text-gray-600 font-sans mt-1">
+            <p className="text-xs sm:text-sm text-[#004C97]/80 font-sans mt-1">
               {language === 'es'
                 ? 'Fotografías reales de nuestras salas de cultivo, quirófanos, analizadores y áreas clínicas en Centro Médico ABC Santa Fe.'
                 : 'Authentic photography of our embryo culture rooms, surgical suites, analyzers, and clinical spaces at ABC Santa Fe.'}
             </p>
           </div>
-          <span className="text-xs text-[#004C97] font-semibold font-title px-3 py-1.5 rounded-xl bg-[#F0F7FD] border border-[#69B3E7]/40 self-start md:self-auto">
+          <span className="text-xs text-[#004C97] font-medium font-title px-3 py-1.5 rounded-xl bg-[#F0F7FD] border border-[#69B3E7]/40 self-start md:self-auto">
             Centro Médico ABC Santa Fe • Consultorio 332
           </span>
         </div>
@@ -470,7 +470,7 @@ export default function InstalacionesPage() {
                 setActiveCategory(cat.id);
                 setSelectedGalleryIndex(null);
               }}
-              className={`px-4 py-2 rounded-2xl text-xs font-bold transition-all font-title cursor-pointer flex items-center gap-1.5 ${
+              className={`px-4 py-2 rounded-2xl text-xs font-medium transition-all font-title cursor-pointer flex items-center gap-1.5 ${
                 activeCategory === cat.id
                   ? 'bg-[#004C97] text-white shadow-md shadow-[#004C97]/20 scale-102'
                   : 'bg-white border border-[#69B3E7]/50 text-[#0B2559] hover:bg-[#F0F7FD]'
@@ -502,7 +502,7 @@ export default function InstalacionesPage() {
                   
                   {/* Category & Brand Badges */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
-                    <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#004C97] shadow-sm font-title border border-[#69B3E7]/30">
+                    <span className="text-[11px] font-medium px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#004C97] shadow-sm font-title border border-[#69B3E7]/30">
                       {item.tag[language]}
                     </span>
                     {item.equipmentBrand && (
@@ -521,10 +521,10 @@ export default function InstalacionesPage() {
 
                 {/* Content Box */}
                 <div className="p-5 space-y-2">
-                  <h4 className="font-title text-base font-bold text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
+                  <h4 className="font-title text-base font-normal text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug">
                     {item.title[language]}
                   </h4>
-                  <p className="text-xs text-gray-600 font-sans leading-relaxed line-clamp-2">
+                  <p className="text-xs text-[#004C97]/80 font-sans leading-relaxed line-clamp-2">
                     {item.description[language]}
                   </p>
                 </div>
@@ -532,7 +532,7 @@ export default function InstalacionesPage() {
 
               {/* Bottom Action strip */}
               <div className="px-5 pb-5 pt-0">
-                <div className="pt-3 border-t border-[#69B3E7]/30 flex items-center justify-between text-xs text-[#004C97] font-bold font-title">
+                <div className="pt-3 border-t border-[#69B3E7]/30 flex items-center justify-between text-xs text-[#004C97] font-medium font-title">
                   <span>{language === 'es' ? 'Ver Fotografía en HD' : 'View HD Photo'}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -550,7 +550,7 @@ export default function InstalacionesPage() {
             {/* Modal Header */}
             <div className="p-4 sm:p-5 bg-[#0B2559] text-white flex items-center justify-between border-b border-white/10 flex-shrink-0">
               <div className="flex items-center gap-3 pr-4">
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#004C97] text-white font-title border border-[#69B3E7]/40">
+                <span className="text-xs font-medium px-3 py-1 rounded-full bg-[#004C97] text-white font-title border border-[#69B3E7]/40">
                   {activeModalItem.tag[language]}
                 </span>
                 <span className="text-xs text-blue-200 font-sans hidden sm:inline-block">
@@ -602,7 +602,7 @@ export default function InstalacionesPage() {
             {/* Modal Caption & Technical Info */}
             <div className="p-4 sm:p-6 bg-[#0B2559] text-white border-t border-white/10 flex-shrink-0 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="space-y-1 max-w-2xl">
-                <h4 className="font-title text-base sm:text-lg font-bold text-white">
+                <h4 className="font-title text-base sm:text-lg font-light text-white">
                   {activeModalItem.title[language]}
                 </h4>
                 <p className="text-xs sm:text-sm text-blue-100 font-sans leading-relaxed">

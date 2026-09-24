@@ -33,7 +33,7 @@ export default function TratamientosPage() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>{language === 'es' ? 'Medicina Reproductiva Avanzada' : 'Advanced Reproductive Medicine'}</span>
           </div>
-          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-light text-white">
             {language === 'es' ? 'Tratamientos Especializados' : 'Specialized Treatments'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">

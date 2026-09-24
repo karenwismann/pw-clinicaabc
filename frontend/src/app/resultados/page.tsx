@@ -43,7 +43,7 @@ export default function ResultadosPage() {
             <Award className="w-3.5 h-3.5" />
             <span>{language === 'es' ? 'Indicadores de Calidad (KPI)' : 'Key Performance Indicators (KPI)'}</span>
           </div>
-          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+          <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-light text-white">
             {language === 'es' ? 'Resultados Clínicos & KPIs' : 'Clinical Results & KPIs'}
           </h1>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">
@@ -87,7 +87,7 @@ export default function ResultadosPage() {
               <span className="text-xs font-bold text-cfa-cyan uppercase tracking-wider font-title">
                 {language === 'es' ? 'Transferencia de Embriones Vitrificados' : 'Frozen Embryo Transfer'}
               </span>
-              <h3 className="font-title text-xl sm:text-2xl font-bold text-cfa-navy">
+              <h3 className="font-title text-xl sm:text-2xl font-light text-cfa-navy">
                 FET CON PGT-A (POR EDAD)
               </h3>
             </div>
@@ -143,7 +143,7 @@ export default function ResultadosPage() {
               <span className="text-xs font-bold text-cfa-cyan uppercase tracking-wider font-title">
                 {language === 'es' ? 'Transferencia de Embriones Vitrificados' : 'Frozen Embryo Transfer'}
               </span>
-              <h3 className="font-title text-xl sm:text-2xl font-bold text-cfa-navy">
+              <h3 className="font-title text-xl sm:text-2xl font-light text-cfa-navy">
                 FET SIN PGT-A (POR EDAD)
               </h3>
             </div>
@@ -199,7 +199,7 @@ export default function ResultadosPage() {
               <span className="text-xs font-bold text-cfa-cyan uppercase tracking-wider font-title">
                 {language === 'es' ? 'Comparativa General' : 'Overall Comparison'}
               </span>
-              <h3 className="font-title text-xl sm:text-2xl font-bold text-cfa-navy">
+              <h3 className="font-title text-xl sm:text-2xl font-light text-cfa-navy">
                 COMPARATIVA ACUMULADO 2021-2025 (FET SIN PGT-A vs. FET CON PGT-A)
               </h3>
             </div>
@@ -257,7 +257,7 @@ export default function ResultadosPage() {
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>{language === 'es' ? 'Auditoría & Rigor Científico' : 'Scientific Rigor'}</span>
           </div>
-          <h3 className="font-title text-2xl sm:text-3xl font-bold text-white">
+          <h3 className="font-title text-2xl sm:text-3xl font-light text-white">
             {language === 'es' ? 'Control de Calidad' : 'Quality Control'}
           </h3>
           <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-sans">

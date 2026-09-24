@@ -42,7 +42,7 @@ export const ValuesSection: React.FC = () => {
           <Sparkles className="w-3.5 h-3.5" />
           <span>{language === 'es' ? 'Principios Fundamentales' : 'Fundamental Principles'}</span>
         </div>
-        <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-cfa-navy">
+        <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-light text-cfa-navy">
           {language === 'es' ? 'Los Valores que nos Mueven' : 'The Values that Guide Us'}
         </h2>
         <p className="text-xs sm:text-sm text-cfa-grayText mt-1 font-sans">
@@ -95,7 +95,7 @@ export const ValuesSection: React.FC = () => {
               <span className="text-xs font-bold text-[#0B2559] uppercase tracking-wider font-title">
                 {language === 'es' ? 'Valor Institucional' : 'Institutional Value'}
               </span>
-              <h3 className="font-title text-xl sm:text-2xl font-extrabold text-[#0B2559]">
+              <h3 className="font-title text-xl sm:text-2xl font-light text-[#0B2559]">
                 {activeData.title}
               </h3>
             </div>
