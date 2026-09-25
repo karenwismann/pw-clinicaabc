@@ -160,9 +160,11 @@ export default function EquipoPage() {
                     <h4 className="font-title text-lg font-normal text-cfa-navy group-hover:text-cfa-cyan transition-colors leading-snug">
                       {doc.name}
                     </h4>
-                    <p className="text-xs font-light text-cfa-cyan font-title">
-                      {data.specialty}
-                    </p>
+                    {data.specialty && data.specialty.trim() !== '' && (
+                      <p className="text-xs font-light text-cfa-cyan font-title">
+                        {data.specialty}
+                      </p>
+                    )}
                     <p className="text-xs sm:text-sm text-cfa-grayDark leading-relaxed line-clamp-3 font-sans">
                       {data.brief}
                     </p>
@@ -335,9 +337,11 @@ export default function EquipoPage() {
                   <h3 className="font-title text-xl sm:text-2xl font-light text-cfa-navy">
                     {selectedDoctor.name}
                   </h3>
-                  <p className="text-xs sm:text-sm font-light text-cfa-cyan font-title">
-                    {(selectedDoctor[language] || selectedDoctor.es).specialty}
-                  </p>
+                  {(selectedDoctor[language] || selectedDoctor.es).specialty && (selectedDoctor[language] || selectedDoctor.es).specialty.trim() !== '' && (
+                    <p className="text-xs sm:text-sm font-light text-cfa-cyan font-title">
+                      {(selectedDoctor[language] || selectedDoctor.es).specialty}
+                    </p>
+                  )}
                   <p className="text-xs sm:text-sm text-cfa-grayDark font-sans leading-relaxed">
                     {(selectedDoctor[language] || selectedDoctor.es).brief}
                   </p>

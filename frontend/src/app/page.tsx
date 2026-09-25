@@ -334,9 +334,11 @@ export default function Home() {
                       <h4 className="font-title text-sm sm:text-[14.5px] font-normal text-[#0B2559] group-hover:text-[#004C97] transition-colors leading-snug min-h-[44px] flex items-center">
                         {doc.name}
                       </h4>
-                      <p className="text-[11px] font-light text-[#004C97] font-title min-h-[34px] flex items-center mt-1 leading-snug line-clamp-2">
-                        {data.specialty}
-                      </p>
+                      {data.specialty && data.specialty.trim() !== '' ? (
+                        <p className="text-[11px] font-light text-[#004C97] font-title min-h-[34px] flex items-center mt-1 leading-snug line-clamp-2">
+                          {data.specialty}
+                        </p>
+                      ) : null}
                     </div>
                     <p className="text-[11px] text-[#0B2559]/75 line-clamp-3 font-sans leading-relaxed min-h-[50px]">
                       {data.brief}
@@ -491,9 +493,11 @@ export default function Home() {
                   <h3 className="font-title text-xl sm:text-2xl font-light text-[#0B2559]">
                     {selectedDoctor.name}
                   </h3>
-                  <p className="text-xs sm:text-sm font-light text-[#004C97] font-title">
-                    {(selectedDoctor[language] || selectedDoctor.es).specialty}
-                  </p>
+                  {(selectedDoctor[language] || selectedDoctor.es).specialty && (selectedDoctor[language] || selectedDoctor.es).specialty.trim() !== '' && (
+                    <p className="text-xs sm:text-sm font-light text-[#004C97] font-title">
+                      {(selectedDoctor[language] || selectedDoctor.es).specialty}
+                    </p>
+                  )}
                   <p className="text-xs sm:text-sm text-[#0B2559]/80 font-sans leading-relaxed">
                     {(selectedDoctor[language] || selectedDoctor.es).brief}
                   </p>

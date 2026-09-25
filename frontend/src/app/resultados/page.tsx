@@ -34,6 +34,17 @@ export default function ResultadosPage() {
     { grupo: 'FET Con PGT-A', transferencias: 514, edadMedia: 35.9, embrionesTotal: 601, embrionesProm: 1.17, bioq: '65.8%', clin: '60.3%', imp: '58.2%', unico: '87.4%', mult: '12.6%' },
   ];
 
+  // Table 4: DONACIÓN
+  const donacion = [
+    { parametro: language === 'es' ? 'Edad promedio' : 'Average Age', valor: '26.3', highlight: false, isCyan: false, isNavy: false, isDeepBlue: false },
+    { parametro: language === 'es' ? 'Promedio por transferencia' : 'Average per Transfer', valor: '1.9', highlight: false, isCyan: false, isNavy: false, isDeepBlue: false },
+    { parametro: language === 'es' ? 'Embarazo bioquímico' : 'Biochemical Pregnancy', valor: '70.8%', highlight: true, isCyan: true, isNavy: false, isDeepBlue: false },
+    { parametro: language === 'es' ? 'Embarazo clínico' : 'Clinical Pregnancy', valor: '62.0%', highlight: true, isCyan: false, isNavy: true, isDeepBlue: false },
+    { parametro: language === 'es' ? 'Tasa de implantación' : 'Implantation Rate', valor: '41.5%', highlight: false, isCyan: false, isNavy: false, isDeepBlue: true },
+    { parametro: language === 'es' ? 'Embarazo único' : 'Single Pregnancy', valor: '55.1%', highlight: false, isCyan: false, isNavy: false, isDeepBlue: false },
+    { parametro: language === 'es' ? 'Embarazo múltiple' : 'Multiple Pregnancy', valor: '44.9%', highlight: false, isCyan: false, isNavy: false, isDeepBlue: false },
+  ];
+
   return (
     <div className="space-y-16 pb-20">
       {/* Header Banner */}
@@ -244,6 +255,58 @@ export default function ResultadosPage() {
                     <td className="p-3 text-center font-bold text-cfa-deepBlue">{row.imp}</td>
                     <td className="p-3 text-center">{row.unico}</td>
                     <td className="p-3 text-center text-cfa-grayDark">{row.mult}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* TABLA 4: DONACIÓN */}
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-cfa-softBlue shadow-soft space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span className="text-xs font-bold text-cfa-cyan uppercase tracking-wider font-title">
+                {language === 'es' ? 'Programa de Alta Eficacia' : 'High Efficiency Program'}
+              </span>
+              <h3 className="font-title text-xl sm:text-2xl font-light text-cfa-navy">
+                {language === 'es' ? 'DONACIÓN' : 'DONATION'}
+              </h3>
+            </div>
+            <button
+              onClick={() => setSelectedImage('/imagenes/kpi/tabla-donacion.png')}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-cfa-iceBlue hover:bg-cfa-softBlue text-cfa-cyan font-bold text-xs transition-colors cursor-pointer font-title self-start sm:self-auto"
+            >
+              <Eye className="w-4 h-4" />
+              <span>{language === 'es' ? 'Ver Tabla Fuente' : 'View Source Graphic'}</span>
+            </button>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-cfa-grayBorder">
+            <table className="w-full text-left text-xs sm:text-sm">
+              <thead className="bg-cfa-navy text-white font-title text-[11px] sm:text-xs">
+                <tr>
+                  <th className="p-3.5">Parámetro / Indicador</th>
+                  <th className="p-3.5 text-right sm:text-center">Resultado</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-cfa-grayBorder font-sans text-cfa-navy">
+                {donacion.map((row, idx) => (
+                  <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-cfa-grayLight/60'}>
+                    <td className="p-3.5 font-bold text-cfa-navy font-title">
+                      {row.parametro}
+                    </td>
+                    <td className={`p-3.5 text-right sm:text-center ${
+                      row.isCyan 
+                        ? 'font-bold text-cfa-cyan bg-cfa-softBlue/30 text-sm sm:text-base' 
+                        : row.isNavy 
+                        ? 'font-bold text-cfa-navy bg-cfa-softBlue/50 text-sm sm:text-base' 
+                        : row.isDeepBlue 
+                        ? 'font-bold text-cfa-deepBlue text-sm sm:text-base' 
+                        : 'font-semibold text-cfa-navy'
+                    }`}>
+                      {row.valor}
+                    </td>
                   </tr>
                 ))}
               </tbody>
