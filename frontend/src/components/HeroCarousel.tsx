@@ -114,27 +114,27 @@ export const HeroCarousel: React.FC = () => {
               <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 pointer-events-none" />
             </div>
 
-            {/* Content Container: On mobile positioned at the bottom so the photo subject is visible */}
-            <div className="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-14 sm:justify-center sm:pb-0">
-              <div className="max-w-2xl lg:max-w-3xl text-white space-y-2.5 sm:space-y-6 animate-fadeIn z-10">
+            {/* Content Container: Elevated vertically with ample left clearance to avoid overlap when resized */}
+            <div className="absolute inset-0 max-w-7xl mx-auto px-8 sm:px-16 lg:px-20 flex flex-col justify-center pb-8 sm:pb-12 md:pb-16 -translate-y-4 sm:-translate-y-6 md:-translate-y-8">
+              <div className="max-w-2xl lg:max-w-3xl text-white space-y-3 sm:space-y-5 animate-fadeIn z-10 pl-2 sm:pl-0">
                 
-                {/* Main Title - Proportional on mobile so it doesn't take over the screen */}
-                <div className="space-y-1 sm:space-y-2">
-                  <h1 className="font-light text-xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-snug sm:leading-[1.15] tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+                {/* Main Title - Proportional and elevated */}
+                <div className="space-y-1.5 sm:space-y-2.5">
+                  <h1 className="font-light text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight sm:leading-[1.15] tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
                     {slide.title}
                   </h1>
                   {slide.subtitle && (
-                    <p className="font-light text-xs sm:text-lg md:text-2xl text-white/95 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] max-w-xl line-clamp-2 sm:line-clamp-none">
+                    <p className="font-light text-xs sm:text-base md:text-xl lg:text-2xl text-white/95 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] max-w-xl line-clamp-2 sm:line-clamp-none">
                       {slide.subtitle}
                     </p>
                   )}
                 </div>
 
-                {/* CTA Buttons - Compact and sleek on mobile */}
-                <div className="pt-1 sm:pt-4 flex flex-wrap items-center gap-2 sm:gap-4">
+                {/* CTA Buttons - Compact and elevated */}
+                <div className="pt-1.5 sm:pt-3 flex flex-wrap items-center gap-2.5 sm:gap-4">
                   <Link
                     href={slide.buttonLink}
-                    className="inline-flex items-center gap-1.5 sm:gap-2 px-4 py-2 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl bg-[#004C97] hover:bg-[#003B75] text-white font-bold text-xs sm:text-base border border-[#69B3E7]/60 shadow-xl hover:scale-105 active:scale-95 transition-all font-title"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-4 py-2 sm:px-7 sm:py-3.5 rounded-xl sm:rounded-2xl bg-[#004C97] hover:bg-[#69B3E7] text-white font-bold text-xs sm:text-base border border-[#69B3E7]/60 shadow-xl hover:scale-105 active:scale-95 transition-all font-title"
                   >
                     <span>{slide.buttonText}</span>
                     <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-white" />
@@ -142,7 +142,7 @@ export const HeroCarousel: React.FC = () => {
 
                   <Link
                     href="/#agendar-cita"
-                    className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-7 sm:py-4 rounded-xl sm:rounded-2xl bg-white/20 hover:bg-white/30 text-white font-bold text-xs sm:text-base border border-white/40 backdrop-blur-md shadow-xl hover:scale-105 active:scale-95 transition-all font-title"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-6 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white/20 hover:bg-white/30 text-white font-bold text-xs sm:text-base border border-white/40 backdrop-blur-md shadow-xl hover:scale-105 active:scale-95 transition-all font-title"
                   >
                     <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#69B3E7]" />
                     <span>{language === 'es' ? 'Agendar Consulta' : 'Book Consultation'}</span>
@@ -150,7 +150,7 @@ export const HeroCarousel: React.FC = () => {
                 </div>
 
                 {/* Official Legend */}
-                <div className="pt-1 sm:pt-2 flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-sm text-white/90 font-medium tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] font-sans">
+                <div className="pt-1 sm:pt-2 flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs md:text-sm text-white/90 font-medium tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] font-sans">
                   <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#69B3E7] flex-shrink-0" />
                   <span className="line-clamp-1 sm:line-clamp-none">{slide.legend}</span>
                 </div>
@@ -161,21 +161,21 @@ export const HeroCarousel: React.FC = () => {
         );
       })}
 
-      {/* Navigation Arrows - Transparent Minimalist Design, compact on mobile */}
+      {/* Navigation Arrows - Minimalist Design with safe positioning */}
       <button
         onClick={handlePrev}
-        className="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black/25 hover:bg-black/45 text-white/90 hover:text-white flex items-center justify-center transition-all backdrop-blur-sm border border-white/25 hover:border-white/50 hover:scale-105 active:scale-95 cursor-pointer shadow-lg"
+        className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/35 hover:bg-[#004C97] text-white flex items-center justify-center transition-all backdrop-blur-sm border border-white/30 hover:border-white/60 hover:scale-110 active:scale-95 cursor-pointer shadow-lg"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-4 h-4 sm:w-7 sm:h-7" />
+        <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       <button
         onClick={handleNext}
-        className="absolute right-2 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black/25 hover:bg-black/45 text-white/90 hover:text-white flex items-center justify-center transition-all backdrop-blur-sm border border-white/25 hover:border-white/50 hover:scale-105 active:scale-95 cursor-pointer shadow-lg"
+        className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/35 hover:bg-[#004C97] text-white flex items-center justify-center transition-all backdrop-blur-sm border border-white/30 hover:border-white/60 hover:scale-110 active:scale-95 cursor-pointer shadow-lg"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-4 h-4 sm:w-7 sm:h-7" />
+        <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       {/* Bottom Indicators - Transparent & Minimalist Dots (No numbers) */}
