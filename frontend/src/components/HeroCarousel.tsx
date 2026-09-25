@@ -54,7 +54,7 @@ export const HeroCarousel: React.FC = () => {
     {
       id: 4,
       imageSrc: '/imagenes/carrusel4.jpg',
-      imagePosition: 'object-[60%_center]',
+      imagePosition: 'object-[70%_center]',
       badgeText: t.hero.badge4,
       title: t.hero.slide4Title || t.hero.slide4,
       subtitle: t.hero.slide4Sub,
